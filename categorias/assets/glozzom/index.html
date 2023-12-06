@@ -1,0 +1,729 @@
+<!DOCTYPE html>
+
+<html lang="">
+
+<head>
+<title>Glozzom</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<link href="layout/styles/layout.css" rel="stylesheet" type="text/css" media="all">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
+<style> 
+  .yy-main-header {
+      background-color: #1493bf; /* Color de fondo de la barra de navegación */
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0;
+  }
+  
+  .yy-logo-wrap img {
+      max-width: 160px;
+      height: auto;
+      display: block; /* Asegúrate de que la imagen se muestre como bloque */
+      margin: 0 auto; /* Centra la imagen si es más pequeña que el contenedor */
+  }
+  
+  
+  .yy-menu-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      align-items: center; 
+      
+      margin-right: 70px;
+  }
+  
+  .yy-menu-list a, .yy-menu-list li {
+      text-decoration: none;
+      color: rgb(0, 0, 0); /* Color del texto de los enlaces */
+      font-weight: bold;
+      padding: 10px 15px;
+  }
+  
+  .yy-menu-parent {
+      position: relative;
+      cursor: pointer; /* Cambia el cursor para indicar que es desplegable */
+  }
+  
+  .yy-menu-parent::after {
+      content: "";
+      border: solid rgb(19, 19, 19);
+      border-width: 0 3px 3px 0;
+      display: inline-block;
+      padding: 3px;
+      margin-left: 10px;
+      position: absolute;
+      right: 0; /* Alinea la flecha hacia la derecha */
+      top: 50%; /* Alinea la flecha verticalmente */
+      transform: translateY(-50%) rotate(45deg); /* Centra y rota la flecha */
+  }
+  
+  .yy-menu-list > .yy-menu-parent:hover .yy-sub-menu {
+      display: block; /* Muestra el menú desplegable al pasar el mouse */
+  }
+  
+  .yy-sub-menu {
+      display: none; /* Oculta el menú desplegable por defecto */
+      position: absolute;
+      background-color: #fdfdfd; /* Color de fondo del menú desplegable */
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2); /* Sombra para el menú desplegable */
+      padding: 12px 16px; /* Espaciado dentro del menú desplegable */
+      z-index: 200; /* Incrementa el z-index para asegurar que esté por encima de otros elementos */
+      margin-top: .5em; /* Espacio para la sombra */
+  }
+  
+
+  /* footer */
+  .con {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+  }
+  
+  .site-footer {
+      background-color: rgb(67, 152, 180);
+      color: #141313;
+      padding: 20px 0;
+      margin-top: 7rem;
+  }
+  
+  .footer-sections-container {
+      display: flex;
+      justify-content: space-between; /* Cambiado de 'space-around' para un mejor control del espacio */
+      flex-wrap: wrap;
+  }
+  
+  .footer-secti {
+      flex-basis: 20%; /* Cambiado de 'flex: 1' para tener un mejor control sobre el ancho */
+      margin: 0;
+      padding: 20px;
+      box-sizing: border-box;
+      font-size: 12px;
+  }
+  
+  
+  
+  .footer-link a {
+      color: #0d0d0d;
+      text-decoration: none;
+      margin-left: -40px;
+      font-size: 1.3rem;
+  }
+  
+  .social-icons {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      justify-content: center;
+  }
+  
+  .social-icons li {
+      margin: 0 10px;
+      
+  }
+  
+  .footer-second-s {
+      text-align: center;
+      margin-top: 20px;
+  }
+  
+  .social-li {
+      list-style: none;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      
+  }
+  
+  .social-li li {
+      margin: 0 10px;
+      position: relative;
+  }
+  
+  .social-li li a {
+      position: relative;
+      z-index: 1; /* Poner sobre la línea */
+  }
+  
+  .footer-line {
+      width: 80%;
+      height: 1px;
+      background-color: #73a5c1; /* Color de la línea */
+      margin-top: 20px;
+      margin-left: auto; /* Margen automático a la izquierda */
+      margin-right: auto; /* Margen automático a la derecha */
+  }
+  
+  
+  .p {
+      text-align: center;
+      font-size: 10px;
+      color: #0b0b0b;
+      margin-top: 10px;
+  }
+  
+  .footer-bo input[type="email"],
+  .footer-bo textarea {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 10px;
+      background-color: #fff; /* Background color for the input fields */
+      border: 1px solid #f1f5f6;
+      border-radius: 5px;
+      box-sizing: border-box;
+      color: #0d0c0c; 
+      resize: none !important;
+  }
+  
+  
+  .footer-bo button {
+      width: 100%; /* Hace que el botón ocupe todo el ancho del contenedor */
+      background-color: #f7fafb;
+      color: rgb(7, 7, 7);
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+  }
+  
+  .footer-bo button:hover {
+      background-color: #14c46c;
+  }
+  
+  .footer-link {
+      margin-top: 1rem;
+      margin-left: 50px;
+  }
+  
+  .footer-secti {
+      margin-bottom: 10px;
+  }
+  
+  .quick-contact input,
+  .quick-contact textarea {
+      margin-bottom: 15px; /* Ajustado para uniformidad */
+  }
+  {% comment %} ...... {% endcomment %}
+  .quick-contact {
+      background-color: rgb(67, 152, 180); /* El color de fondo que combina con el pie de página */
+      padding: 20px;
+      border-radius: 8px; /* Bordes redondeados para el formulario */
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra para dar profundidad */
+      width: 100%; /* Ajusta el ancho según sea necesario */
+      box-sizing: border-box;
+  }
+  
+  .quick-contact h2 {
+      color: #fff; /* Título del formulario en color blanco */
+      margin-bottom: 16px; /* Espacio entre el título y el campo de email */
+  }
+  
+  .quick-contact input[type="email"],
+  .quick-contact textarea {
+      width: calc(100% - 20px); /* Se calcula el 100% menos el padding */
+      padding: 10px;
+      margin-bottom: 16px; /* Espacio entre los campos de texto */
+      border: 1px solid #556d6d; 
+      background-color: #ebebeb; 
+      color: black;
+      border-radius: 5px; 
+      resize: none !important;
+  }
+  
+  
+  .quick-contact input[type="email"]:focus,
+  .quick-contact textarea:focus {
+      outline: none; /* Elimina el contorno al enfocar */
+      border: 2px solid #a39999; /* Cambia el color del borde al enfocar */
+  }
+  
+  .quick-contact button {
+      width: 100%; /* Ajusta el botón para que se expanda al 100% del formulario */
+      padding: 10px 0; /* Padding superior e inferior para el botón */
+      border: none; /* Elimina el borde del botón */
+      background-color: #0d0c0c; /* Color de fondo del botón */
+      color: #fff; /* Texto del botón en color blanco */
+      border-radius: 4px; /* Bordes redondeados para el botón */
+      cursor: pointer; /* Cursor en forma de mano al pasar sobre el botón */
+      transition: background-color 0.3s; /* Transición suave para el color de fondo */
+  }
+  
+  .quick-contact button:hover {
+      background-color: #a568a7; /* Cambia el color de fondo al pasar el cursor */
+  }
+  .social-li a {
+      font-size: 24px; /* Tamaño del icono */
+      color: white; /* Color del icono */
+      transition: color 0.3s ease; /* Transición suave para el efecto hover */
+  }
+  
+  .social-li a:hover {
+      color: black; /* Cambia el color al hacer hover */
+      /* Puedes agregar otros estilos que desees para el hover aquí */
+  }
+  .in-title {
+      font-weight: bold; /* Hace el texto en negrita */
+      text-transform: uppercase; /* Convierte el texto a mayúsculas */
+      margin-bottom: 16px; /* Agrega espacio debajo del título */
+      font-size: 18px; /* Ajusta el tamaño del texto según sea necesario */
+  }
+  
+  .in-content {
+      text-align: justify; /* Justifica el contenido */
+      margin-top: 16px; /* Agrega espacio arriba del contenido para separarlo del título */
+  }
+  .contact-title {
+      font-weight: bold;
+      text-transform: uppercase;
+      margin-bottom: 20px; /* Espacio debajo del título */
+      font-size: 18px; /* Ajusta el tamaño del texto según sea necesario */
+      color: #fff; /* Color del texto */
+  }
+  
+  .contact-description {
+      text-align: justify;
+      margin-bottom: 20px; 
+  }
+  
+  .contact-details {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      margin-top: 2rem
+  }
+  
+  .contact-details li {
+      display: flex;
+      align-items: center; /* Alinea los íconos con el texto */
+      margin-bottom: -1px; /* Espacio entre cada elemento de contacto */
+  }
+  
+  .contact-icon {
+      /* Ajusta el tamaño y el color de tus íconos aquí si es necesario */
+      margin-right: 6px; /* Espacio entre el ícono y el texto */
+      font-size: 16px; /* Tamaño del ícono */
+  }
+  
+  .contact-text {
+      color: #d9dee3;
+      font-weight: bold;
+  }
+  .contact-icon i {
+      margin-right: 10px; /* Espacio entre el ícono y el texto */
+      color: #fff; /* O el color que prefieras para tus iconos */
+      /* Otros estilos que quieras aplicar a los iconos */
+  }
+
+
+
+  
+  .footer-secti {
+      flex: 1;
+      padding: 20px;
+      margin-right: 20px; 
+  }
+  
+ 
+  {% comment %} xd {% endcomment %}
+  .footer-sections-container {
+      display: flex;
+      justify-content: flex-start; /* O utiliza 'center' si prefieres centrar todo el contenido en el contenedor */
+      flex-wrap: wrap;
+  }
+  
+  .footer-secti {
+      margin-right: 15px;
+      margin-left: 15px; 
+     
+  }
+  
+  /* Si deseas asegurarte de que el último elemento no tenga un margen a la derecha */
+  .footer-secti:last-child {
+      margin-right: 0;
+  }
+  
+</style>
+<body id="top">
+  <div id="yy-page" itemscope itemtype="http://schema.org/LocalBusiness">
+    <header class="yy-main-header">
+        <div class="yy-logo-wrap" itemprop="logo">
+            <img src="../../../images/logoo.jpg" alt="Logo Image">
+        </div>
+        <nav class="yy-nav-desktop">
+            <ul class="yy-menu-list">
+                <li><a href="../../../index.html">Inicio</a></li>
+                <li class="yy-menu-parent">
+                    Categorias
+                    <ul class="yy-sub-menu">
+                        <li><a href="../../costa.html">Costa</a></li>
+                        <li><a href="../../sierra.html">Sierra</a></li>
+                        <li><a href="../../selva.html">Selva</a></li>
+                    </ul>
+                </li>
+                <li><a href="../../../nosotros.html">Nosotros</a></li>
+                <li><a href="../../../blog.html">Blog</a></li>
+            </ul>
+        </nav>
+    </header>
+</div>
+
+<div class="bgded overlay" style="background-image:url('images/demo/backgrounds/01.png');"> 
+ 
+  <div class="wrapper row1">
+    <header id="header" class="hoc clear"> 
+     
+    </header>
+  </div>
+ 
+  <div class="wrapper">
+    <div id="pageintro" class="hoc clear"> 
+      <!-- ################################################################################################ -->
+      <article>
+        <h2 class="heading">La mejor aventura culinaria esta en Perú </h2>
+        <p>Embárcate en un viaje de sabor donde el océano se encuentra con la tradición: descubre la costa peruana en cada bocado.</p>
+        <footer><a class="btn" href="https://www.boardingpax.com/peru-el-destino-culinario-definitivo-la-mejor-aventura-culinaria-del-mundo-esta-en-moray-cusco-segun-los-world-culinary-awards/">Ver</a></footer>
+      </article>
+      <!-- ################################################################################################ -->
+    </div>
+  </div>
+  <!-- ################################################################################################ -->
+</div>
+<div class="wrapper row3">
+  <main class="hoc container clear"> 
+    <!-- main body -->
+    <!-- ################################################################################################ -->
+    <div class="sectiontitle">
+      <h6 class="heading">SABORES DEL MAR: COSTA PERUANA</h6>
+      <p>Descubre la exquisitez marina en nuestra selección de restaurantes costeros.
+      </p>
+    </div>
+    <div class="group">
+      <div class="one_half first">
+        <h6 class="heading">DELICIAS COSTEÑAS A TU MESA</h6>
+        <p>Desde el bullicio de las cocinas abiertas hasta la tranquila elegancia de comedores con vistas al mar, nuestra cuidadosa selección de restaurantes a lo largo de la costa peruana invita a los comensales a sumergirse en un ambiente donde cada detalle está impregnado de la esencia del Pacífico.</p>
+        <p class="btmspace-30">Es un viaje culinario que comienza en la selección meticulosa de ingredientes frescos y se completa con la maestría de chefs innovadores que reinterpretan la herencia gastronómica costeña.&hellip;</p>
+        <footer><a class="btn" href="https://www.instagram.com/costenasdelicias/?hl=es">Leer más &raquo;</a></footer>
+      </div>
+      <div class="one_half">
+        <ul class="nospace group">
+          <li class="one_half first btmspace-50">
+            <article>
+              <h6 class="heading font-x1"><a href="https://peru21.pe/gastronomia/imperdibles-conoce-cuales-son-los-10-platos-peruanos-mas-ricos-segun-chatgpt-comida-peruana-gastronomia-delicias-culinarias-cocina-peruana-cuales-es-la-comida-mas-deliciosa-noticia/">EXPERIENCIA CULINARIA INIGUALABLE</a></h6>
+              <p class="nospace">Solo lo mejor de la costa en tu plato: sabor, frescura y tradición. &hellip;</p>
+              <div class="image-container" style="text-align: center; margin-top: 2rem;">
+                <img src="images/demo/e1.jpg" alt="Imagen 1" style="width: 30%; margin-right: 1.5%;">
+                <img src="images/demo/e2.jpg" alt="Imagen 2" style="width: 30%; margin-right: 1.5%;">
+                <img src="images/demo/e3.jpg" alt="Imagen 3" style="width: 30%;">
+              </div>
+            </article>
+          </li>
+          
+          <li class="one_half btmspace-50">
+            <article>
+              <h6 class="heading font-x1"><a href="#">Especialidades Marinas</a></h6>
+              <p class="nospace">Descubre la sofisticación de la cocina costera peruana, desde suculentas causas hasta innovadores platos de autor.
+                &hellip;</p>
+                <div class="image-container" style="text-align: center; margin-top: 2rem;">
+                  <img src="images/demo/m1.jpg" alt="Imagen 1" style="width: 30%; margin-right: 1.5%;">
+                  <img src="images/demo/m2.jpg" alt="Imagen 2" style="width: 30%; margin-right: 1.5%;">
+                  <img src="images/demo/m3.jpg" alt="Imagen 3" style="width: 30%;">
+                </div>
+            </article>
+          </li>
+          <li class="one_half first">
+            <article>
+              <h6 class="heading font-x1"><a href="#">Tesoro del Pacífico</a></h6>
+              <p class="nospace">Selección diaria de lo mejor del mar, en armonía con técnicas culinarias ancestrales y contemporáneas.&hellip;</p>
+              <div class="image-container" style="text-align: center; margin-top: 2rem;">
+                <img src="images/demo/t1.jpg" alt="Imagen 1" style="width: 30%; margin-right: 1.5%;">
+                <img src="images/demo/t2.jpg" alt="Imagen 2" style="width: 30%; margin-right: 1.5%;">
+                <img src="images/demo/t3.jpg" alt="Imagen 3" style="width: 30%;">
+              </div>
+            </article>
+          </li>
+          <li class="one_half">
+            <article>
+              <h6 class="heading font-x1"><a href="#">Sabores que Encantan</a></h6>
+              <p class="nospace">Deja que tu paladar navegue por una carta de opciones que reflejan la biodiversidad costera del Perú.&hellip;</p>
+              <div class="image-container" style="text-align: center; margin-top: 2rem;">
+                <img src="images/demo/s1.jpg" alt="Imagen 1" style="width: 30%; margin-right: 1.5%;">
+                <img src="images/demo/s2.jpg" alt="Imagen 2" style="width: 30%; margin-right: 1.5%;">
+                <img src="images/demo/s3.jpg" alt="Imagen 3" style="width: 30%;">
+              </div>
+            </article>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="clear"></div>
+  </main>
+</div>
+<div class="wrapper bgded overlay" style="background-image:url('images/demo/backgrounds/02.png');">
+  <article class="hoc container clear center"> 
+    <!-- ################################################################################################ -->
+    <div class="sectiontitle" style="margin-bottom:30px;">
+      <h6 class="heading">CONOCE LA COSTA CULINARIA</h6>
+      <p>Descubre los secretos mejor guardados de la cocina costera peruana.</p>
+    </div>
+    <p><a class="btn medium" href="https://emarket.pe/blog/gastronomia-de-la-costa-sierra-y-selva">Descubre Más &raquo;</a></p>
+    <!-- ################################################################################################ -->
+  </article>
+</div>
+<div class="wrapper row3">
+  <div class="hoc container clear"> 
+    <!-- ################################################################################################ -->
+    <div class="sectiontitle">
+      <h6 class="heading">DESTINOS GASTRONÓMICOS DESTACADOS</h6>
+      <p>Una selección de los restaurantes más renombrados de la costa peruana.
+
+      </p>
+    </div>
+    <ul class="nospace group services">
+      <li class="one_third first btmspace-30">
+        <article class="bgded" style="background-image:url('images/demo/preparandonos-para-los.jpg');">
+          <div class="overlay">
+            <h6 class="heading font-x1"><a href="https://lasbolena.com.pe/">Las Bolena</a></h6>
+            <p>Nuestros locales ofrecen los tesoros del día, capturados y cocinados con maestría.&hellip;</p>
+            <footer>
+              <ul class="nospace inline pushright" style="margin-top: 2rem;">
+                <li style=" display: block; font-weight: bold;"><i class="fa fa-map-marker"></i> 
+                  Av. Reducto 1290, Miraflores, Lima 15074 Perú</li>
+                <li style=" display: block; margin-top: 0.5rem; font-weight: bold;"><i class="fa fa-globe"></i> <a href="https://lasbolena.com.pe/" style=" font-weight: bold;">Sitio web</a></li>
+                <li style="display: block; font-weight: bold;"><i class="fa fa-phone"></i> +51 1 6832493</li>
+              </ul>
+            </footer>
+          </div>
+        </article>
+      </li>
+      <li class="one_third btmspace-30">
+        <article class="bgded" style="background-image:url('images/demo/trastienda.png');">
+          <div class="overlay">
+            <h6 class="heading font-x1"><a href="https://latrastienda.pe/">La Trastienda</a></h6>
+            <p>Nuestros locales ofrecen los tesoros del día, capturados y cocinados con maestría.&hellip;</p>
+            <footer>
+              <ul class="nospace inline pushright" style="margin-top: 2rem;">
+                <li style=" display: block; font-weight: bold;"><i class="fa fa-map-marker"></i> 
+                  Av. Costa Verde s/n Playa Las Cascadas (Bordemar) Barranco</li>
+                <li style=" display: block; margin-top: 0.5rem; font-weight: bold;"><i class="fa fa-globe"></i> <a href="https://latrastienda.pe/" style=" font-weight: bold;">Sitio web</a></li>
+                <li style="display: block; font-weight: bold;"><i class="fa fa-phone"></i> +51 4771690</li>
+              </ul>
+            </footer>
+            
+            
+          </div>
+        </article>
+      </li>
+      
+      
+      <li class="one_third btmspace-30">
+        <article class="bgded" style="background-image:url('images/demo/tragaluz-terraza.jpg');">
+          <div class="overlay">
+            <h6 class="heading font-x1"><a href="https://latrastienda.pe/">Tragaluz</a></h6>
+            <p>Nuestros locales ofrecen los tesoros del día, capturados y cocinados con maestría.&hellip;</p>
+            <footer>
+              <ul class="nospace inline pushright" style="margin-top: 2rem;">
+                <li style=" display: block; font-weight: bold;"><i class="fa fa-map-marker"></i> Malecón de la Reserva 1035 Miraflores, Lima 15074 Perú</li>
+                <li style=" display: block; margin-top: 0.5rem; font-weight: bold;"><i class="fa fa-globe"></i> <a href="https://latrastienda.pe/" style=" font-weight: bold;">Sitio web</a></li>
+                <li style="display: block; font-weight: bold;"><i class="fa fa-phone"></i> +51 4771690</li>
+              </ul>
+            </footer>
+          </div>
+        </article>
+      </li>
+      <li class="one_third first">
+        <article class="bgded" style="background-image:url('images/demo/la73-barranco.jpg');">
+          <div class="overlay">
+            <h6 class="heading font-x1"><a href="https://www.facebook.com/la73debarranco">La 73 de Barranco </a></h6>
+            <p>Nuestros locales ofrecen los tesoros del día, capturados y cocinados con maestría.&hellip;</p>
+            <footer>
+              <ul class="nospace inline pushright" style="margin-top: 2rem;">
+                <li style=" display: block; font-weight: bold;"><i class="fa fa-map-marker"></i>Av. El Sol Oeste 175, Barranco, Lima 15063 Perú</li>
+                <li style=" display: block; margin-top: 0.5rem; font-weight: bold;"><i class="fa fa-globe"></i> <a href="https://www.facebook.com/la73debarranco" style=" font-weight: bold;">Sitio web</a></li>
+                <li style="display: block; font-weight: bold;"><i class="fa fa-phone"></i> +51 1 2470780</li>
+              </ul>
+            </footer>
+          </div>
+        </article>
+      </li>
+      <li class="one_third">
+        <article class="bgded" style="background-image:url('images/demo/nuestro-lindo-local.jpg');">
+          <div class="overlay">
+            <h6 class="heading font-x1"><a href="https://www.google.com/maps/place//data=!4m2!3m1!1s0x9105b721af361111:0x697ff03cfde1fd29?source=g.page.share">Bahía Lima</a></h6>
+            <p>Nuestros locales ofrecen los tesoros del día, capturados y cocinados con maestría.&hellip;</p>
+            <footer>
+              <ul class="nospace inline pushright" style="margin-top: 2rem;">
+                <li style=" display: block; font-weight: bold;"><i class="fa fa-map-marker"></i> 
+                  Av.  las Cascadas, Boulevard Bordemar, Barranco 15063 Perú</li>
+                <li style=" display: block; margin-top: 0.5rem; font-weight: bold;"><i class="fa fa-globe"></i> <a href="https://www.google.com/maps/place//data=!4m2!3m1!1s0x9105b721af361111:0x697ff03cfde1fd29?source=g.page.share" style=" font-weight: bold;">Sitio web</a></li>
+                <li style="display: block; font-weight: bold;"><i class="fa fa-phone"></i>+51 960 535 416</li>
+              </ul>
+            </footer>
+          </div>
+        </article>
+      </li>
+      <li class="one_third">
+        <article class="bgded" style="background-image:url('images/demo/lynchi.png');">
+          <div class="overlay">
+            <h6 class="heading font-x1"><a href="https://lynchcafe.pe/">Lynch- Café para Volar</a></h6>
+            <p>Nuestros locales ofrecen los tesoros del día, capturados y cocinados con maestría.&hellip;</p>
+            <footer>
+              <ul class="nospace inline pushright" style="margin-top: 2rem;">
+                <li style=" display: block; font-weight: bold;"><i class="fa fa-map-marker"></i> Avenida del Pinar 135, Lima 15038 Perú</li>
+                <li style=" display: block; margin-top: 0.5rem; font-weight: bold;"><i class="fa fa-globe"></i> <a href="https://lynchcafe.pe/" style=" font-weight: bold;">Sitio web</a></li>
+                <li style="display: block; font-weight: bold;"><i class="fa fa-phone"></i> +51 978 800 039</li>
+              </ul>
+            </footer>
+          </div>
+        </article>
+      </li>
+    </ul>
+    <!-- ################################################################################################ -->
+  </div>
+</div>
+<div class="wrapper bgded overlay" style="background-image:url('images/demo/backgrounds/03.png');">
+  <article class="hoc container clear center"> 
+    <!-- ################################################################################################ -->
+    <div class="sectiontitle" style="margin-bottom:30px;">
+      <h6 class="heading">Oasis Urbanos: Terrazas Gastronómicas</h6>
+    <p>Descubre espacios donde la brisa y el sabor se encuentran, ofreciéndote la mejor experiencia culinaria al aire libre.</p>
+
+    </div>
+    <p><a class="btn medium" href="https://cosas.pe/abrebocas/211644/guia-cosas-12-restaurantes-con-terraza-para-seguir-disfrutando-este-invierno/">Leer &raquo;</a></p>
+  </article>
+</div>
+<div class="wrapper row3">
+  <section class="hoc container clear"> 
+    <!-- ################################################################################################ -->
+    <div class="sectiontitle">
+      <h6 class="heading">Bares y pubs</h6>
+      <p>Descubre una selección de aperitivos que despiertan el paladar y preparan tus sentidos para una experiencia gastronómica excepcional.</p>
+    </div>
+    <div class="group">
+      <article class="one_third first"><a href="https://www.facebook.com/MollysIrishBarLima/?locale=es_LA"><img class="btmspace-30" src="images/demo/bar1.jpg" alt=""></a>
+        <h3 class="nospace heading font-x1">Molly's Irish Bar & Restaurant</h3>
+        <ul class="nospace meta">
+          <li><i class="fa fa-user"></i> <a href="https://www.tripadvisor.com.pe/ShowUserReviews-g294316-d12912231-r924561484-Molly_s_Irish_Bar_Restaurant-Lima_Lima_Region.html">Mollys</a></li>
+          <li><i class="fa fa-tag"></i> <a href="https://www.tripadvisor.com.pe/ShowUserReviews-g294316-d12912231-r924479190-Molly_s_Irish_Bar_Restaurant-Lima_Lima_Region.html">Sábado en la noche</a></li>
+        </ul>
+        <p>Excelente ambiente, música en vivo y atención estupenda! Me pedí una pizza Margarita súper bien y los tragos muy buenos! Muy recomendable!&hellip;</p>
+        <footer class="nospace"><a class="btn" href="https://www.facebook.com/MollysIrishBarLima/?locale=es_LA">Visitar &raquo;</a></footer>
+      </article>
+      <article class="one_third"><a href="https://www.facebook.com/people/Intro-caf%C3%A9-bar/100068500232002/"><img class="btmspace-30" src="images/demo/bar2.jpg" alt=""></a>
+        <h3 class="nospace heading font-x1">Intro Cafe Bar</h3>
+        <ul class="nospace meta">
+          <li><i class="fa fa-user"></i> <a href="https://www.tripadvisor.com.pe/ShowUserReviews-g294316-d23475620-r923992736-Intro_Cafe_Bar-Lima_Lima_Region.html">Excelente lugar </a></li>
+          <li><i class="fa fa-tag"></i> <a href="https://www.tripadvisor.com.pe/ShowUserReviews-g294316-d23475620-r923896609-Intro_Cafe_Bar-Lima_Lima_Region.html">Excelente atención</a></li>
+        </ul>
+        <p>El mejor lugar para pasar tu noche con tus patas o tu pareja es, sin duda, Intro Café Bar. Acompañado de una gran variedad de platos, espacios cómodos y &hellip;</p>
+        <footer class="nospace"><a class="btn" href="https://www.facebook.com/people/Intro-caf%C3%A9-bar/100068500232002/">Visitar &raquo;</a></footer>
+      </article>
+      <article class="one_third"><a href="https://www.facebook.com/EstadioFCPeru/"><img class="btmspace-30" src="images/demo/bar3.jpg" alt=""></a>
+        <h3 class="nospace heading font-x1">Estadio Restaurant</h3>
+        <ul class="nospace meta">
+          <li><i class="fa fa-user"></i> <a href="https://www.tripadvisor.com.pe/ShowUserReviews-g294316-d2528386-r885396852-Estadio_F_C_Restaurant-Lima_Lima_Region.html">Estadio, un lugar genial </a></li>
+          <li><i class="fa fa-tag"></i> <a href="https://www.tripadvisor.com.pe/ShowUserReviews-g294316-d2528386-r805392916-Estadio_F_C_Restaurant-Lima_Lima_Region.html">Vacacionando</a></li>
+        </ul>
+        <p>Todo muy rico súper lugar para ir a comer, muy buena la temática del sitio. Comida bien servida, las bebidas no alcohólicas las sirven en botellas&hellip;</p>
+        <footer class="nospace"><a class="btn" href="https://www.facebook.com/EstadioFCPeru/">Visitar &raquo;</a></footer>
+      </article>
+    </div>
+    <!-- ################################################################################################ -->
+  </section>
+  
+</div>
+<footer class="site-footer" itemscope itemtype="http://schema.org/WPFooter">
+  <div class="con footer-sections-container">
+      <!-- Primera Columna -->
+      <div class="footer-secti">
+          <header>
+              <h2 class="in-title">Información</h2> 
+          </header>
+          <p  class="in-content">Explora nuevas aventuras y descubre más sobre Perú en nuestra página.</p>
+          <ul class="contact-details">
+              <li>
+                  <span class="contact-icon"><i class="fas fa-phone"></i></span>
+                  <span class="contact-text">903392728</span>
+              </li>
+              <li>
+                  <span class="contact-icon"><i class="fas fa-envelope"></i></span>
+                  <span class="contact-text">info@turisite.com</span>
+              </li>
+              <li>
+                  <span class="contact-icon"><i class="fas fa-map-marker-alt"></i></span>
+                  <span class="contact-text">Perú, La Libertad, Trujillo</span>
+              </li>
+          </ul>
+      </div>
+      
+      <!-- Segunda Columna -->
+      <div class="footer-secti">
+          <header>
+              <h2 class="in-title">ENLACES</h2> 
+          </header>
+          <ul class="footer-link " >
+              <li><a href="../../../../index.html">Inicio</a></li>
+              <li><a href="../../../../blog.html">Blog</a></li>
+              <li><a href="../../../../nosotros.html">Nosotros</a></li>
+              <li><a href="../../../../gastronomia.html">Gastronomía</a></li>
+              <li><a href="../../../../ciudades.html">Ciudades</a></li>
+              <li><a href="../../../../cultura.html">Cultura</a></li>
+          </ul>
+      </div>
+      
+      <!-- Tercera Columna -->
+      <div class="footer-secti">
+          <header>
+              <h2 class="in-title">DESCUBRE MAS</h2> 
+          </header>
+          <ul class="footer-link">
+              <li><a href="../../../../categorias/selva.html">Selva</a></li>
+              <li><a href="../../../../categorias/costa.html">Costa</a></li>
+              <li><a href="../../../../categorias/sierra.html">Sierra</a></li>
+          </ul>
+      </div>
+      
+      <!-- Cuarta Columna -->
+      <div class="footer-secti">
+          <header>
+              <h2 class="in-title">CONTACTO</h2> 
+          </header>
+          <section class="quick-contact">
+              <form action="tu-script-de-procesamiento" method="POST">
+                  <input type="email" name="email" placeholder="Tu Email*" required>
+                  <textarea name="message" placeholder="Escribe tu mensaje*" required></textarea>
+                  <button type="submit">Enviar mensaje</button>
+              </form>
+          </section>
+      </div>
+      
+  </div>
+  
+  <!-- Iconos de redes sociales -->
+  <div class="social-icons">
+      <ul class="social-li">
+
+
+          <li><a href="#"><i class="fab fa-facebook-square"></i></a></li>
+          <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+          <li><a href="#"><i class="fab fa-skype"></i></a></li>
+          <li><a href="#"><i class="fab fa-youtube"></i></a></li>
+          <li><a href="#"> <i class="fab fa-instagram"></i></a></li>
+      </ul>
+  </div>
+  
+  <!-- Línea y derechos de autor -->
+  <div class="footer-line"></div>
+  <p class="p">&copy; 2023 TuriWeb@gmail.com. Todos los derechos reservados.| 903392728</p>
+</footer>
+
+
+<script src="layout/scripts/jquery.min.js"></script>
+<script src="layout/scripts/jquery.backtotop.js"></script>
+<script src="layout/scripts/jquery.mobilemenu.js"></script>
+</body>
+</html>

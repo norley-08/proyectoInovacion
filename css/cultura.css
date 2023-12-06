@@ -1,0 +1,393 @@
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Rubik:wght@300;400;500;600;700&display=swap");
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.video{
+    justify-content: center;
+    margin-bottom: 5rem;
+}
+
+.categoria{
+    text-align: center;
+    font-size: 5rem;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    text-shadow: 3px 3px rgb(17, 17, 97);
+    -webkit-text-stroke-color: rgb(24, 22, 22);
+    -webkit-text-stroke-width: 1px;
+    color: transparent;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin-bottom: 2rem;
+}
+
+.contenido{
+    display: flex;
+    gap: 5rem;
+    margin-left: 10rem;
+    margin-right: 10rem;
+    text-align: justify;
+}
+
+.contenido p{
+font-size: 1.5rem;
+}
+
+.titulo-carrusel{
+    text-align: center;
+    font-size: 4rem;
+    margin-top: 3rem;
+    margin-bottom: 0rem;
+    text-shadow: 3px 3px rgb(17, 17, 97);
+    -webkit-text-stroke-color: rgb(24, 22, 22);
+    -webkit-text-stroke-width: 1px;
+    color: transparent;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.carrusel{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+button{
+    font-family: "Rubik", sans-serif;
+    background-color: transparent;
+    border: 1px solid white;
+    color: inherit;
+    font-size: 1rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    height: 50px;
+    transition: 0.5s ease;
+}
+
+button:hover{
+    cursor: pointer;
+    background-color: rgba(255, 255, 255, 0.4);
+}
+
+.carrusel .container{
+    position: relative;
+    width: 1280px;
+    height: 590px;
+    border-radius: 20px;
+    overflow: hidden;
+    background-color: #767676;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    color: #ffffff;
+}
+
+.carrusel .container .content{
+    width: 100%;
+    display: flex;
+}
+
+.carrusel .container .introduce{
+    position: relative;
+    width: 40%;
+    height: 100%;
+    z-index: 20;
+}
+
+.carrusel .introduce .wrapper{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: fit-content;
+    padding: 0 25px 0 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    pointer-events: none;
+}
+
+.carrusel .introduce .wrapper span{
+    overflow: hidden;
+}
+
+.carrusel .introduce .wrapper span > *{
+    transition: 0.5s ease;
+    opacity: 0;
+    transform: translateY(300px);
+    transition-delay: calc((3 - var(--idx)) * 0.1s);
+}
+
+.carrusel .introduce .wrapper.active{
+    pointer-events: all;
+}
+
+.carrusel .wrapper.active span > * {
+    opacity: 1;
+    transform: translateY(0);
+    transition-delay: calc(var(--idx) * 0.1s);
+}
+
+.carrusel .introduce:not(.place) {
+    font-family: "Rubik", sans-serif;
+}
+
+.carrusel .introduce .country{
+    font-size: 2rem;
+    font-size: 400;
+}
+
+.carrusel .introduce .place{
+    font-family: "Bebas Neue", sans-serif;
+    font-size: 7.5rem;
+    font-weight: 400;
+    text-transform: uppercase;
+    line-height: 1.1;
+    letter-spacing: 1px;
+    margin-top: 10px;
+}
+
+.carrusel .introduce .describe{
+    font-size: 1.5rem;
+    margin-top: 8px;
+    font-weight: 300;
+}
+
+.carrusel .content .thumbnail-list{
+    position: relative;
+    height: 300px;
+    flex: 1;
+}
+
+.carrusel .thumbnail-list .wrapper{
+    position: relative;
+    z-index: 10;
+    height: 300px;
+}
+
+.carrusel .thumbnail-list .wrapper .thumbnail{
+    position: absolute;
+    height: 300px;
+    width: 200px;
+    border-radius: 15px;
+    overflow: hidden;
+    transition: 0.75s cubic-bezier(0.6, 0.1, 0.3, 1);
+    transform: translateX(calc(var(--idx) * 230px));
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.4);
+}
+
+.carrusel .thumbnail-list .wrapper .thumbnail.zoom{
+    width: 1280px;
+    height: 720px;
+    transform: translate(-512px, -270px);
+    filter: brightness(40%);
+    box-shadow: none;
+}
+
+.carrusel .thumbnail img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.carrusel .container .navigation{
+    margin-left: 40%;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 50px 50px 50px 0;
+    z-index: 20;
+}
+
+.carrusel .navigation .next-button{
+    font-size: 1.5rem;
+    width: 180px;
+    border-radius: 50px;
+}
+
+.carrusel .navigation .line{
+    flex: 1;
+    height: 2px;
+    background-color: #ffffff;
+}
+
+.carrusel .navigation .ordinal-number{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 50px;
+    overflow: hidden;
+}
+
+.carrusel .ordinal-number h2{
+    font-family: "Bebas Neue", sans-serif;
+    font-size: 3.5rem;
+    font-weight: 400;
+    line-height: 1;
+    position: absolute;
+    transform: translateY(200%);
+    transition: 0.5s ease;
+}
+
+.carrusel .ordinal-number h2.active{
+    transform: unset;
+}
+
+.body-t{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(235, 234, 233);
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    margin-top: 3rem;
+}
+
+.body-t2{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   background-color: rgb(235, 234, 233);
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+
+.tradiciones-titulo{
+    margin-top: 5rem;
+    text-align: center;
+    font-size: 3rem;
+    text-shadow: 3px 3px rgb(17, 17, 97);
+    -webkit-text-stroke-color: rgb(24, 22, 22);
+    -webkit-text-stroke-width: 1px;
+    color: transparent;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.tradiciones{
+    margin-top: 3rem;
+    position: relative;
+    width: 1100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 30px;
+}
+.tradiciones2{
+    position: relative;
+    width: 1100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 30px;
+    margin-top: -2rem;
+}
+
+.tradiciones .card{
+    position: relative;
+    max-width: 300px;
+    height: 180px;
+    background-color: #FFF;
+    margin: 30px 10px;
+    padding: 20px 15px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 5px 202px rgba(0,0,0,0,5);
+    transition: 0.3s ease-in-out;
+}
+
+.tradiciones2 .card{
+    position: relative;
+    max-width: 300px;
+    height: 180px;
+    background-color: #FFF;
+    margin: 30px 10px;
+    padding: 20px 15px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 5px 202px rgba(0,0,0,0,5);
+    transition: 0.3s ease-in-out;
+}
+
+.tradiciones .card:hover{
+    height: 290px;
+}
+
+.tradiciones2 .card:hover{
+    height: 290px;
+}
+
+.tradiciones .card .imgBx{
+    position: relative;
+    width: 230px;
+    height: 150px;
+    top: -60px;
+    left: 20px;
+    z-index: 1;
+    box-shadow: 0 5px 20px rgba(0,0,0,0,5);
+}
+
+.tradiciones2 .card .imgBx{
+    position: relative;
+    width: 230px;
+    height: 150px;
+    top: -60px;
+    left: 20px;
+    z-index: 1;
+    box-shadow: 0 5px 20px rgba(0,0,0,0,5);
+}
+
+.tradiciones .card .imgBx img{
+    max-width: 100%;
+    border-radius: 4px;
+}
+
+.tradiciones2 .card .imgBx img{
+    max-width: 100%;
+    border-radius: 4px;
+}
+
+.tradiciones .card .contenidos{
+    position: relative;
+    margin-top: -140px;
+    padding: 10px 15px;
+    text-align: center;
+    color: #111;
+    visibility: hidden;
+    opacity: 0;
+    transition: 0.3s ease-in-out;
+    font-size: 1.3rem;
+}
+
+.tradiciones2 .card .contenidos{
+    position: relative;
+    margin-top: -140px;
+    padding: 10px 15px;
+    text-align: center;
+    color: #111;
+    visibility: hidden;
+    opacity: 0;
+    transition: 0.3s ease-in-out;
+    font-size: 1.3rem;
+}
+
+.tradiciones .card:hover .contenidos{
+    visibility: visible;
+    opacity: 1;
+    margin-top: -40px;
+    transition-delay: 0.3s;
+}
+
+.tradiciones2 .card:hover .contenidos{
+    visibility: visible;
+    opacity: 1;
+    margin-top: -40px;
+    transition-delay: 0.3s;
+}

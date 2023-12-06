@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TuriWeb</title>
+    <link href="assets/css/style_r_lugares.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Rufina:400,700" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900" rel="stylesheet" />
+    <link rel="stylesheet" href="assets/css/style_header.css">
+    <link rel="stylesheet" type="text/css" href="../css/all.min.css">
+    <link rel="stylesheet" type="text/css" href="../inner-page-style.css">
+    <link rel="stylesheet" type="text/css" href="../style.css">
+    <link rel="shortcut icon" type="../image/icon" href="assets/logo/favicon.png"/>    
+    <link href="https://fonts.googleapis.com/css?family=Raleway:400,500,600,700" rel="stylesheet">
+ 
+</head>
+
+<style> 
+	.yy-main-header {
+		background-color: #1493bf; /* Color de fondo de la barra de navegación */
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		padding: 0;
+	}
+	
+	.yy-logo-wrap img {
+		max-width: 160px;
+		height: auto;
+		display: block; /* Asegúrate de que la imagen se muestre como bloque */
+		margin: 0 auto; /* Centra la imagen si es más pequeña que el contenedor */
+	}
+	
+	
+	.yy-menu-list {
+		list-style: none;
+		padding: 0;
+		margin: 0;
+		display: flex;
+		align-items: center; 
+		
+		margin-right: 70px;
+	}
+	
+	.yy-menu-list a, .yy-menu-list li {
+		text-decoration: none;
+		color: rgb(0, 0, 0); /* Color del texto de los enlaces */
+		font-weight: bold;
+		padding: 10px 15px;
+	}
+	
+	.yy-menu-parent {
+		position: relative;
+		cursor: pointer; /* Cambia el cursor para indicar que es desplegable */
+	}
+	
+	.yy-menu-parent::after {
+		content: "";
+		border: solid rgb(19, 19, 19);
+		border-width: 0 3px 3px 0;
+		display: inline-block;
+		padding: 3px;
+		margin-left: 10px;
+		position: absolute;
+		right: 0; /* Alinea la flecha hacia la derecha */
+		top: 50%; /* Alinea la flecha verticalmente */
+		transform: translateY(-50%) rotate(45deg); /* Centra y rota la flecha */
+	}
+	
+	.yy-menu-list > .yy-menu-parent:hover .yy-sub-menu {
+		display: block; /* Muestra el menú desplegable al pasar el mouse */
+	}
+	
+	.yy-sub-menu {
+		display: none; /* Oculta el menú desplegable por defecto */
+		position: absolute;
+		background-color: #fdfdfd; /* Color de fondo del menú desplegable */
+		box-shadow: 0 4px 8px rgba(0,0,0,0.2); /* Sombra para el menú desplegable */
+		padding: 12px 16px; /* Espaciado dentro del menú desplegable */
+		z-index: 200; /* Incrementa el z-index para asegurar que esté por encima de otros elementos */
+		margin-top: .5em; /* Espacio para la sombra */
+	}
+	
+
+	/* footer */
+	.con {
+		max-width: 1200px;
+		margin: 0 auto;
+		padding: 0 20px;
+	}
+	
+	.site-footer {
+		background-color: rgb(67, 152, 180);
+		color: #141313;
+		padding: 20px 0;
+		margin-top: 7rem;
+	}
+	
+	.footer-sections-container {
+		display: flex;
+		justify-content: space-between; /* Cambiado de 'space-around' para un mejor control del espacio */
+		flex-wrap: wrap;
+	}
+	
+	.footer-secti {
+		flex-basis: 20%; /* Cambiado de 'flex: 1' para tener un mejor control sobre el ancho */
+		margin: 0;
+		padding: 20px;
+		box-sizing: border-box;
+		font-size: 12px;
+	}
+	
+	
+	
+	.footer-link a {
+		color: #0d0d0d;
+		text-decoration: none;
+		margin-left: -40px;
+		font-size: 1.3rem;
+	}
+	
+	.social-icons {
+		list-style: none;
+		padding: 0;
+		margin: 0;
+		display: flex;
+		justify-content: center;
+	}
+	
+	.social-icons li {
+		margin: 0 10px;
+		
+	}
+	
+	.footer-second-s {
+		text-align: center;
+		margin-top: 20px;
+	}
+	
+	.social-li {
+		list-style: none;
+		padding: 0;
+		display: flex;
+		justify-content: center;
+		
+	}
+	
+	.social-li li {
+		margin: 0 10px;
+		position: relative;
+	}
+	
+	.social-li li a {
+		position: relative;
+		z-index: 1; /* Poner sobre la línea */
+	}
+	
+	.footer-line {
+		width: 80%;
+		height: 1px;
+		background-color: #73a5c1; /* Color de la línea */
+		margin-top: 20px;
+		margin-left: auto; /* Margen automático a la izquierda */
+		margin-right: auto; /* Margen automático a la derecha */
+	}
+	
+	
+	.p {
+		text-align: center;
+		font-size: 10px;
+		color: #0b0b0b;
+		margin-top: 10px;
+	}
+	
+	.footer-bo input[type="email"],
+	.footer-bo textarea {
+		width: 100%;
+		padding: 10px;
+		margin-bottom: 10px;
+		background-color: #fff; /* Background color for the input fields */
+		border: 1px solid #f1f5f6;
+		border-radius: 5px;
+		box-sizing: border-box;
+		color: #0d0c0c; 
+		resize: none !important;
+	}
+	
+	
+	.footer-bo button {
+		width: 100%; /* Hace que el botón ocupe todo el ancho del contenedor */
+		background-color: #f7fafb;
+		color: rgb(7, 7, 7);
+		padding: 10px 20px;
+		border: none;
+		border-radius: 5px;
+		cursor: pointer;
+	}
+	
+	.footer-bo button:hover {
+		background-color: #14c46c;
+	}
+	
+	.footer-link {
+		margin-top: 1rem;
+		margin-left: 50px;
+	}
+	
+	.footer-secti {
+		margin-bottom: 10px;
+	}
+	
+	.quick-contact input,
+	.quick-contact textarea {
+		margin-bottom: 15px; /* Ajustado para uniformidad */
+	}
+	{% comment %} ...... {% endcomment %}
+	.quick-contact {
+		background-color: rgb(67, 152, 180); /* El color de fondo que combina con el pie de página */
+		padding: 20px;
+		border-radius: 8px; /* Bordes redondeados para el formulario */
+		box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra para dar profundidad */
+		width: 100%; /* Ajusta el ancho según sea necesario */
+		box-sizing: border-box;
+	}
+	
+	.quick-contact h2 {
+		color: #fff; /* Título del formulario en color blanco */
+		margin-bottom: 16px; /* Espacio entre el título y el campo de email */
+	}
+	
+	.quick-contact input[type="email"],
+	.quick-contact textarea {
+		width: calc(100% - 20px); /* Se calcula el 100% menos el padding */
+		padding: 10px;
+		margin-bottom: 16px; /* Espacio entre los campos de texto */
+		border: 1px solid #556d6d; 
+		background-color: #ebebeb; 
+		color: black;
+		border-radius: 5px; 
+		resize: none !important;
+	}
+	
+	
+	.quick-contact input[type="email"]:focus,
+	.quick-contact textarea:focus {
+		outline: none; /* Elimina el contorno al enfocar */
+		border: 2px solid #a39999; /* Cambia el color del borde al enfocar */
+	}
+	
+	.quick-contact button {
+		width: 100%; /* Ajusta el botón para que se expanda al 100% del formulario */
+		padding: 10px 0; /* Padding superior e inferior para el botón */
+		border: none; /* Elimina el borde del botón */
+		background-color: #0d0c0c; /* Color de fondo del botón */
+		color: #fff; /* Texto del botón en color blanco */
+		border-radius: 4px; /* Bordes redondeados para el botón */
+		cursor: pointer; /* Cursor en forma de mano al pasar sobre el botón */
+		transition: background-color 0.3s; /* Transición suave para el color de fondo */
+	}
+	
+	.quick-contact button:hover {
+		background-color: #a568a7; /* Cambia el color de fondo al pasar el cursor */
+	}
+	.social-li a {
+		font-size: 24px; /* Tamaño del icono */
+		color: white; /* Color del icono */
+		transition: color 0.3s ease; /* Transición suave para el efecto hover */
+	}
+	
+	.social-li a:hover {
+		color: black; /* Cambia el color al hacer hover */
+		/* Puedes agregar otros estilos que desees para el hover aquí */
+	}
+	.in-title {
+		font-weight: bold; /* Hace el texto en negrita */
+		text-transform: uppercase; /* Convierte el texto a mayúsculas */
+		margin-bottom: 16px; /* Agrega espacio debajo del título */
+		font-size: 18px; /* Ajusta el tamaño del texto según sea necesario */
+	}
+	
+	.in-content {
+		text-align: justify; /* Justifica el contenido */
+		margin-top: 16px; /* Agrega espacio arriba del contenido para separarlo del título */
+	}
+	.contact-title {
+		font-weight: bold;
+		text-transform: uppercase;
+		margin-bottom: 20px; /* Espacio debajo del título */
+		font-size: 18px; /* Ajusta el tamaño del texto según sea necesario */
+		color: #fff; /* Color del texto */
+	}
+	
+	.contact-description {
+		text-align: justify;
+		margin-bottom: 20px; 
+	}
+	
+	.contact-details {
+		list-style: none;
+		padding: 0;
+		margin: 0;
+		margin-top: 2rem
+	}
+	
+	.contact-details li {
+		display: flex;
+		align-items: center; /* Alinea los íconos con el texto */
+		margin-bottom: -1px; /* Espacio entre cada elemento de contacto */
+	}
+	
+	.contact-icon {
+		/* Ajusta el tamaño y el color de tus íconos aquí si es necesario */
+		margin-right: 6px; /* Espacio entre el ícono y el texto */
+		font-size: 16px; /* Tamaño del ícono */
+	}
+	
+	.contact-text {
+		color: #d9dee3;
+		font-weight: bold;
+	}
+	.contact-icon i {
+		margin-right: 10px; /* Espacio entre el ícono y el texto */
+		color: #fff; /* O el color que prefieras para tus iconos */
+		/* Otros estilos que quieras aplicar a los iconos */
+	}
+
+
+
+	
+	.footer-secti {
+		flex: 1;
+		padding: 20px;
+		margin-right: 20px; 
+	}
+	
+   
+	{% comment %} xd {% endcomment %}
+	.footer-sections-container {
+		display: flex;
+		justify-content: flex-start; /* O utiliza 'center' si prefieres centrar todo el contenido en el contenedor */
+		flex-wrap: wrap;
+	}
+	
+	.footer-secti {
+		margin-right: 15px;
+		margin-left: 15px; 
+	   
+	}
+	
+	/* Si deseas asegurarte de que el último elemento no tenga un margen a la derecha */
+	.footer-secti:last-child {
+		margin-right: 0;
+	}
+	
+</style>
+<body>
+    <div id="yy-page" itemscope itemtype="http://schema.org/LocalBusiness">
+		<header class="yy-main-header">
+			<div class="yy-logo-wrap" itemprop="logo">
+				<img src="../../../images/logoo.jpg" alt="Logo Image">
+			</div>
+			<nav class="yy-nav-desktop">
+				<ul class="yy-menu-list">
+					<li><a href="../../../index.html">Inicio</a></li>
+					<li class="yy-menu-parent">
+						Categorias
+						<ul class="yy-sub-menu">
+							<li><a href="costa.html">Costa</a></li>
+							<li><a href="sierra.html">Sierra</a></li>
+							<li><a href="selva.html">Selva</a></li>
+						</ul>
+					</li>
+					<li><a href="../../../nosotros.html">Nosotros</a></li>
+					<li><a href="../../../blog.html">Blog</a></li>
+				</ul>
+			</nav>
+		</header>
+	</div>
+    <div id="page" class="site" itemscope itemtype="http://schema.org/LocalBusiness">
+		
+
+        <div class="header">
+            <div class="image-container">
+                <img src="assets/images/blog/c1.jpg" alt="Imagen 1">
+                <img src="assets/images/blog/c2.jpg" alt="Imagen 2">
+                <img src="assets/images/blog/c3.jpg" alt="Imagen 3" class="active">
+            </div>
+            <div class="titles">
+                <div class="title-group active">
+                    <h1 class="main-title h-h">Explora Lla costa peruana</h1>
+                </div>
+                <div class="title-group">
+                    <h1 class="main-title h-h">Viaja a Tumbes</h1>
+                </div>
+                <div class="title-group">
+                    <h1 class="main-title h-h">Piura te espera</h1>
+                </div>
+            </div>
+        </div>
+        
+       
+        <div class="container-fluid py-5">
+            <div class="container pt-5 pb-3">
+                <div class="text-center mb-3 pb-3">
+                    <h6 class="text-primary text-uppercase" style="letter-spacing: 5px;">Departementos</h6>
+                    <h1>Explorar los principales destinos</h1>
+                </div>
+                <div class="row">
+                    <div class="col-lg-4 col-md-6 mb-4">
+                        <div class="destination-item position-relative overflow-hidden mb-2">
+                            <img class="img-fluid" src="assets/images/blog/lima.jpg" alt="">
+                            <a class="destination-overlay text-white text-decoration-none" href="assets/templatemo_511_journey/index.html">
+                                <h5 class="text-white">Lima</h5>
+                                <span>20 ciudades</span>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 mb-4">
+                        <div class="destination-item position-relative overflow-hidden mb-2">
+                            <img class="img-fluid" src="assets/images/blog/tumbes.jpg" alt="">
+                            <a class="destination-overlay text-white text-decoration-none" href="">
+                                <h5 class="text-white">Tumbes</h5>
+                                <span>10 Ciudades</span>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 mb-4">
+                        <div class="destination-item position-relative overflow-hidden mb-2">
+                            <img class="img-fluid" src="assets/images/blog/piura.jpg" alt="">
+                            <a class="destination-overlay text-white text-decoration-none" href="">
+                                <h5 class="text-white">Piura</h5>
+                                <span>100 Ciudades</span>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 mb-4">
+                        <div class="destination-item position-relative overflow-hidden mb-2">
+                            <img class="img-fluid" src="assets/images/blog/lambayeque.jpg" alt="">
+                            <a class="destination-overlay text-white text-decoration-none" href="">
+                                <h5 class="text-white">Lambayeque</h5>
+                                <span>100 Ciudades</span>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 mb-4">
+                        <div class="destination-item position-relative overflow-hidden mb-2">
+                            <img class="img-fluid" src="assets/images/blog/ancash.jpg" alt="">
+                            <a class="destination-overlay text-white text-decoration-none" href="">
+                                <h5 class="text-white">Áncash</h5>
+                                <span>100 Ciudades</span>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 mb-4">
+                        <div class="destination-item position-relative overflow-hidden mb-2">
+                            <img class="img-fluid" src="assets/images/blog/ica.jpg" alt="">
+                            <a class="destination-overlay text-white text-decoration-none" href="">
+                                <h5 class="text-white">Ica</h5>
+                                <span>10 Ciudades</span>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 mb-4">
+                        <div class="destination-item position-relative overflow-hidden mb-2">
+                            <img class="img-fluid" src="assets/images/blog/pasco.jpg" alt="">
+                            <a class="destination-overlay text-white text-decoration-none" href="">
+                                <h5 class="text-white">Pasco</h5>
+                                <span>10 Ciudades</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+        <script>
+            const images = document.querySelectorAll('.image-container img');
+            const titleGroups = document.querySelectorAll('.title-group');
+
+            let currentImageIndex = 0;
+
+            function showNextImage() {
+                images[currentImageIndex].classList.remove('active');
+                titleGroups[currentImageIndex].classList.remove('active'); // Oculta el grupo de títulos actual
+                currentImageIndex = (currentImageIndex + 1) % images.length;
+                images[currentImageIndex].classList.add('active');
+                titleGroups[currentImageIndex].classList.add('active'); // Muestra el nuevo grupo de títulos
+            }
+
+            images.forEach(image => {
+                image.addEventListener('animationend', showNextImage);
+            });
+
+            setInterval(() => {
+                images[currentImageIndex].classList.remove('active');
+                titleGroups[currentImageIndex].classList.remove('active'); // Oculta el grupo de títulos actual
+                currentImageIndex = (currentImageIndex + 1) % images.length;
+                images[currentImageIndex].classList.add('active');
+                titleGroups[currentImageIndex].classList.add('active'); // Muestra el nuevo grupo de títulos
+            }, 5000); // Cambiar la imagen cada 3 segundos
+            // Cambiar la imagen cada 3 segundos
+        </script>
+    </div>
+<<<<<<< HEAD
+
+    <footer class="site-footer" itemscope itemtype="http://schema.org/WPFooter">
+        <div class="con footer-sections-container">
+            <!-- Primera Columna -->
+            <div class="footer-secti">
+                <header>
+                    <h2 class="in-title">Información</h2> 
+                </header>
+                <p  class="in-content">Explora nuevas aventuras y descubre más sobre Perú en nuestra página.</p>
+                <ul class="contact-details">
+                    <li>
+                        <span class="contact-icon"><i class="fas fa-phone"></i></span>
+                        <span class="contact-text">903392728</span>
+                    </li>
+                    <li>
+                        <span class="contact-icon"><i class="fas fa-envelope"></i></span>
+                        <span class="contact-text">info@turisite.com</span>
+                    </li>
+                    <li>
+                        <span class="contact-icon"><i class="fas fa-map-marker-alt"></i></span>
+                        <span class="contact-text">Perú, La Libertad, Trujillo</span>
+                    </li>
+                </ul>
+            </div>
+            
+            <!-- Segunda Columna -->
+            <div class="footer-secti">
+                <header>
+                    <h2 class="in-title">ENLACES</h2> 
+                </header>
+                <ul class="footer-link " >
+                    <li><a href="../../../../index.html">Inicio</a></li>
+                    <li><a href="../../../../blog.html">Blog</a></li>
+                    <li><a href="../../../../nosotros.html">Nosotros</a></li>
+                    <li><a href="../../../../gastronomia.html">Gastronomía</a></li>
+                    <li><a href="../../../../ciudades.html">Ciudades</a></li>
+                    <li><a href="../../../../cultura.html">Cultura</a></li>
+                </ul>
+            </div>
+            
+            <!-- Tercera Columna -->
+            <div class="footer-secti">
+                <header>
+                    <h2 class="in-title">DESCUBRE MAS</h2> 
+                </header>
+                <ul class="footer-link">
+                    <li><a href="../../../../categorias/selva.html">Selva</a></li>
+                    <li><a href="../../../../categorias/costa.html">Costa</a></li>
+                    <li><a href="../../../../categorias/sierra.html">Sierra</a></li>
+                </ul>
+            </div>
+            
+            <!-- Cuarta Columna -->
+            <div class="footer-secti">
+                <header>
+                    <h2 class="in-title">CONTACTO</h2> 
+                </header>
+                <section class="quick-contact">
+                    <form action="tu-script-de-procesamiento" method="POST">
+                        <input type="email" name="email" placeholder="Tu Email*" required>
+                        <textarea name="message" placeholder="Escribe tu mensaje*" required></textarea>
+                        <button type="submit">Enviar mensaje</button>
+                    </form>
+                </section>
+            </div>
+            
+        </div>
+        
+        <!-- Iconos de redes sociales -->
+        <div class="social-icons">
+            <ul class="social-li">
+
+
+                <li><a href="#"><i class="fab fa-facebook-square"></i></a></li>
+                <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                <li><a href="#"><i class="fab fa-skype"></i></a></li>
+                <li><a href="#"><i class="fab fa-youtube"></i></a></li>
+                <li><a href="#"> <i class="fab fa-instagram"></i></a></li>
+            </ul>
+        </div>
+        
+        <!-- Línea y derechos de autor -->
+        <div class="footer-line"></div>
+        <p class="p">&copy; 2023 TuriWeb@gmail.com. Todos los derechos reservados.| 903392728</p>
+    </footer>
+=======
+>>>>>>> a8db9528e1d97384846452b105f7d28b5df792e5
+</body>
+</html>

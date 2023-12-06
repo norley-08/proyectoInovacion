@@ -1,0 +1,731 @@
+<!DOCTYPE html>
+
+<html lang="">
+
+<head>
+<title>Glozzom</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<link href="layout/styles/layout.css" rel="stylesheet" type="text/css" media="all">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
+<style> 
+  .yy-main-header {
+      background-color: #1493bf; /* Color de fondo de la barra de navegación */
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0;
+  }
+  
+  .yy-logo-wrap img {
+      max-width: 160px;
+      height: auto;
+      display: block; /* Asegúrate de que la imagen se muestre como bloque */
+      margin: 0 auto; /* Centra la imagen si es más pequeña que el contenedor */
+  }
+  
+  
+  .yy-menu-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      align-items: center; 
+      
+      margin-right: 70px;
+  }
+  
+  .yy-menu-list a, .yy-menu-list li {
+      text-decoration: none;
+      color: rgb(0, 0, 0); /* Color del texto de los enlaces */
+      font-weight: bold;
+      padding: 10px 15px;
+  }
+  
+  .yy-menu-parent {
+      position: relative;
+      cursor: pointer; /* Cambia el cursor para indicar que es desplegable */
+  }
+  
+  .yy-menu-parent::after {
+      content: "";
+      border: solid rgb(19, 19, 19);
+      border-width: 0 3px 3px 0;
+      display: inline-block;
+      padding: 3px;
+      margin-left: 10px;
+      position: absolute;
+      right: 0; /* Alinea la flecha hacia la derecha */
+      top: 50%; /* Alinea la flecha verticalmente */
+      transform: translateY(-50%) rotate(45deg); /* Centra y rota la flecha */
+  }
+  
+  .yy-menu-list > .yy-menu-parent:hover .yy-sub-menu {
+      display: block; /* Muestra el menú desplegable al pasar el mouse */
+  }
+  
+  .yy-sub-menu {
+      display: none; /* Oculta el menú desplegable por defecto */
+      position: absolute;
+      background-color: #fdfdfd; /* Color de fondo del menú desplegable */
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2); /* Sombra para el menú desplegable */
+      padding: 12px 16px; /* Espaciado dentro del menú desplegable */
+      z-index: 200; /* Incrementa el z-index para asegurar que esté por encima de otros elementos */
+      margin-top: .5em; /* Espacio para la sombra */
+  }
+  
+
+  /* footer */
+  .con {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+  }
+  
+  .site-footer {
+      background-color: rgb(67, 152, 180);
+      color: #141313;
+      padding: 20px 0;
+      margin-top: 7rem;
+  }
+  
+  .footer-sections-container {
+      display: flex;
+      justify-content: space-between; /* Cambiado de 'space-around' para un mejor control del espacio */
+      flex-wrap: wrap;
+  }
+  
+  .footer-secti {
+      flex-basis: 20%; /* Cambiado de 'flex: 1' para tener un mejor control sobre el ancho */
+      margin: 0;
+      padding: 20px;
+      box-sizing: border-box;
+      font-size: 12px;
+  }
+  
+  
+  
+  .footer-link a {
+      color: #0d0d0d;
+      text-decoration: none;
+      margin-left: -40px;
+      font-size: 1.3rem;
+  }
+  
+  .social-icons {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      justify-content: center;
+  }
+  
+  .social-icons li {
+      margin: 0 10px;
+      
+  }
+  
+  .footer-second-s {
+      text-align: center;
+      margin-top: 20px;
+  }
+  
+  .social-li {
+      list-style: none;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      
+  }
+  
+  .social-li li {
+      margin: 0 10px;
+      position: relative;
+  }
+  
+  .social-li li a {
+      position: relative;
+      z-index: 1; /* Poner sobre la línea */
+  }
+  
+  .footer-line {
+      width: 80%;
+      height: 1px;
+      background-color: #73a5c1; /* Color de la línea */
+      margin-top: 20px;
+      margin-left: auto; /* Margen automático a la izquierda */
+      margin-right: auto; /* Margen automático a la derecha */
+  }
+  
+  
+  .p {
+      text-align: center;
+      font-size: 10px;
+      color: #0b0b0b;
+      margin-top: 10px;
+  }
+  
+  .footer-bo input[type="email"],
+  .footer-bo textarea {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 10px;
+      background-color: #fff; /* Background color for the input fields */
+      border: 1px solid #f1f5f6;
+      border-radius: 5px;
+      box-sizing: border-box;
+      color: #0d0c0c; 
+      resize: none !important;
+  }
+  
+  
+  .footer-bo button {
+      width: 100%; /* Hace que el botón ocupe todo el ancho del contenedor */
+      background-color: #f7fafb;
+      color: rgb(7, 7, 7);
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+  }
+  
+  .footer-bo button:hover {
+      background-color: #14c46c;
+  }
+  
+  .footer-link {
+      margin-top: 1rem;
+      margin-left: 50px;
+  }
+  
+  .footer-secti {
+      margin-bottom: 10px;
+  }
+  
+  .quick-contact input,
+  .quick-contact textarea {
+      margin-bottom: 15px; /* Ajustado para uniformidad */
+  }
+  {% comment %} ...... {% endcomment %}
+  .quick-contact {
+      background-color: rgb(67, 152, 180); /* El color de fondo que combina con el pie de página */
+      padding: 20px;
+      border-radius: 8px; /* Bordes redondeados para el formulario */
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra para dar profundidad */
+      width: 100%; /* Ajusta el ancho según sea necesario */
+      box-sizing: border-box;
+  }
+  
+  .quick-contact h2 {
+      color: #fff; /* Título del formulario en color blanco */
+      margin-bottom: 16px; /* Espacio entre el título y el campo de email */
+  }
+  
+  .quick-contact input[type="email"],
+  .quick-contact textarea {
+      width: calc(100% - 20px); /* Se calcula el 100% menos el padding */
+      padding: 10px;
+      margin-bottom: 16px; /* Espacio entre los campos de texto */
+      border: 1px solid #556d6d; 
+      background-color: #ebebeb; 
+      color: black;
+      border-radius: 5px; 
+      resize: none !important;
+  }
+  
+  
+  .quick-contact input[type="email"]:focus,
+  .quick-contact textarea:focus {
+      outline: none; /* Elimina el contorno al enfocar */
+      border: 2px solid #a39999; /* Cambia el color del borde al enfocar */
+  }
+  
+  .quick-contact button {
+      width: 100%; /* Ajusta el botón para que se expanda al 100% del formulario */
+      padding: 10px 0; /* Padding superior e inferior para el botón */
+      border: none; /* Elimina el borde del botón */
+      background-color: #0d0c0c; /* Color de fondo del botón */
+      color: #fff; /* Texto del botón en color blanco */
+      border-radius: 4px; /* Bordes redondeados para el botón */
+      cursor: pointer; /* Cursor en forma de mano al pasar sobre el botón */
+      transition: background-color 0.3s; /* Transición suave para el color de fondo */
+  }
+  
+  .quick-contact button:hover {
+      background-color: #a568a7; /* Cambia el color de fondo al pasar el cursor */
+  }
+  .social-li a {
+      font-size: 24px; /* Tamaño del icono */
+      color: white; /* Color del icono */
+      transition: color 0.3s ease; /* Transición suave para el efecto hover */
+  }
+  
+  .social-li a:hover {
+      color: black; /* Cambia el color al hacer hover */
+      /* Puedes agregar otros estilos que desees para el hover aquí */
+  }
+  .in-title {
+      font-weight: bold; /* Hace el texto en negrita */
+      text-transform: uppercase; /* Convierte el texto a mayúsculas */
+      margin-bottom: 16px; /* Agrega espacio debajo del título */
+      font-size: 18px; /* Ajusta el tamaño del texto según sea necesario */
+  }
+  
+  .in-content {
+      text-align: justify; /* Justifica el contenido */
+      margin-top: 16px; /* Agrega espacio arriba del contenido para separarlo del título */
+  }
+  .contact-title {
+      font-weight: bold;
+      text-transform: uppercase;
+      margin-bottom: 20px; /* Espacio debajo del título */
+      font-size: 18px; /* Ajusta el tamaño del texto según sea necesario */
+      color: #fff; /* Color del texto */
+  }
+  
+  .contact-description {
+      text-align: justify;
+      margin-bottom: 20px; 
+  }
+  
+  .contact-details {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      margin-top: 2rem
+  }
+  
+  .contact-details li {
+      display: flex;
+      align-items: center; /* Alinea los íconos con el texto */
+      margin-bottom: -1px; /* Espacio entre cada elemento de contacto */
+  }
+  
+  .contact-icon {
+      /* Ajusta el tamaño y el color de tus íconos aquí si es necesario */
+      margin-right: 6px; /* Espacio entre el ícono y el texto */
+      font-size: 16px; /* Tamaño del ícono */
+  }
+  
+  .contact-text {
+      color: #d9dee3;
+      font-weight: bold;
+  }
+  .contact-icon i {
+      margin-right: 10px; /* Espacio entre el ícono y el texto */
+      color: #fff; /* O el color que prefieras para tus iconos */
+      /* Otros estilos que quieras aplicar a los iconos */
+  }
+
+
+
+  
+  .footer-secti {
+      flex: 1;
+      padding: 20px;
+      margin-right: 20px; 
+  }
+  
+ 
+  
+  .footer-sections-container {
+      display: flex;
+      justify-content: flex-start; /* O utiliza 'center' si prefieres centrar todo el contenido en el contenedor */
+      flex-wrap: wrap;
+  }
+  
+  .footer-secti {
+      margin-right: 15px;
+      margin-left: 15px; 
+     
+  }
+  
+  /* Si deseas asegurarte de que el último elemento no tenga un margen a la derecha */
+  .footer-secti:last-child {
+      margin-right: 0;
+  }
+  
+</style>
+
+<body id="top">
+  <div id="yy-page" itemscope itemtype="http://schema.org/LocalBusiness">
+    <header class="yy-main-header">
+        <div class="yy-logo-wrap" itemprop="logo">
+            <img src="../../../images/logoo.jpg" alt="Logo Image">
+        </div>
+        <nav class="yy-nav-desktop">
+            <ul class="yy-menu-list">
+                <li><a href="../../../index.html">Inicio</a></li>
+                <li class="yy-menu-parent">
+                    Categorias
+                    <ul class="yy-sub-menu">
+                        <li><a href="../../costa.html">Costa</a></li>
+                        <li><a href="../../sierra.html">Sierra</a></li>
+                        <li><a href="../../selva.html">Selva</a></li>
+                    </ul>
+                </li>
+                <li><a href="../../../nosotros.html">Nosotros</a></li>
+                <li><a href="../../../blog.html">Blog</a></li>
+            </ul>
+        </nav>
+    </header>
+</div>
+
+<div class="bgded overlay" style="background-image:url('images/demo/backgrounds/th.jpg');"> 
+ 
+  <div class="wrapper row1">
+    <header id="header" class="hoc clear"> 
+     
+    </header>
+  </div>
+ 
+  <div class="wrapper">
+    <div id="pageintro" class="hoc clear"> 
+      <!-- ################################################################################################ -->
+      <article>
+        <h2 class="heading">La mejor aventura culinaria esta en Perú </h2>
+        <p>Embárcate en un viaje de sabor donde el océano se encuentra con la tradición: descubre la sierra peruana en cada bocado.</p>
+        <footer><a class="btn" href="https://www.boardingpax.com/peru-el-destino-culinario-definitivo-la-mejor-aventura-culinaria-del-mundo-esta-en-moray-cusco-segun-los-world-culinary-awards/">Ver</a></footer>
+      </article>
+      <!-- ################################################################################################ -->
+    </div>
+  </div>
+  <!-- ################################################################################################ -->
+</div>
+<div class="wrapper row3">
+  <main class="hoc container clear"> 
+    <!-- main body -->
+    <!-- ################################################################################################ -->
+    <div class="sectiontitle">
+      <h6 class="heading">SABORES DE LA SIERRA: EXPERIENCIA CULINARIA EN LAS ALTURAS</h6>
+      <p>Embárcate en un viaje gastronómico único con nuestra selección de restaurantes en la majestuosa sierra peruana.
+      </p>
+    </div>
+    <div class="group">
+      <div class="one_half first">
+        <h6 class="heading">DELICIAS ANDINAS EN TU MESA</h6>
+        <p> Desde la efervescencia de las cocinas tradicionales hasta la serena elegancia de comedores con vistas a los imponentes paisajes montañosos, nuestra cuidadosa elección de restaurantes a lo largo de la sierra peruana invita a los comensales a sumergirse en un ambiente donde cada detalle refleja la riqueza de la región andina.&hellip;</p>
+        <footer><a class="btn" href="https://www.instagram.com/deliciasandinas_kukakintu/">Leer más &raquo;</a></footer>
+      </div>
+      <div class="one_half">
+        <ul class="nospace group">
+          <li class="one_half first btmspace-50">
+            <article>
+              <h6 class="heading font-x1"><a href="https://peru21.pe/gastronomia/imperdibles-conoce-cuales-son-los-10-platos-peruanos-mas-ricos-segun-chatgpt-comida-peruana-gastronomia-delicias-culinarias-cocina-peruana-cuales-es-la-comida-mas-deliciosa-noticia/">DELICIAS ANDINAS</a></h6>
+              <p class="nospace">Explora la autenticidad de la sierra peruana, desde platillos tradicionales hasta creaciones innovadoras de chefs destacados.  &hellip;</p>
+              <div class="image-container" style="text-align: center; margin-top: 2rem;">
+                <img src="images/demo/sd1.jpg" alt="Imagen 1" style="width: 30%; margin-right: 1.5%;">
+                <img src="images/demo/sd2.jpg" alt="Imagen 2" style="width: 30%; margin-right: 1.5%;">
+                <img src="images/demo/sd3.jpg" alt="Imagen 3" style="width: 30%;">
+              </div>
+            </article>
+          </li>
+          
+          <li class="one_half btmspace-50">
+            <article>
+              <h6 class="heading font-x1"><a href="#">JOYAS DE LOS ANDES</a></h6>
+              <p class="nospace">Una selección diaria de lo más selecto de la región andina, fusionando técnicas culinarias antiguas y contemporáneas en una armonía perfecta.
+                &hellip;</p>
+                <div class="image-container" style="text-align: center; margin-top: 2rem;">
+                  <img src="images/demo/sd4.jpg" alt="Imagen 1" style="width: 30%; margin-right: 1.5%;">
+                  <img src="images/demo/sd5.jpg" alt="Imagen 2" style="width: 30%; margin-right: 1.5%;">
+                  <img src="images/demo/sd6.jpg" alt="Imagen 3" style="width: 30%;">
+                </div>
+            </article>
+          </li>
+          <li class="one_half first">
+            <article>
+              <h6 class="heading font-x1"><a href="#">AROMAS QUE CAUTIVAN</a></h6>
+              <p class="nospace">Permite que tu paladar se sumerja en una carta repleta  que reflejan la biodiversidad de la sierra peruana.&hellip;</p>
+              <div class="image-container" style="text-align: center; margin-top: 2rem;">
+                <img src="images/demo/sd7.jpg" alt="Imagen 1" style="width: 30%; margin-right: 1.5%;">
+                <img src="images/demo/sd8.jpg" alt="Imagen 2" style="width: 30%; margin-right: 1.5%;">
+                <img src="images/demo/sd9.jpg" alt="Imagen 3" style="width: 30%;">
+              </div>
+            </article>
+          </li>
+          <li class="one_half">
+            <article>
+              <h6 class="heading font-x1"><a href="#">Sabores que Encantan</a></h6>
+              <p class="nospace">Permítele a tu paladar explorar una carta de opciones que capturan la rica biodiversidad de la costa peruana..&hellip;</p>
+              <div class="image-container" style="text-align: center; margin-top: 2rem;">
+                <img src="images/demo/sd1.jpg" alt="Imagen 1" style="width: 30%; margin-right: 1.5%;">
+                <img src="images/demo/sd10.jpg" alt="Imagen 2" style="width: 30%; margin-right: 1.5%;">
+                <img src="images/demo/sd4.jpg" alt="Imagen 3" style="width: 30%;">
+              </div>
+            </article>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="clear"></div>
+  </main>
+</div>
+<div class="wrapper bgded overlay" style="background-image:url('images/demo/backgrounds/th.jpeg');">
+  <article class="hoc container clear center"> 
+    <!-- ################################################################################################ -->
+    <div class="sectiontitle" style="margin-bottom:30px;">
+      <h6 class="heading">ADÉNTRATE EN LA CULINARIA DE LA SIERRA</h6>
+      <p>Descubre los sabores auténticos que han sido transmitidos a lo largo de generaciones, enriquecidos por la altitud y la diversidad de la región.</p>
+    </div>
+    <p><a class="btn medium" href="https://larepublica.pe/gastronomia/2021/01/15/los-10-mejores-platos-tipicos-de-la-sierra-peruana-evat-atmp">Descubre Más &raquo;</a></p>
+    <!-- ################################################################################################ -->
+  </article>
+</div>
+<div class="wrapper row3">
+  <div class="hoc container clear"> 
+    <!-- ################################################################################################ -->
+    <div class="sectiontitle">
+      <h6 class="heading">DESTINOS GASTRONÓMICOS DESTACADOS</h6>
+      <p>Una selección de los restaurantes más renombrados de la sierra peruana.
+
+      </p>
+    </div>
+    <ul class="nospace group services">
+      <li class="one_third first btmspace-30">
+        <article class="bgded" style="background-image:url('images/demo/inti-raymi-restaurant.jpg');">
+          <div class="overlay">
+            <h6 class="heading font-x1"><a href="https://www.marriott.com/en-us/hotels/cuzlc-palacio-del-inka-a-luxury-collection-hotel-cusco/dining/">Restaurante Inti Raymi</a></h6>
+            <p>Nuestros locales ofrecen los tesoros del día, capturados y cocinados con maestría.&hellip;</p>
+            <footer>
+              <ul class="nospace inline pushright" style="margin-top: 2rem;">
+                <li style=" display: block; font-weight: bold;"><i class="fa fa-map-marker"></i> 
+                  Palacio Del Inka  Plazoleta Santo Domingo 259, Cuzco Perú</li>
+                <li style=" display: block; margin-top: 0.5rem; font-weight: bold;"><i class="fa fa-globe"></i> <a href="https://www.marriott.com/en-us/hotels/cuzlc-palacio-del-inka-a-luxury-collection-hotel-cusco/dining/" style=" font-weight: bold;">Sitio web</a></li>
+                <li style="display: block; font-weight: bold;"><i class="fa fa-phone"></i> +51 922641983</li>
+              </ul>
+            </footer>
+          </div>
+        </article>
+      </li>
+      <li class="one_third btmspace-30">
+        <article class="bgded" style="background-image:url('images/demo/nuestro-amplio-salon.jpg');">
+          <div class="overlay">
+            <h6 class="heading font-x1"><a href="https://www.instagram.com/limoperuanonikkei/">La LIMO peruano nikkei</a></h6>
+            <p>Nuestros locales ofrecen los tesoros del día, capturados y cocinados con maestría.&hellip;</p>
+            <footer>
+              <ul class="nospace inline pushright" style="margin-top: 2rem;">
+                <li style=" display: block; font-weight: bold;"><i class="fa fa-map-marker"></i> 
+                  Portal de Carnes 236 Piso 2, Plaza de Armas, Cuzco 08002 Perú</li>
+                <li style=" display: block; margin-top: 0.5rem; font-weight: bold;"><i class="fa fa-globe"></i> <a href="https://www.instagram.com/limoperuanonikkei/" style=" font-weight: bold;">Sitio web</a></li>
+                <li style="display: block; font-weight: bold;"><i class="fa fa-phone"></i> +51 84 240668</li>
+              </ul>
+            </footer>
+            
+            
+          </div>
+        </article>
+      </li>
+      
+      
+      <li class="one_third btmspace-30">
+        <article class="bgded" style="background-image:url('images/demo/pirqa-restaurante.jpg');">
+          <div class="overlay">
+            <h6 class="heading font-x1"><a href="https://www.marriott.com/en-us/hotels/cuzmc-jw-marriott-el-convento-cusco/overview/">Qespi Restaurant & Bar</a></h6>
+            <p>Nuestros locales ofrecen los tesoros del día, capturados y cocinados con maestría.&hellip;</p>
+            <footer>
+              <ul class="nospace inline pushright" style="margin-top: 2rem;">
+                <li style=" display: block; font-weight: bold;"><i class="fa fa-map-marker"></i> Calle Ruinas 432 Dentro del Hotel marriot, San Augstin.</li>
+                <li style=" display: block; margin-top: 0.5rem; font-weight: bold;"><i class="fa fa-globe"></i> <a href="https://www.marriott.com/en-us/hotels/cuzmc-jw-marriott-el-convento-cusco/overview/" style=" font-weight: bold;">Sitio web</a></li>
+                <li style="display: block; font-weight: bold;"><i class="fa fa-phone"></i> +51 84 582200</li>
+              </ul>
+            </footer>
+          </div>
+        </article>
+      </li>
+      <li class="one_third first">
+        <article class="bgded" style="background-image:url('images/demo/estamos-ubicados-en-el.jpg');">
+          <div class="overlay">
+            <h6 class="heading font-x1"><a href="https://chicha.com.pe/cusco/">Chicha por Gaston Acurio </a></h6>
+            <p>Nuestros locales ofrecen los tesoros del día, capturados y cocinados con maestría.&hellip;</p>
+            <footer>
+              <ul class="nospace inline pushright" style="margin-top: 2rem;">
+                <li style=" display: block; font-weight: bold;"><i class="fa fa-map-marker"></i>Calle Plaza Regocijo 261 - 2 piso Centro de Cusco, Cuzco 84 Perú</li>
+                <li style=" display: block; margin-top: 0.5rem; font-weight: bold;"><i class="fa fa-globe"></i> <a href="https://chicha.com.pe/cusco/" style=" font-weight: bold;">Sitio web</a></li>
+                <li style="display: block; font-weight: bold;"><i class="fa fa-phone"></i> +51 84 240520</li>
+              </ul>
+            </footer>
+          </div>
+        </article>
+      </li>
+      <li class="one_third">
+        <article class="bgded" style="background-image:url('images/demo/belmond-hotel-monasterio.jpg');">
+          <div class="overlay">
+            <h6 class="heading font-x1"><a href="https://www.belmond.com/hotels/south-america/peru/cusco/belmond-hotel-monasterio/">Belmond Hotel Monasterio</a></h6>
+            <p>Nuestros locales ofrecen los tesoros del día, capturados y cocinados con maestría.&hellip;</p>
+            <footer>
+              <ul class="nospace inline pushright" style="margin-top: 2rem;">
+                <li style=" display: block; font-weight: bold;"><i class="fa fa-map-marker"></i> 
+                  Calle Palacio 140, Cuzco 5184 Perú</li>
+                <li style=" display: block; margin-top: 0.5rem; font-weight: bold;"><i class="fa fa-globe"></i> <a href="https://www.belmond.com/hotels/south-america/peru/cusco/belmond-hotel-monasterio/" style=" font-weight: bold;">Sitio web</a></li>
+                <li style="display: block; font-weight: bold;"><i class="fa fa-phone"></i>+51 84 582222</li>
+              </ul>
+            </footer>
+          </div>
+        </article>
+      </li>
+      <li class="one_third">
+        <article class="bgded" style="background-image:url('images/demo/caption.jpg');">
+          <div class="overlay">
+            <h6 class="heading font-x1"><a href="https://www.belmond.com/hotels/south-america/peru/cusco/belmond-hotel-monasterio/dining?utm_source=local_search&utm_medium=link&utm_campaign=tripadvisor_restaurant">El Tupay Restaurant
+            </a></h6>
+            <p>Nuestros locales ofrecen los tesoros del día, capturados y cocinados con maestría.&hellip;</p>
+            <footer>
+              <ul class="nospace inline pushright" style="margin-top: 2rem;">
+                <li style=" display: block; font-weight: bold;"><i class="fa fa-map-marker"></i> Calle Plazoleta Nazarenas 337 Plazoleta Nazarenas, Cuzco Perú</li>
+                <li style=" display: block; margin-top: 0.5rem; font-weight: bold;"><i class="fa fa-globe"></i> <a href="https://www.belmond.com/hotels/south-america/peru/cusco/belmond-hotel-monasterio/dining?utm_source=local_search&utm_medium=link&utm_campaign=tripadvisor_restaurant" style=" font-weight: bold;">Sitio web</a></li>
+                <li style="display: block; font-weight: bold;"><i class="fa fa-phone"></i> +51 84-604000</li>
+              </ul>
+            </footer>
+          </div>
+        </article>
+      </li>
+    </ul>
+    <!-- ################################################################################################ -->
+  </div>
+</div>
+<div class="wrapper bgded overlay" style="background-image:url('images/demo/backgrounds/03.png');">
+  <article class="hoc container clear center"> 
+    <!-- ################################################################################################ -->
+    <div class="sectiontitle" style="margin-bottom:30px;">
+      <h6 class="heading">Oasis Urbanos: Terrazas Gastronómicas</h6>
+    <p>Descubre espacios donde la brisa y el sabor se encuentran, ofreciéndote la mejor experiencia culinaria al aire libre.</p>
+
+    </div>
+    <p><a class="btn medium" href="https://www.backus.pe/terrazas-gastronomicas">Leer &raquo;</a></p>
+  </article>
+</div>
+<div class="wrapper row3">
+  <section class="hoc container clear"> 
+    <!-- ################################################################################################ -->
+    <div class="sectiontitle">
+      <h6 class="heading">Bares y pubs</h6>
+      <p>Descubre una selección de aperitivos que despiertan el paladar y preparan tus sentidos para una experiencia gastronómica excepcional.</p>
+    </div>
+    <div class="group">
+      <article class="one_third first"><a href="https://www.facebook.com/mushrooms.lounge/?locale=es_LA"><img class="btmspace-30" src="images/demo/mushrooms-lounge-bar.jpg" alt=""></a>
+        <h3 class="nospace heading font-x1">Mushrooms Lounge & Bar</h3>
+        <ul class="nospace meta">
+          <li><i class="fa fa-user"></i> <a href="https://www.tripadvisor.com.pe/Attraction_Review-g294314-d8011600-Reviews-Mushrooms_Lounge_Bar-Cusco_Cusco_Region.html">Cusco</a></li>
+          <li><i class="fa fa-tag"></i> <a href="https://www.tripadvisor.com.pe/Attraction_Review-g294314-d8011600-Reviews-Mushrooms_Lounge_Bar-Cusco_Cusco_Region.html">Sábado en la noche</a></li>
+        </ul>
+        <p>Excelente ambiente, música en vivo y atención estupenda! Me pedí una pizza Margarita súper bien y los tragos muy buenos! Muy recomendable!&hellip;</p>
+        <footer class="nospace"><a class="btn" href="https://www.facebook.com/mushrooms.lounge/?locale=es_LA">Visitar &raquo;</a></footer>
+      </article>
+
+
+      <article class="one_third"><a href="https://www.facebook.com/p/El-Bunker-de-San-Blas-100083548383349/"><img class="btmspace-30" src="images/demo/barra.jpg" alt=""></a>
+        <h3 class="nospace heading font-x1">El Bunker De San Blas</h3>
+        <ul class="nospace meta">
+          <li><i class="fa fa-user"></i> <a href="https://www.tripadvisor.com.pe/Attraction_Review-g294314-d23984449-Reviews-El_Bunker_De_San_Blas-Cusco_Cusco_Region.html">Excelente lugar </a></li>
+          <li><i class="fa fa-tag"></i> <a href="https://www.tripadvisor.com.pe/Attraction_Review-g294314-d23984449-Reviews-El_Bunker_De_San_Blas-Cusco_Cusco_Region.html">Cusco</a></li>
+        </ul>
+        <p>El mejor lugar para pasar tu noche con tus patas o tu pareja es, sin duda, Intro Café Bar. Acompañado de una gran variedad de platos, espacios cómodos y &hellip;</p>
+        <footer class="nospace"><a class="btn" href="https://www.facebook.com/p/El-Bunker-de-San-Blas-100083548383349/">Visitar &raquo;</a></footer>
+      </article>
+
+      <article class="one_third"><a href="https://museodelpisco.org/"><img class="btmspace-30" src="images/demo/museo-de-pisco.jpg" alt=""></a>
+        <h3 class="nospace heading font-x1">Museo del Pisco</h3>
+        <ul class="nospace meta">
+          <li><i class="fa fa-user"></i> <a href="https://www.tripadvisor.com.pe/Attraction_Review-g294313-d7240091-Reviews-Museo_del_Pisco-Arequipa_Arequipa_Region.html">Estadio, un lugar genial </a></li>
+          <li><i class="fa fa-tag"></i> <a href="https://www.tripadvisor.com.pe/Attraction_Review-g294313-d7240091-Reviews-Museo_del_Pisco-Arequipa_Arequipa_Region.html">Vacacionando</a></li>
+        </ul>
+        <p>Todo muy rico súper lugar para ir a comer, muy buena la temática del sitio. Comida bien servida, las bebidas no alcohólicas las sirven en botellas&hellip;</p>
+        <footer class="nospace"><a class="btn" href="https://museodelpisco.org/">Visitar &raquo;</a></footer>
+      </article>
+    </div>
+    <!-- ################################################################################################ -->
+  </section>
+  
+</div>
+<footer class="site-footer" itemscope itemtype="http://schema.org/WPFooter">
+  <div class="con footer-sections-container">
+      <!-- Primera Columna -->
+      <div class="footer-secti">
+          <header>
+              <h2 class="in-title">Información</h2> 
+          </header>
+          <p  class="in-content">Explora nuevas aventuras y descubre más sobre Perú en nuestra página.</p>
+          <ul class="contact-details">
+              <li>
+                  <span class="contact-icon"><i class="fas fa-phone"></i></span>
+                  <span class="contact-text">903392728</span>
+              </li>
+              <li>
+                  <span class="contact-icon"><i class="fas fa-envelope"></i></span>
+                  <span class="contact-text">info@turisite.com</span>
+              </li>
+              <li>
+                  <span class="contact-icon"><i class="fas fa-map-marker-alt"></i></span>
+                  <span class="contact-text">Perú, La Libertad, Trujillo</span>
+              </li>
+          </ul>
+      </div>
+      
+      <!-- Segunda Columna -->
+      <div class="footer-secti">
+          <header>
+              <h2 class="in-title">ENLACES</h2> 
+          </header>
+          <ul class="footer-link " >
+              <li><a href="../../../../index.html">Inicio</a></li>
+              <li><a href="../../../../blog.html">Blog</a></li>
+              <li><a href="../../../../nosotros.html">Nosotros</a></li>
+              <li><a href="../../../../gastronomia.html">Gastronomía</a></li>
+              <li><a href="../../../../ciudades.html">Ciudades</a></li>
+              <li><a href="../../../../cultura.html">Cultura</a></li>
+          </ul>
+      </div>
+      
+      <!-- Tercera Columna -->
+      <div class="footer-secti">
+          <header>
+              <h2 class="in-title">DESCUBRE MAS</h2> 
+          </header>
+          <ul class="footer-link">
+              <li><a href="../../../../categorias/selva.html">Selva</a></li>
+              <li><a href="../../../../categorias/costa.html">Costa</a></li>
+              <li><a href="../../../../categorias/sierra.html">Sierra</a></li>
+          </ul>
+      </div>
+      
+      <!-- Cuarta Columna -->
+      <div class="footer-secti">
+          <header>
+              <h2 class="in-title">CONTACTO</h2> 
+          </header>
+          <section class="quick-contact">
+              <form action="tu-script-de-procesamiento" method="POST">
+                  <input type="email" name="email" placeholder="Tu Email*" required>
+                  <textarea name="message" placeholder="Escribe tu mensaje*" required></textarea>
+                  <button type="submit">Enviar mensaje</button>
+              </form>
+          </section>
+      </div>
+      
+  </div>
+  
+  <!-- Iconos de redes sociales -->
+  <div class="social-icons">
+      <ul class="social-li">
+
+
+          <li><a href="#"><i class="fab fa-facebook-square"></i></a></li>
+          <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+          <li><a href="#"><i class="fab fa-skype"></i></a></li>
+          <li><a href="#"><i class="fab fa-youtube"></i></a></li>
+          <li><a href="#"> <i class="fab fa-instagram"></i></a></li>
+      </ul>
+  </div>
+  
+  <!-- Línea y derechos de autor -->
+  <div class="footer-line"></div>
+  <p class="p">&copy; 2023 TuriWeb@gmail.com. Todos los derechos reservados.| 903392728</p>
+</footer>
+<script src="layout/scripts/jquery.min.js"></script>
+<script src="layout/scripts/jquery.backtotop.js"></script>
+<script src="layout/scripts/jquery.mobilemenu.js"></script>
+</body>
+</html>

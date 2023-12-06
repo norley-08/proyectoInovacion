@@ -1,0 +1,44 @@
+.image-container {
+    position: relative;
+    width: 100%;
+    height: 300px;
+    overflow: hidden;
+}
+
+.image-container img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    transition: transform 6s ease-in-out, opacity 4s ease-in-out;
+}
+
+.image-container img.active {
+    opacity: 1;
+    transform: scale(1.2);
+}
+
+/* titulo para el hader */
+.title-group {
+    display: none;
+    
+}
+
+.title-group.active {
+    display: block;
+}
+.h-h{
+    font-style: normal;
+        font-family: 'BreePeru_Bold';
+        font-size: 68px;
+        line-height: 120px;
+        color: #f5f3f3;
+        position: relative;
+        margin-top: -22rem;
+        margin-left: 4rem;
+    }
+
+.container-fluid{
+    margin-top: 10rem;
+}

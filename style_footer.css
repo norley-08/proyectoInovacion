@@ -1,0 +1,133 @@
+
+.con {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.site-footer {
+    background-color: rgb(67, 152, 180);
+    color: #fff;
+    padding: 20px 0;
+}
+
+.footer-sections-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.footer-secti {
+    flex: 1;
+    margin: 0;
+    font-size: 12px;
+}
+
+.footer-bo {
+    padding: 20px;
+    font-size: 14px;
+    color: #0d0c0c;
+    border: 1px solid rgb(44, 120, 145); /* Bordes para resaltar la ubicación de las secciones, puedes eliminar esto si no lo deseas */
+}
+
+.footer-link a {
+    color: #0d0c0c;
+    text-decoration: none;
+}
+
+.footer-line {
+    border: 0;
+}
+
+.social-icons {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+}
+
+.social-icons li {
+    margin: 0 10px;
+}
+
+.footer-second-s {
+    text-align: center;
+    margin-top: 20px;
+    
+}
+  
+.social-li {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+}
+  
+.social-li li {
+    margin: 0 10px;
+    position: relative;
+}
+  
+
+  /* Estilo del icono */
+.social-li li a {
+    position: relative;
+    z-index: 1; /* Poner sobre la línea */
+}
+  
+.footer-line {
+    width: 100%;
+    margin-top: 20px;
+}
+.p{
+    text-align: center;
+    font-size: 16px;
+    color: #0d0c0c;
+    margin-top: 10px;
+}
+
+.footer a{
+    background-color: chartreuse;
+}
+.footer-bo input[type="email"],
+.footer-bo textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  background-color: rgb(67, 152, 180);
+  border: 1px solid #f1f5f6;
+  border-radius: 5px;
+  box-sizing: border-box;  
+}
+
+.footer-bo textarea {
+  height: 100px; /* Ajusta la altura según tus necesidades */
+}
+
+.footer-bo button {
+  background-color: #f7fbf8;
+  color: rgb(7, 7, 7);
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.footer-bo button:hover {
+  background-color: #14c46c;
+}
+.footer-link {
+    margin-bottom: 10px;
+}
+
+.footer-secti {
+    margin-bottom: 10px;
+}
+
+.quick-contact input,
+.quick-contact textarea {
+    margin-bottom: 0px;
+}.in{
+    margin-bottom: 15px;
+}

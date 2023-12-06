@@ -1,0 +1,270 @@
+*, *:after, *:before {
+    box-sizing: border-box;
+  }
+  
+  :root {
+      --l1: hsla(0, 0%, 100%, 1);
+      --l2: hsla(223, 13%, 87%, 1);
+      --l3: hsla(0, 0%, 77%, 1);
+      --d1: hsla(0, 0%, 20%, 1);
+      --d2: #555;
+      --p1: #FFC324;
+      --g1: #FFB714;
+      --g2: #FFE579;
+    }
+  
+    .categoria{
+      text-align: center;
+      font-size: 5rem;
+      font-family: Georgia, 'Times New Roman', Times, serif;
+      text-shadow: 3px 3px rgb(17, 17, 97);
+      -webkit-text-stroke-color: rgb(24, 22, 22);
+      -webkit-text-stroke-width: 1px;
+      color: transparent;
+      font-family: Verdana, Geneva, Tahoma, sans-serif;
+      margin-bottom: 2rem;
+      }
+    
+    h2, h4, p, ul, li {
+      margin: 0;
+      padding: 0;
+    }
+    
+    h2, h4 {
+      font-family: 'Oswald', sans-serif;
+      text-transform: uppercase;
+      color: var(--d1);
+    }
+    
+    h2 {
+      font-size: 27px;
+      font-weight: 500;
+      letter-spacing: -0.2px;
+      margin-bottom: 10px;
+    }
+    
+    p, li {
+      font-family: "Roboto", sans-serif;
+      font-weight: 400;
+      color: var(--d2);
+      line-height: 22px;
+    }
+    
+    ul, li {
+      text-decoration: none;
+      list-style: disc outside;
+    }
+    
+    ul {
+      padding-left: 20px;
+    }
+    
+    svg {
+      margin: 0px;
+      min-width: 24px;
+      min-height: 24px;
+    }
+    
+    /* --------------
+    Main styles begin
+    -------------- */
+    
+    body {
+      margin: 0;
+      min-height: 450px;
+      height: 100vh;
+      align-items: center;
+      justify-content: center;
+    }
+    
+  .div-body{
+      display: flex;
+      justify-content: center;
+      gap: 3rem;
+  }
+  
+    /* --------------
+    Overall card
+    -------------- */
+    
+    .cardContainer {
+      position: relative;
+      width: 300px;
+      height: 400px;
+      min-width: 300px;
+      min-height: 400px;
+      margin: 4px;
+      perspective: 1000px;
+      margin-bottom: 3rem;
+    }
+    
+    /* .active is applied to .card when . card is clicked. */
+    
+    .active {
+      transform: translateZ(0px) rotateY(180deg) !important;
+    }
+    
+    .card {
+      display: inline-block;
+      width: 100%;
+      height: 100%;
+      cursor: pointer;
+      -moz-backface-visibility: hidden;
+      transform-style: preserve-3d;
+      transform: translateZ(-100px);
+      transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    }
+    
+    .card:after {
+      content: '';
+      position: absolute;
+      z-index: -1;
+      width: 100%;
+      height: 100%;
+      border-radius: 5px;
+      box-shadow: 0 14px 50px -4px hsla(0, 0%, 0%, 0.15);
+      opacity: 0;
+      transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1.4);
+    }
+    
+    .card:hover {
+      transform: translateZ(0px);
+    }
+    
+    .card:hover:after {
+      opacity: 1;
+    }
+    
+    .card .side {
+      -webkit-backface-visibility: hidden;
+      backface-visibility: hidden;
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      border-radius: 5px;
+      background-color: var(--l1);
+    }
+    
+    .card .front {
+      z-index: 2;
+      background: #e1ecee;
+    }
+    
+    .card .back {
+      transform: rotateY(180deg);
+    }
+    
+    .card .info {
+      padding: 16px;
+    }
+    
+    /* --------------
+    Front of card
+    -------------- */
+    
+    .front .img {
+      background-color: var(--l2);
+      background-position: center;
+      background-size: cover;
+      border-radius: 5px 5px 0 0;
+      width: 100%;
+      height: 250px;
+    }
+    
+    .front .img1 {
+      background-image: url(https://www.plataforma10.com.pe/viajes/wp-content/uploads/2023/03/foto-portada-3.webp);
+    }
+    
+    .front .img2 {
+      background-image: url(https://cdn0.ecologiaverde.com/es/posts/8/6/7/caracteristicas_de_la_selva_alta_1768_0_600.jpg);
+    }
+    
+    .front .img3 {
+      background-image: url(https://assets.isu.pub/document-structure/210906025217-b40e01e7d1d6d6c3c0622d9974f5fb26/v1/8f4925a90f62431431fbb2721f452f6f.jpeg);
+    }
+  
+    .front .img4 {
+      background-image: url(https://media.tacdn.com/media/attractions-splice-spp-674x446/06/6c/31/c7.jpg);
+    }
+    
+    .front .img5 {
+      background-image: url(https://www.peru.travel/Contenido/Atractivo/Imagen/es/59/1.1/Principal/parque-manu.jpg);
+    }
+    
+    .front .img6 {
+      background-image: url(https://denomades.s3.us-west-2.amazonaws.com/blog/wp-content/uploads/2020/01/15192408/pacaya-samiria.jpg);
+    }
+  
+    .front .img7 {
+      background-image: url(https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0a/df/38/2e/laguna-de-yarinacocha.jpg?w=1200&h=-1&s=1);
+    }
+    
+    .front .img8 {
+      background-image: url(https://upload.wikimedia.org/wikipedia/commons/2/25/Ocaso_en_el_Mara%C3%B1on_-_panoramio_%281%29.jpg);
+    }
+    
+    .front .img9 {
+      background-image: url(https://caaap.org.pe/wp-content/uploads/2022/01/rio-huallaga.jpg);
+    }
+    
+    /* --------------
+    Back of card
+    -------------- */
+    
+    .back {
+      position: relative;
+    }
+    
+    .back h2 {
+      margin-top: 6px;
+      margin-bottom: 18px;
+    }
+    
+    .back .reviews {
+      display: flex;
+      align-items: center;
+      margin-bottom: 12px;
+      cursor: pointer;
+    }
+    
+    .back .reviews p {
+      color: var(--l3);
+      font-weight: 300;
+      margin: 1px 0 0 6px;
+      transition: 0.3s ease-in-out;
+    }
+    
+    .back .reviews:hover p {
+      color: var(--d2);
+    }
+    
+    .back li {
+      line-height: 22px;
+      margin: 2px 0 6px 0;
+    }
+    
+    .back .btn:hover h4 {
+      transform: translateX(0px);
+    }
+    
+    .back .btn:hover svg {
+      transform: translateX(0px);
+      opacity: 1;
+    }
+    
+    .back h4 {
+      transform: translateX(12px);
+      transition: transform 0.3s ease-out;
+    }
+    
+    .back svg {
+      margin: 1px 0 0 4px;
+      transform: translateX(-8px);
+      opacity: 0;
+      transition: all 0.3s ease-out;
+    }
+  
+  .info p{
+      font-size: 1.4rem;
+      text-align: justify;
+  }

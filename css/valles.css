@@ -1,0 +1,270 @@
+*, *:after, *:before {
+    box-sizing: border-box;
+  }
+  
+  :root {
+      --l1: hsla(0, 0%, 100%, 1);
+      --l2: hsla(223, 13%, 87%, 1);
+      --l3: hsla(0, 0%, 77%, 1);
+      --d1: hsla(0, 0%, 20%, 1);
+      --d2: #555;
+      --p1: #FFC324;
+      --g1: #FFB714;
+      --g2: #FFE579;
+    }
+  
+    .categoria{
+      text-align: center;
+      font-size: 5rem;
+      font-family: Georgia, 'Times New Roman', Times, serif;
+      text-shadow: 3px 3px rgb(17, 17, 97);
+      -webkit-text-stroke-color: rgb(24, 22, 22);
+      -webkit-text-stroke-width: 1px;
+      color: transparent;
+      font-family: Verdana, Geneva, Tahoma, sans-serif;
+      margin-bottom: 2rem;
+      }
+    
+    h2, h4, p, ul, li {
+      margin: 0;
+      padding: 0;
+    }
+    
+    h2, h4 {
+      font-family: 'Oswald', sans-serif;
+      text-transform: uppercase;
+      color: var(--d1);
+    }
+    
+    h2 {
+      font-size: 27px;
+      font-weight: 500;
+      letter-spacing: -0.2px;
+      margin-bottom: 10px;
+    }
+    
+    p, li {
+      font-family: "Roboto", sans-serif;
+      font-weight: 400;
+      color: var(--d2);
+      line-height: 22px;
+    }
+    
+    ul, li {
+      text-decoration: none;
+      list-style: disc outside;
+    }
+    
+    ul {
+      padding-left: 20px;
+    }
+    
+    svg {
+      margin: 0px;
+      min-width: 24px;
+      min-height: 24px;
+    }
+    
+    /* --------------
+    Main styles begin
+    -------------- */
+    
+    body {
+      margin: 0;
+      min-height: 450px;
+      height: 100vh;
+      align-items: center;
+      justify-content: center;
+    }
+    
+  .div-body{
+      display: flex;
+      justify-content: center;
+      gap: 3rem;
+  }
+  
+    /* --------------
+    Overall card
+    -------------- */
+    
+    .cardContainer {
+      position: relative;
+      width: 300px;
+      height: 400px;
+      min-width: 300px;
+      min-height: 400px;
+      margin: 4px;
+      perspective: 1000px;
+      margin-bottom: 3rem;
+    }
+    
+    /* .active is applied to .card when . card is clicked. */
+    
+    .active {
+      transform: translateZ(0px) rotateY(180deg) !important;
+    }
+    
+    .card {
+      display: inline-block;
+      width: 100%;
+      height: 100%;
+      cursor: pointer;
+      -moz-backface-visibility: hidden;
+      transform-style: preserve-3d;
+      transform: translateZ(-100px);
+      transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    }
+    
+    .card:after {
+      content: '';
+      position: absolute;
+      z-index: -1;
+      width: 100%;
+      height: 100%;
+      border-radius: 5px;
+      box-shadow: 0 14px 50px -4px hsla(0, 0%, 0%, 0.15);
+      opacity: 0;
+      transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1.4);
+    }
+    
+    .card:hover {
+      transform: translateZ(0px);
+    }
+    
+    .card:hover:after {
+      opacity: 1;
+    }
+    
+    .card .side {
+      -webkit-backface-visibility: hidden;
+      backface-visibility: hidden;
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      border-radius: 5px;
+      background-color: var(--l1);
+    }
+    
+    .card .front {
+      z-index: 2;
+      background: #e1ecee;
+    }
+    
+    .card .back {
+      transform: rotateY(180deg);
+    }
+    
+    .card .info {
+      padding: 16px;
+    }
+    
+    /* --------------
+    Front of card
+    -------------- */
+    
+    .front .img {
+      background-color: var(--l2);
+      background-position: center;
+      background-size: cover;
+      border-radius: 5px 5px 0 0;
+      width: 100%;
+      height: 250px;
+    }
+    
+    .front .img1 {
+      background-image: url(https://larepublica.cronosmedia.glr.pe/original/2020/05/14/61ddca231784e514f56febda.jpg);
+    }
+    
+    .front .img2 {
+      background-image: url(https://inkatimetours.com/wp-content/uploads/2019/08/Valle-sagrado-de-los-incas-en-cusco-peru.jpg);
+    }
+    
+    .front .img3 {
+      background-image: url(https://media.tacdn.com/media/attractions-splice-spp-674x446/0b/39/7c/3a.jpg);
+    }
+  
+    .front .img4 {
+      background-image: url(https://portal.andina.pe/EDPfotografia3/Thumbnail/2022/11/08/000910501W.jpg);
+    }
+    
+    .front .img5 {
+      background-image: url(https://portal.andina.pe/EDPfotografia2/Thumbnail/2012/10/27/000194722W.jpg);
+    }
+    
+    .front .img6 {
+      background-image: url(https://www.tierrasvivas.com/img/valley-of-apurimac-316.jpg);
+    }
+  
+    .front .img7 {
+      background-image: url(https://cdn.www.gob.pe/uploads/document/file/576650/standard_IMG-20200405-WA0007.jpg);
+    }
+    
+    .front .img8 {
+      background-image: url(https://peru.info/archivos/publicacion/88-imagen-152745852018.jpg);
+    }
+    
+    .front .img9 {
+      background-image: url(https://elperuano.pe/fotografia/thumbnail/2023/04/25/000245153M.jpg);
+    }
+    
+    /* --------------
+    Back of card
+    -------------- */
+    
+    .back {
+      position: relative;
+    }
+    
+    .back h2 {
+      margin-top: 6px;
+      margin-bottom: 18px;
+    }
+    
+    .back .reviews {
+      display: flex;
+      align-items: center;
+      margin-bottom: 12px;
+      cursor: pointer;
+    }
+    
+    .back .reviews p {
+      color: var(--l3);
+      font-weight: 300;
+      margin: 1px 0 0 6px;
+      transition: 0.3s ease-in-out;
+    }
+    
+    .back .reviews:hover p {
+      color: var(--d2);
+    }
+    
+    .back li {
+      line-height: 22px;
+      margin: 2px 0 6px 0;
+    }
+    
+    .back .btn:hover h4 {
+      transform: translateX(0px);
+    }
+    
+    .back .btn:hover svg {
+      transform: translateX(0px);
+      opacity: 1;
+    }
+    
+    .back h4 {
+      transform: translateX(12px);
+      transition: transform 0.3s ease-out;
+    }
+    
+    .back svg {
+      margin: 1px 0 0 4px;
+      transform: translateX(-8px);
+      opacity: 0;
+      transition: all 0.3s ease-out;
+    }
+  
+  .info p{
+      font-size: 1.4rem;
+      text-align: justify;
+  }

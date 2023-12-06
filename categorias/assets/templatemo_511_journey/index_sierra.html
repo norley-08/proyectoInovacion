@@ -1,0 +1,737 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>TuriWeb</title>
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700">  <!-- Google web font "Open Sans" -->
+    <link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.min.css">                <!-- Font Awesome -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">   
+    <link rel="stylesheet" href="../../../../style.css">
+    <link rel="shortcut icon" type="../image/icon" href="../logo/favicon.png"/>    
+    <link href="https://fonts.googleapis.com/css?family=Raleway:400,500,600,700" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/datepicker.css"/>
+    <link rel="stylesheet" type="text/css" href="slick/slick.css"/>
+    <link rel="stylesheet" type="text/css" href="slick/slick-theme.css"/>
+    <link rel="stylesheet" href="css/templatemo-style.css">     
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">                          
+      </head>
+      <style> 
+        .yy-main-header {
+            background-color: #1493bf; /* Color de fondo de la barra de navegación */
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0;
+        }
+        
+        .yy-logo-wrap img {
+            max-width: 160px;
+            height: auto;
+            display: block; /* Asegúrate de que la imagen se muestre como bloque */
+            margin: 0 auto; /* Centra la imagen si es más pequeña que el contenedor */
+        }
+        
+        
+        .yy-menu-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            align-items: center; 
+            
+            margin-right: 70px;
+        }
+        
+        .yy-menu-list a, .yy-menu-list li {
+            text-decoration: none;
+            color: rgb(0, 0, 0); /* Color del texto de los enlaces */
+            font-weight: bold;
+            padding: 10px 15px;
+        }
+        
+        .yy-menu-parent {
+            position: relative;
+            cursor: pointer; /* Cambia el cursor para indicar que es desplegable */
+        }
+        
+        .yy-menu-parent::after {
+            content: "";
+            border: solid rgb(19, 19, 19);
+            border-width: 0 3px 3px 0;
+            display: inline-block;
+            padding: 3px;
+            margin-left: 10px;
+            position: absolute;
+            right: 0; /* Alinea la flecha hacia la derecha */
+            top: 50%; /* Alinea la flecha verticalmente */
+            transform: translateY(-50%) rotate(45deg); /* Centra y rota la flecha */
+        }
+        
+        .yy-menu-list > .yy-menu-parent:hover .yy-sub-menu {
+            display: block; /* Muestra el menú desplegable al pasar el mouse */
+        }
+        
+        .yy-sub-menu {
+            display: none; /* Oculta el menú desplegable por defecto */
+            position: absolute;
+            background-color: #fdfdfd; /* Color de fondo del menú desplegable */
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2); /* Sombra para el menú desplegable */
+            padding: 12px 16px; /* Espaciado dentro del menú desplegable */
+            z-index: 200; /* Incrementa el z-index para asegurar que esté por encima de otros elementos */
+            margin-top: .5em; /* Espacio para la sombra */
+        }
+        
+    
+        /* footer */
+        .con {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .site-footer {
+            background-color: rgb(67, 152, 180);
+            color: #141313;
+            padding: 20px 0;
+            margin-top: 7rem;
+        }
+        
+        .footer-sections-container {
+            display: flex;
+            justify-content: space-between; /* Cambiado de 'space-around' para un mejor control del espacio */
+            flex-wrap: wrap;
+        }
+        
+        .footer-secti {
+            flex-basis: 20%; /* Cambiado de 'flex: 1' para tener un mejor control sobre el ancho */
+            margin: 0;
+            padding: 20px;
+            box-sizing: border-box;
+            font-size: 12px;
+        }
+        
+        
+        
+        .footer-link a {
+            color: #0d0d0d;
+            text-decoration: none;
+            margin-left: -40px;
+            font-size: 1.3rem;
+        }
+        
+        .social-icons {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+        }
+        
+        .social-icons li {
+            margin: 0 10px;
+            
+        }
+        
+        .footer-second-s {
+            text-align: center;
+            margin-top: 20px;
+        }
+        
+        .social-li {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            
+        }
+        
+        .social-li li {
+            margin: 0 10px;
+            position: relative;
+        }
+        
+        .social-li li a {
+            position: relative;
+            z-index: 1; /* Poner sobre la línea */
+        }
+        
+        .footer-line {
+            width: 80%;
+            height: 1px;
+            background-color: #73a5c1; /* Color de la línea */
+            margin-top: 20px;
+            margin-left: auto; /* Margen automático a la izquierda */
+            margin-right: auto; /* Margen automático a la derecha */
+        }
+        
+        
+        .p {
+            text-align: center;
+            font-size: 10px;
+            color: #0b0b0b;
+            margin-top: 10px;
+        }
+        
+        .footer-bo input[type="email"],
+        .footer-bo textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            background-color: #fff; /* Background color for the input fields */
+            border: 1px solid #f1f5f6;
+            border-radius: 5px;
+            box-sizing: border-box;
+            color: #0d0c0c; 
+            resize: none !important;
+        }
+        
+        
+        .footer-bo button {
+            width: 100%; /* Hace que el botón ocupe todo el ancho del contenedor */
+            background-color: #f7fafb;
+            color: rgb(7, 7, 7);
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        
+        .footer-bo button:hover {
+            background-color: #14c46c;
+        }
+        
+        .footer-link {
+            margin-top: 1rem;
+            margin-left: 50px;
+        }
+        
+        .footer-secti {
+            margin-bottom: 10px;
+        }
+        
+        .quick-contact input,
+        .quick-contact textarea {
+            margin-bottom: 15px; /* Ajustado para uniformidad */
+        }
+        {% comment %} ...... {% endcomment %}
+        .quick-contact {
+            background-color: rgb(67, 152, 180); /* El color de fondo que combina con el pie de página */
+            padding: 20px;
+            border-radius: 8px; /* Bordes redondeados para el formulario */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra para dar profundidad */
+            width: 100%; /* Ajusta el ancho según sea necesario */
+            box-sizing: border-box;
+        }
+        
+        .quick-contact h2 {
+            color: #fff; /* Título del formulario en color blanco */
+            margin-bottom: 16px; /* Espacio entre el título y el campo de email */
+        }
+        
+        .quick-contact input[type="email"],
+        .quick-contact textarea {
+            width: calc(100% - 20px); /* Se calcula el 100% menos el padding */
+            padding: 10px;
+            margin-bottom: 16px; /* Espacio entre los campos de texto */
+            border: 1px solid #556d6d; 
+            background-color: #ebebeb; 
+            color: black;
+            border-radius: 5px; 
+            resize: none !important;
+        }
+        
+        
+        .quick-contact input[type="email"]:focus,
+        .quick-contact textarea:focus {
+            outline: none; /* Elimina el contorno al enfocar */
+            border: 2px solid #a39999; /* Cambia el color del borde al enfocar */
+        }
+        
+        .quick-contact button {
+            width: 100%; /* Ajusta el botón para que se expanda al 100% del formulario */
+            padding: 10px 0; /* Padding superior e inferior para el botón */
+            border: none; /* Elimina el borde del botón */
+            background-color: #0d0c0c; /* Color de fondo del botón */
+            color: #fff; /* Texto del botón en color blanco */
+            border-radius: 4px; /* Bordes redondeados para el botón */
+            cursor: pointer; /* Cursor en forma de mano al pasar sobre el botón */
+            transition: background-color 0.3s; /* Transición suave para el color de fondo */
+        }
+        
+        .quick-contact button:hover {
+            background-color: #a568a7; /* Cambia el color de fondo al pasar el cursor */
+        }
+        .social-li a {
+            font-size: 24px; /* Tamaño del icono */
+            color: white; /* Color del icono */
+            transition: color 0.3s ease; /* Transición suave para el efecto hover */
+        }
+        
+        .social-li a:hover {
+            color: black; /* Cambia el color al hacer hover */
+            /* Puedes agregar otros estilos que desees para el hover aquí */
+        }
+        .in-title {
+            font-weight: bold; /* Hace el texto en negrita */
+            text-transform: uppercase; /* Convierte el texto a mayúsculas */
+            margin-bottom: 16px; /* Agrega espacio debajo del título */
+            font-size: 18px; /* Ajusta el tamaño del texto según sea necesario */
+        }
+        
+        .in-content {
+            text-align: justify; /* Justifica el contenido */
+            margin-top: 16px; /* Agrega espacio arriba del contenido para separarlo del título */
+        }
+        .contact-title {
+            font-weight: bold;
+            text-transform: uppercase;
+            margin-bottom: 20px; /* Espacio debajo del título */
+            font-size: 18px; /* Ajusta el tamaño del texto según sea necesario */
+            color: #fff; /* Color del texto */
+        }
+        
+        .contact-description {
+            text-align: justify;
+            margin-bottom: 20px; 
+        }
+        
+        .contact-details {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            margin-top: 2rem
+        }
+        
+        .contact-details li {
+            display: flex;
+            align-items: center; /* Alinea los íconos con el texto */
+            margin-bottom: -1px; /* Espacio entre cada elemento de contacto */
+        }
+        
+        .contact-icon {
+            /* Ajusta el tamaño y el color de tus íconos aquí si es necesario */
+            margin-right: 6px; /* Espacio entre el ícono y el texto */
+            font-size: 16px; /* Tamaño del ícono */
+        }
+        
+        .contact-text {
+            color: #d9dee3;
+            font-weight: bold;
+        }
+        .contact-icon i {
+            margin-right: 10px; /* Espacio entre el ícono y el texto */
+            color: #fff; /* O el color que prefieras para tus iconos */
+            /* Otros estilos que quieras aplicar a los iconos */
+        }
+    
+    
+    
+        
+        .footer-secti {
+            flex: 1;
+            padding: 20px;
+            margin-right: 20px; 
+        }
+        
+       
+        {% comment %} xd {% endcomment %}
+        .footer-sections-container {
+            display: flex;
+            justify-content: flex-start; /* O utiliza 'center' si prefieres centrar todo el contenido en el contenedor */
+            flex-wrap: wrap;
+        }
+        
+        .footer-secti {
+            margin-right: 15px;
+            margin-left: 15px; 
+           
+        }
+        
+        /* Si deseas asegurarte de que el último elemento no tenga un margen a la derecha */
+        .footer-secti:last-child {
+            margin-right: 0;
+        }
+        
+    </style>
+      <body>
+        <div id="yy-page" itemscope itemtype="http://schema.org/LocalBusiness">
+            <header class="yy-main-header">
+                <div class="yy-logo-wrap" itemprop="logo">
+                    <img src="../../../images/logoo.jpg" alt="Logo Image">
+                </div>
+                <nav class="yy-nav-desktop">
+                    <ul class="yy-menu-list">
+                        <li><a href="../../../index.html">Inicio</a></li>
+                        <li class="yy-menu-parent">
+                            Categorias
+                            <ul class="yy-sub-menu">
+                                <li><a href="../../costa.html">Costa</a></li>
+                                <li><a href="../../sierra.html">Sierra</a></li>
+                                <li><a href="../../selva.html">Selva</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="../../../nosotros.html">Nosotros</a></li>
+                        <li><a href="../../../blog.html">Blog</a></li>
+                    </ul>
+                </nav>
+            </header>
+        </div>
+        <div class="tm-page-wrap mx-auto">
+            <section class="tm-banner">
+                <div class="tm-container-outer tm-banner-bg">
+                    <div class="container">
+
+                        <div class="row tm-banner-row tm-banner-row-header">
+                            <div class="col-xs-12">
+                                <div class="tm-banner-header">
+                                    <div class="tm-banner">
+                                        <h1 class="text-uppercase tm-banner-title">Descubre los lugares más impresionantes</h1>
+                                        <img src="img/dots-3.png" alt="Dots">
+                                        <p class="tm-banner-subtitle">Explora los maravillosos lugares turísticos que la sierra peruana tiene para ofrecer.</p>
+                                        <a href="#destinos" class="tm-down-arrow-link"><i class="fa fa-2x fa-angle-down tm-down-arrow"></i></a>
+                                    </div>
+                                           
+                                </div>    
+                            </div>  <!-- col-xs-12 -->                      
+                        </div> <!-- row -->
+                        <div class="row tm-banner-row" id="tm-section-search">
+
+                            <form action="index.html" method="get" class="tm-search-form tm-section-pad-2">
+                                <div class="form-row tm-search-form-row">
+                                    <div class="form-group tm-form-group tm-form-group-pad tm-form-group-1">
+                                        <h2>Bienvenido a los Lugares Turísticos </h2>
+                                        <p>Explora los asombrosos destinos turísticos que la sierra peruana tiene para ofrecer. Completa el formulario a continuación para obtener más información.</p>
+                                    </div>
+                                    <div class="form-group tm-form-group tm-form-group-pad tm-form-group-3" style="display: none;">
+                                        <label for="inputCheckIn">Check In Date</label>
+                                        <input name="check-in" type="text" class="form-control" id="inputCheckIn" placeholder="Check In">
+                                    </div>
+                                    <div class="form-group tm-form-group tm-form-group-pad tm-form-group-3" style="display: none;">
+                                        <label for="inputCheckOut">Check Out Date</label>
+                                        <input name="check-out" type="text" class="form-control" id="inputCheckOut" placeholder="Check Out">
+                                    </div>
+                                    
+                                    <div class="form-group tm-form-group tm-form-group-pad tm-form-group-1">
+                                        <label for="btnSubmit" style="font-size: 14px; color: #555; margin-bottom: 5px;">Descubre más sobre  destinos turísticos:</label>
+                                        
+                                    </div>
+                                    
+                                    
+                                </div>
+                            </form>                            
+
+                        </div> <!-- row -->
+                        <div class="tm-banner-overlay"></div>
+                    </div>  <!-- .container -->                   
+                </div>     <!-- .tm-container-outer -->                 
+            </section>
+            <section class="p-5 tm-container-outer tm-bg-gray">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xs-12 mx-auto tm-about-text-wrap text-center">
+                            <h2 class="text-uppercase mb-4">¿Cuáles son los principales <strong>lugares</strong> de la Sierra?</h2>
+                            <p class="mb-4">Los departamentos de la sierra peruana albergan diversos atractivos turísticos, muy visitados tanto por personas locales como foráneas. En la misma región destacan sitios como Machu Picchu, la ciudad de Cusco con su encanto histórico, las misteriosas líneas de Nazca y los impresionantes cañones como el del Colca. Fuera de las ciudades, también se pueden explorar lugares importantes como la Laguna de Llanganuco, la Reserva Nacional de Paracas o la Montaña de Siete Colores. Descubre qué ver en estos destinos y, sobre todo, obtén información sobre las experiencias que te esperan.</p>
+                            <a href="../free-travel-website-template/about.html" class="text-uppercase btn-primary tm-btn">Ver galeria</a>
+                            
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <div class="tm-container-outer" id="tm-section-2">
+                <section class="tm-slideshow-section">
+                    <div class="tm-slideshow">
+                        <img src="img/Cusco…Plaza_de_armas.jpg" alt="Image">
+                        <img src="img/saqsayhuaman-cusco.jpg" alt="Image">
+                        <img src="img/inti raymi.jpg" alt="Image">    
+                    </div>
+                    <div class="tm-slideshow-description tm-bg-primary">
+                        <h2 class=""> Cusco(Plaza de armas, Sacsayhuamán, Inti raymi )</h2>
+                        <p>
+                             Cusco, conocida magnífico centro histórico. Sus calles empedradas exhiben una fascinante fusión de la cultura inca y española. Destacan lugares emblemáticos como la imponente Plaza de Armas, rodeada de hermosas construcciones coloniales como la Catedral de Cusco y la Iglesia. Además, los alrededores de la ciudad albergan restos arqueológicos incas, como Sacsayhuamán y Qenqo.</p>
+                            <a href="../free-travel-website-template/about.html" class="text-uppercase tm-btn tm-btn-white tm-btn-white-primary">Ver en Galeria</a>
+                    </div>
+                </section>
+                <section class="clearfix tm-slideshow-section tm-slideshow-section-reverse">
+
+                    <div class="tm-right tm-slideshow tm-slideshow-highlight">
+                        <img src="img/plaza_are.jpg" alt="Image">
+                        <img src="img/misti_volcano_02.jpg" alt="Image">
+                        <img src="img/cañon-colca-arequipa.png" alt="Image">
+                    </div> 
+
+                    <div class="tm-slideshow-description tm-slideshow-description-left tm-bg-highlight">
+                        <h2 class="">Arequipa (Plaza de armas, Volcán Misti... )</h2>
+                        <p>Arequipa, a más de 2,300 metros, a menudo es considerada como la ciudad más hermosa del Perú. Con un telón de fondo de montañas nevadas, el centro de la ciudad está declarado Patrimonio de la Humanidad por la UNESCO. El principal reclamo a la fama de la ciudad es la antigua arquitectura construida con piedra sillar, una roca volcánica que irradia un color brillante a la luz del sol</p>
+                        <a href="../free-travel-website-template/about.html" class="text-uppercase tm-btn tm-btn-white tm-btn-white-highlight">Ver en Galeria</a>
+                    </div>                        
+
+                </section>
+                <section class="tm-slideshow-section">
+                    <div class="tm-slideshow">
+                        <img src="img/islas_flotantes.jpg" alt="Image">
+                        <img src="img/island-amantani.jpg" alt="Image">
+                        <img src="img/mistico-portal-interdimensional-preinca-atrae-a-turistas-en-Puno-6.jpg" alt="Image">
+                    </div>
+                    <div class="tm-slideshow-description tm-bg-primary">
+                        <h2 class="">Puno</h2>
+                        <p>El Lago Titicaca, con su encanto y misticismo, destaca como uno de los lugares más impresionantes en la sierra peruana. Enmarcado por majestuosas montañas y cautivadores paisajes, este lago navegable es reconocido como el más alto del mundo. Sus aguas cristalinas albergan diversas islas que rebosan historia y cultura.</p>
+                        <a href="../free-travel-website-template/about.html" class="text-uppercase tm-btn tm-btn-white tm-btn-white-primary">Ver en Galeria</a>
+                    </div>
+                </section>
+            </div>        
+            <div class="tm-container-outer" id="tm-section-3">
+               
+                <div class="tab-content clearfix">
+                	
+                   
+                    <!-- Tab 4 -->
+                    <div class="tab-pane fade show active" id="4a">
+                    <!-- Current Active Tab WITH "show active" classes in DIV tag -->
+                        <div class="tm-recommended-place-wrap">
+                            <div class="tm-recommended-place">
+                                <img src="img/Visitar-Ollantaytambo.jpg" alt="Image" class="img-fluid tm-recommended-img">
+                                <div class="tm-recommended-description-box">
+                                    <h3 class="tm-recommended-title">Ollantaytambo</h3>
+                                    <p class="tm-text-highlight">Cusco, Urubamba </p>
+                                    <p class="tm-text-gray">Uno de los pueblos más lindos del valle sangrado del Perú es Ollantaytambo, en esta localidad se pueden apreciar lindas terrazas incas y edificaciones de piedras...</p>   
+                                </div>
+                                <a href="#" class="tm-recommended-price-box">
+                                    <p class="tm-recommended-price">$440</p>
+                                    <p class="tm-recommended-price-link">Aproximadamente</p>
+                                </a>                        
+                            </div>
+
+                            <div class="tm-recommended-place">
+                                <img src="img/Visitar-el-Koricancha.jpg" alt="Image" class="img-fluid tm-recommended-img">
+                                <div class="tm-recommended-description-box">
+                                    <h3 class="tm-recommended-title">Koricancha</h3>
+                                    <p class="tm-text-highlight">Cusco, Cusco</p>
+                                    <p class="tm-text-gray">Considerado como uno de los más sagrados y totalmente respetados en su momento por imperio Inca, Koricancha es un templo dedicado al Dios sol en donde se les rendía tributo y ofrendas a los demás dioses y al sol.
+                                        ...</p>   
+                                </div>
+                                <div id="preload-hover-img"></div>
+                                <a href="#" class="tm-recommended-price-box">
+                                    <p class="tm-recommended-price">$450</p>
+                                    <p class="tm-recommended-price-link">Aproximadamente</p>
+                                </a>
+                            </div>
+
+                            <div class="tm-recommended-place">
+                                <img src="img/Visitar-Tarma-Junin.jpg" alt="Image" class="img-fluid tm-recommended-img">
+                                <div class="tm-recommended-description-box">
+                                    <h3 class="tm-recommended-title">Tarma</h3>
+                                    <p class="tm-text-highlight"> Junin, Tarma </p>
+                                    <p class="tm-text-gray">Una de las ciudades andinas más religiosas de todo el Perú, con
+                                        templos lindos y llamativos en donde su ambiente y lindas misas llenas de buena vibra a los visitantes, de ser amante del catolicismo, Tarma es la ciudad ideal.....</p>   
+                                </div>
+                                <a href="#" class="tm-recommended-price-box">
+                                    <p class="tm-recommended-price">$460</p>
+                                    <p class="tm-recommended-price-link">Aproximadamente</p>
+                                </a>
+                            </div>
+
+                            <div class="tm-recommended-place">
+                                <img src="img/Visitar-Torre-Torre-Huancayo.jpg" alt="Image" class="img-fluid tm-recommended-img">
+                                <div class="tm-recommended-description-box">
+                                    <h3 class="tm-recommended-title">Torre Torre de Huancayo</h3>
+                                    <p class="tm-text-highlight">Junín,Huancayo</p>
+                                    <p class="tm-text-gray">Se conoce como las Torres de Huancayo, a las formaciones rocosas en sentido vertical a causa de las lluvias, cuyo otro nombre también es la chimenea de hadas, se dice según la historia que este sitio es habitado por muchas hadas y almas benévolas ...</p>   
+                                </div>
+                                <a href="#" class="tm-recommended-price-box">
+                                    <p class="tm-recommended-price">$470</p>
+                                    <p class="tm-recommended-price-link">Aproximadamente</p>
+                                </a>
+                            </div>    
+                        </div>                        
+
+                        <a href="../free-travel-website-template/about.html" class="text-uppercase btn-primary tm-btn mx-auto tm-d-table">Ver en Galeria</a>
+                    </div> <!-- tab-pane -->
+                    
+                </div>
+            </div>
+          
+        </div>
+    </div> <!-- .main-content -->
+    <footer class="site-footer" itemscope itemtype="http://schema.org/WPFooter">
+        <div class="con footer-sections-container">
+            <!-- Primera Columna -->
+            <div class="footer-secti">
+                <header>
+                    <h2 class="in-title">Información</h2> 
+                </header>
+                <p  class="in-content">Explora nuevas aventuras y descubre más sobre Perú en nuestra página.</p>
+                <ul class="contact-details">
+                    <li>
+                        <span class="contact-icon"><i class="fas fa-phone"></i></span>
+                        <span class="contact-text">903392728</span>
+                    </li>
+                    <li>
+                        <span class="contact-icon"><i class="fas fa-envelope"></i></span>
+                        <span class="contact-text">info@turisite.com</span>
+                    </li>
+                    <li>
+                        <span class="contact-icon"><i class="fas fa-map-marker-alt"></i></span>
+                        <span class="contact-text">Perú, La Libertad, Trujillo</span>
+                    </li>
+                </ul>
+            </div>
+            
+            <!-- Segunda Columna -->
+            <div class="footer-secti">
+                <header>
+                    <h2 class="in-title">ENLACES</h2> 
+                </header>
+                <ul class="footer-link " >
+                    <li><a href="../../../../index.html">Inicio</a></li>
+                    <li><a href="../../../../blog.html">Blog</a></li>
+                    <li><a href="../../../../nosotros.html">Nosotros</a></li>
+                    <li><a href="../../../../gastronomia.html">Gastronomía</a></li>
+                    <li><a href="../../../../ciudades.html">Ciudades</a></li>
+                    <li><a href="../../../../cultura.html">Cultura</a></li>
+                </ul>
+            </div>
+            
+            <!-- Tercera Columna -->
+            <div class="footer-secti">
+                <header>
+                    <h2 class="in-title">DESCUBRE MAS</h2> 
+                </header>
+                <ul class="footer-link">
+                    <li><a href="../../../../categorias/selva.html">Selva</a></li>
+                    <li><a href="../../../../categorias/costa.html">Costa</a></li>
+                    <li><a href="../../../../categorias/sierra.html">Sierra</a></li>
+                    <li><a href="../../../../categorias/regiones_lugares.html">Lugares turísticos</a></li>
+                </ul>
+            </div>
+            
+            <!-- Cuarta Columna -->
+            <div class="footer-secti">
+                <header>
+                    <h2 class="in-title">CONTACTO</h2> 
+                </header>
+                <section class="quick-contact">
+                    <form action="tu-script-de-procesamiento" method="POST">
+                        <input type="email" name="email" placeholder="Tu Email*" required>
+                        <textarea name="message" placeholder="Escribe tu mensaje*" required></textarea>
+                        <button type="submit">Enviar mensaje</button>
+                    </form>
+                </section>
+            </div>
+            
+        </div>
+        
+        <!-- Iconos de redes sociales -->
+        <div class="social-icons">
+            <ul class="social-li">
+
+
+                <li><a href="#"><i class="fab fa-facebook-square"></i></a></li>
+                <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                <li><a href="#"><i class="fab fa-skype"></i></a></li>
+                <li><a href="#"><i class="fab fa-youtube"></i></a></li>
+                <li><a href="#"> <i class="fab fa-instagram"></i></a></li>
+            </ul>
+        </div>
+        
+        <!-- Línea y derechos de autor -->
+        <div class="footer-line"></div>
+        <p class="p">&copy; 2023 TuriWeb@gmail.com. Todos los derechos reservados.| 903392728</p>
+    </footer>
+    
+    <!-- load JS files -->
+    <script src="js/jquery-1.11.3.min.js"></script>             <!-- jQuery (https://jquery.com/download/) -->
+    <script src="js/popper.min.js"></script>                    <!-- https://popper.js.org/ -->       
+    <script src="js/bootstrap.min.js"></script>                 <!-- https://getbootstrap.com/ -->
+    <script src="js/datepicker.min.js"></script>                <!-- https://github.com/qodesmith/datepicker -->
+    <script src="js/jquery.singlePageNav.min.js"></script>      <!-- Single Page Nav (https://github.com/ChrisWojcik/single-page-nav) -->
+    <script src="slick/slick.min.js"></script>                  <!-- http://kenwheeler.github.io/slick/ -->
+    <script src="js/jquery.scrollTo.min.js"></script>           <!-- https://github.com/flesler/jquery.scrollTo -->
+    <script> 
+        /* Google Maps
+        ------------------------------------------------*/
+        var map = '';
+        var center;
+
+        function initialize() {
+            var mapOptions = {
+                zoom: 16,
+                center: new google.maps.LatLng(37.769725, -122.462154),
+                scrollwheel: false
+            };
+
+            map = new google.maps.Map(document.getElementById('google-map'),  mapOptions);
+
+            google.maps.event.addDomListener(map, 'idle', function() {
+              calculateCenter();
+          });
+
+            google.maps.event.addDomListener(window, 'resize', function() {
+              map.setCenter(center);
+          });
+        }
+
+        function calculateCenter() {
+            center = map.getCenter();
+        }
+
+        function loadGoogleMap(){
+            var script = document.createElement('script');
+            script.type = 'text/javascript';
+            script.src = 'https://maps.googleapis.com/maps/api/js?key=AIzaSyDVWt4rJfibfsEDvcuaChUaZRS5NXey1Cs&v=3.exp&sensor=false&' + 'callback=initialize';
+            document.body.appendChild(script);
+        } 
+
+        /* DOM is ready
+        ------------------------------------------------*/
+        $(function(){
+
+            // Change top navbar on scroll
+            $(window).on("scroll", function() {
+                if($(window).scrollTop() > 100) {
+                    $(".tm-top-bar").addClass("active");
+                } else {                    
+                 $(".tm-top-bar").removeClass("active");
+                }
+            });
+
+            // Smooth scroll to search form
+            $('.tm-down-arrow-link').click(function(){
+                $.scrollTo('#tm-section-search', 300, {easing:'linear'});
+            });
+
+            // Date Picker in Search form
+            var pickerCheckIn = datepicker('#inputCheckIn');
+            var pickerCheckOut = datepicker('#inputCheckOut');
+
+            // Update nav links on scroll
+            $('#tm-top-bar').singlePageNav({
+                currentClass:'active',
+                offset: 60
+            });
+
+            // Close navbar after clicked
+            $('.nav-link').click(function(){
+                $('#mainNav').removeClass('show');
+            });
+
+            // Slick Carousel
+            $('.tm-slideshow').slick({
+                infinite: true,
+                arrows: true,
+                slidesToShow: 1,
+                slidesToScroll: 1
+            });
+
+            loadGoogleMap();                                       // Google Map                
+            $('.tm-current-year').text(new Date().getFullYear());  // Update year in copyright           
+        });
+
+    </script>             
+
+</body>
+</html>

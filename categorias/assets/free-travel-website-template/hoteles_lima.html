@@ -1,0 +1,1136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>TuriWeb</title>
+
+<!-- 
+Journey Template 
+http://www.templatemo.com/tm-511-journey
+-->
+    <!-- load stylesheets -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700">  <!-- Google web font "Open Sans" -->
+    <link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.min.css">                <!-- Font Awesome -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">   
+    <link rel="stylesheet" href="../../../../style.css">
+    <link rel="shortcut icon" type="../image/icon" href="../logo/favicon.png"/>    
+    <link href="https://fonts.googleapis.com/css?family=Raleway:400,500,600,700" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="css/datepicker.css"/>
+    <link rel="stylesheet" type="text/css" href="slick/slick.css"/>
+    <link rel="stylesheet" type="text/css" href="slick/slick-theme.css"/>
+    <link rel="stylesheet" href="css/templatemo-style.css">  
+    
+    <link href="img/favicon.ico" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet"> 
+
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css" rel="stylesheet" />
+
+    <!-- Customized Bootstrap Stylesheet -->
+
+    <link href="css/style.css" rel="stylesheet"><!-- Templatemo style -->
+      </head>
+      <style> 
+        .yy-main-header {
+            background-color: #1493bf; /* Color de fondo de la barra de navegación */
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0;
+        }
+        
+        .yy-logo-wrap img {
+            max-width: 160px;
+            height: auto;
+            display: block; /* Asegúrate de que la imagen se muestre como bloque */
+            margin: 0 auto; /* Centra la imagen si es más pequeña que el contenedor */
+        }
+        
+        
+        .yy-menu-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            align-items: center; 
+            
+            margin-right: 70px;
+        }
+        
+        .yy-menu-list a, .yy-menu-list li {
+            text-decoration: none;
+            color: rgb(0, 0, 0); /* Color del texto de los enlaces */
+            font-weight: bold;
+            padding: 10px 15px;
+        }
+        
+        .yy-menu-parent {
+            position: relative;
+            cursor: pointer; /* Cambia el cursor para indicar que es desplegable */
+        }
+        
+        .yy-menu-parent::after {
+            content: "";
+            border: solid rgb(19, 19, 19);
+            border-width: 0 3px 3px 0;
+            display: inline-block;
+            padding: 3px;
+            margin-left: 10px;
+            position: absolute;
+            right: 0; /* Alinea la flecha hacia la derecha */
+            top: 50%; /* Alinea la flecha verticalmente */
+            transform: translateY(-50%) rotate(45deg); /* Centra y rota la flecha */
+        }
+        
+        .yy-menu-list > .yy-menu-parent:hover .yy-sub-menu {
+            display: block; /* Muestra el menú desplegable al pasar el mouse */
+        }
+        
+        .yy-sub-menu {
+            display: none; /* Oculta el menú desplegable por defecto */
+            position: absolute;
+            background-color: #fdfdfd; /* Color de fondo del menú desplegable */
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2); /* Sombra para el menú desplegable */
+            padding: 12px 16px; /* Espaciado dentro del menú desplegable */
+            z-index: 200; /* Incrementa el z-index para asegurar que esté por encima de otros elementos */
+            margin-top: .5em; /* Espacio para la sombra */
+        }
+        
+    
+        /* footer */
+        .con {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .site-footer {
+            background-color: rgb(67, 152, 180);
+            color: #141313;
+            padding: 20px 0;
+            margin-top: 7rem;
+        }
+        
+        .footer-sections-container {
+            display: flex;
+            justify-content: space-between; /* Cambiado de 'space-around' para un mejor control del espacio */
+            flex-wrap: wrap;
+        }
+        
+        .footer-secti {
+            flex-basis: 20%; /* Cambiado de 'flex: 1' para tener un mejor control sobre el ancho */
+            margin: 0;
+            padding: 20px;
+            box-sizing: border-box;
+            font-size: 12px;
+        }
+        
+        
+        
+        .footer-link a {
+            color: #0d0d0d;
+            text-decoration: none;
+            margin-left: -40px;
+            font-size: 1.3rem;
+        }
+        
+        .social-icons {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+        }
+        
+        .social-icons li {
+            margin: 0 10px;
+            
+        }
+        
+        .footer-second-s {
+            text-align: center;
+            margin-top: 20px;
+        }
+        
+        .social-li {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            
+        }
+        
+        .social-li li {
+            margin: 0 10px;
+            position: relative;
+        }
+        
+        .social-li li a {
+            position: relative;
+            z-index: 1; /* Poner sobre la línea */
+        }
+        
+        .footer-line {
+            width: 80%;
+            height: 1px;
+            background-color: #73a5c1; /* Color de la línea */
+            margin-top: 20px;
+            margin-left: auto; /* Margen automático a la izquierda */
+            margin-right: auto; /* Margen automático a la derecha */
+        }
+        
+        
+        .p {
+            text-align: center;
+            font-size: 10px;
+            color: #0b0b0b;
+            margin-top: 10px;
+        }
+        
+        .footer-bo input[type="email"],
+        .footer-bo textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            background-color: #fff; /* Background color for the input fields */
+            border: 1px solid #f1f5f6;
+            border-radius: 5px;
+            box-sizing: border-box;
+            color: #0d0c0c; 
+            resize: none !important;
+        }
+        
+        
+        .footer-bo button {
+            width: 100%; /* Hace que el botón ocupe todo el ancho del contenedor */
+            background-color: #f7fafb;
+            color: rgb(7, 7, 7);
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        
+        .footer-bo button:hover {
+            background-color: #14c46c;
+        }
+        
+        .footer-link {
+            margin-top: 1rem;
+            margin-left: 50px;
+        }
+        
+        .footer-secti {
+            margin-bottom: 10px;
+        }
+        
+        .quick-contact input,
+        .quick-contact textarea {
+            margin-bottom: 15px; /* Ajustado para uniformidad */
+        }
+        {% comment %} ...... {% endcomment %}
+        .quick-contact {
+            background-color: rgb(67, 152, 180); /* El color de fondo que combina con el pie de página */
+            padding: 20px;
+            border-radius: 8px; /* Bordes redondeados para el formulario */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra para dar profundidad */
+            width: 100%; /* Ajusta el ancho según sea necesario */
+            box-sizing: border-box;
+        }
+        
+        .quick-contact h2 {
+            color: #fff; /* Título del formulario en color blanco */
+            margin-bottom: 16px; /* Espacio entre el título y el campo de email */
+        }
+        
+        .quick-contact input[type="email"],
+        .quick-contact textarea {
+            width: calc(100% - 20px); /* Se calcula el 100% menos el padding */
+            padding: 10px;
+            margin-bottom: 16px; /* Espacio entre los campos de texto */
+            border: 1px solid #556d6d; 
+            background-color: #ebebeb; 
+            color: black;
+            border-radius: 5px; 
+            resize: none !important;
+        }
+        
+        
+        .quick-contact input[type="email"]:focus,
+        .quick-contact textarea:focus {
+            outline: none; /* Elimina el contorno al enfocar */
+            border: 2px solid #a39999; /* Cambia el color del borde al enfocar */
+        }
+        
+        .quick-contact button {
+            width: 100%; /* Ajusta el botón para que se expanda al 100% del formulario */
+            padding: 10px 0; /* Padding superior e inferior para el botón */
+            border: none; /* Elimina el borde del botón */
+            background-color: #0d0c0c; /* Color de fondo del botón */
+            color: #fff; /* Texto del botón en color blanco */
+            border-radius: 4px; /* Bordes redondeados para el botón */
+            cursor: pointer; /* Cursor en forma de mano al pasar sobre el botón */
+            transition: background-color 0.3s; /* Transición suave para el color de fondo */
+        }
+        
+        .quick-contact button:hover {
+            background-color: #a568a7; /* Cambia el color de fondo al pasar el cursor */
+        }
+        .social-li a {
+            font-size: 24px; /* Tamaño del icono */
+            color: white; /* Color del icono */
+            transition: color 0.3s ease; /* Transición suave para el efecto hover */
+        }
+        
+        .social-li a:hover {
+            color: black; /* Cambia el color al hacer hover */
+            /* Puedes agregar otros estilos que desees para el hover aquí */
+        }
+        .in-title {
+            font-weight: bold; /* Hace el texto en negrita */
+            text-transform: uppercase; /* Convierte el texto a mayúsculas */
+            margin-bottom: 16px; /* Agrega espacio debajo del título */
+            font-size: 18px; /* Ajusta el tamaño del texto según sea necesario */
+        }
+        
+        .in-content {
+            text-align: justify; /* Justifica el contenido */
+            margin-top: 16px; /* Agrega espacio arriba del contenido para separarlo del título */
+        }
+        .contact-title {
+            font-weight: bold;
+            text-transform: uppercase;
+            margin-bottom: 20px; /* Espacio debajo del título */
+            font-size: 18px; /* Ajusta el tamaño del texto según sea necesario */
+            color: #fff; /* Color del texto */
+        }
+        
+        .contact-description {
+            text-align: justify;
+            margin-bottom: 20px; 
+        }
+        
+        .contact-details {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            margin-top: 2rem
+        }
+        
+        .contact-details li {
+            display: flex;
+            align-items: center; /* Alinea los íconos con el texto */
+            margin-bottom: -1px; /* Espacio entre cada elemento de contacto */
+        }
+        
+        .contact-icon {
+            /* Ajusta el tamaño y el color de tus íconos aquí si es necesario */
+            margin-right: 6px; /* Espacio entre el ícono y el texto */
+            font-size: 16px; /* Tamaño del ícono */
+        }
+        
+        .contact-text {
+            color: #d9dee3;
+            font-weight: bold;
+        }
+        .contact-icon i {
+            margin-right: 10px; /* Espacio entre el ícono y el texto */
+            color: #fff; /* O el color que prefieras para tus iconos */
+            /* Otros estilos que quieras aplicar a los iconos */
+        }
+    
+    
+    
+        
+        .footer-secti {
+            flex: 1;
+            padding: 20px;
+            margin-right: 20px; 
+        }
+        
+       
+        .footer-sections-container {
+            display: flex;
+            justify-content: flex-start; /* O utiliza 'center' si prefieres centrar todo el contenido en el contenedor */
+            flex-wrap: wrap;
+        }
+        
+        .footer-secti {
+            margin-right: 15px;
+            margin-left: 15px; 
+           
+        }
+        
+        /* Si deseas asegurarte de que el último elemento no tenga un margen a la derecha */
+        .footer-secti:last-child {
+            margin-right: 0;
+        }
+        
+    </style>
+      <body>
+        <div id="yy-page" itemscope itemtype="http://schema.org/LocalBusiness">
+            <header class="yy-main-header">
+                <div class="yy-logo-wrap" itemprop="logo">
+                    <img src="../../../images/logoo.jpg" alt="Logo Image">
+                </div>
+                <nav class="yy-nav-desktop">
+                    <ul class="yy-menu-list">
+                        <li><a href="../../../index.html">Inicio</a></li>
+                        <li class="yy-menu-parent">
+                            Categorias
+                            <ul class="yy-sub-menu">
+                                <li><a href="../../costa.html">Costa</a></li>
+                                <li><a href="../../sierra.html">Sierra</a></li>
+                                <li><a href="../../selva.html">Selva</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="../../../nosotros.html">Nosotros</a></li>
+                        <li><a href="../../../blog.html">Blog</a></li>
+                    </ul>
+                </nav>
+            </header>
+        </div>
+
+
+
+    <!-- Carousel Start -->
+    <div class="container-fluid p-0">
+        <div id="header-carousel" class="carousel slide" data-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img class="w-100" src="img/h2.jpg" alt="Image">
+                    <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
+                        <div class="p-3" style="max-width: 900px;">
+                            <h4 class="text-white text-uppercase mb-md-3">Viajes & Excursiones</h4>
+                            <h1 class="display-3 text-white mb-md-4">
+                                Descubra lugares increíbles con nosotros</h1>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img class="w-100" src="img/h3.jpg" alt="Image">
+                    <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
+                        <div class="p-3" style="max-width: 900px;">
+                            <h4 class="text-white text-uppercase mb-md-3">Viajes & Excursiones</h4>
+                            <h1 class="display-3 text-white mb-md-4">
+                               Los destinos principales de nuestra Costa</h1>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img class="w-100" src="img/h1.jpg" alt="Image">
+                    <div class="carousel-caption d-flex flex-column align-items-center justify-content-center">
+                        <div class="p-3" style="max-width: 900px;">
+                            <h4 class="text-white text-uppercase mb-md-3">Viajes & Excursiones</h4>
+                            <h1 class="display-3 text-white mb-md-4">
+                                Sumérgete en la belleza del mundo con nuestros viajes y excursiones. </h1>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <a class="carousel-control-prev" href="#header-carousel" data-slide="prev">
+                <div class="btn btn-dark" style="width: 45px; height: 45px;">
+                    <span class="carousel-control-prev-icon mb-n2"></span>
+                </div>
+            </a>
+            <a class="carousel-control-next" href="#header-carousel" data-slide="next">
+                <div class="btn btn-dark" style="width: 45px; height: 45px;">
+                    <span class="carousel-control-next-icon mb-n2"></span>
+                </div>
+            </a>
+        </div>
+    </div>
+    <!-- Carousel End -->
+
+
+    <!-- About Start -->
+    <div class="container-fluid py-5">
+        <div class="container pt-5">
+            <div class="row">
+                <div class="col-lg-6" style="min-height: 500px;">
+                    <div class="position-relative h-100">
+                        <img class="position-absolute w-100 h-100" src="img/person-hotel.jpg" style="object-fit: cover;">
+                    </div>
+                </div>
+                <div class="col-lg-6 pt-5 pb-lg-5">
+                    <div class="about-text bg-white p-4 p-lg-5 my-lg-5">
+                        <h6 class="text-primary text-uppercase" style="letter-spacing: 5px;">Experiencia hotelera prioritaria.</h6>
+                        <h1 class="mb-3">Consejos y recomendaciones de hoteles</h1>
+                        <p> En nuestro espacio dedicado a los viajes, te proporcionamos detalles  sobre una amplia variedad de hoteles top. Nuestro equipo está comprometido en brindarte la información más actualizada y relevante para ayudarte a encontrar el alojamiento perfecto que se adapte a tus necesidades y preferencias.
+                        </p>
+                        <div class="row mb-4">
+                            <div class="col-6">
+                                <img class="img-fluid" src="img/recomendaciones.jpg" alt="">
+                            </div>
+                            <div class="col-6">
+                                <img class="img-fluid" src="img/recomendaciones2.jpg" alt="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- About End -->
+
+ <!-- Service Start -->
+ <div class="container-fluid py-5">
+    <div class="container pt-5 pb-3">
+        <div class="text-center mb-3 pb-3">
+            <h6 class="text-primary text-uppercase" style="letter-spacing: 5px;">SERVICIOS</h6>
+            <h1>Guía de Hoteles</h1>
+        </div>
+        <div class="row">
+            <div class="col-lg-4 col-md-6 mb-4">
+                <div class="service-item bg-white text-center mb-2 py-5 px-4">
+                    <i class="fa fa-2x fa-route mx-auto mb-4"></i>
+                    <h5 class="mb-2">Guía de Viaje</h5>
+                    <p class="m-0">Nuestra guía te lleva a través de los rincones más encantadores de Lima.</p>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 mb-4">
+                <div class="service-item bg-white text-center mb-2 py-5 px-4">
+                    <i class="fa fa-2x fa-ticket-alt mx-auto mb-4"></i>
+                    <h5 class="mb-2">Reserva de Boletos</h5>
+                    <p class="m-0">Facilitamos la reserva de tus boletos para vuelos y actividades locales.</p>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-6 mb-4">
+                <div class="service-item bg-white text-center mb-2 py-5 px-4">
+                    <i class="fa fa-2x fa-hotel mx-auto mb-4"></i>
+                    <h5 class="mb-2">Reserva de Hotel</h5>
+                    <p class="m-0">Encuentra el alojamiento perfecto para tu estadía en Lima.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Service End -->
+
+ 
+
+
+    <!-- Destination Start -->
+    <div class="container-fluid py-5">
+        <div class="container pt-5 pb-3">
+            <div class="text-center mb-3 pb-3">
+                <h6 class="text-primary text-uppercase" style="letter-spacing: 5px;">Departementos</h6>
+                <h1> Los hoteles top en la  Costa</h1>
+            </div>
+            <div class="row">
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="destination-item position-relative overflow-hidden mb-2">
+                        <img class="img-fluid" src="../images/blog/la-hacienda-bahia-paracas.jpg" alt="">
+                        <a class="destination-overlay text-white text-decoration-none" href="hoteles_lima.html">
+                            <h5 class="text-white">Miraflores Park, A Belmond </h5>
+                            <span>20 Lima</span>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="destination-item position-relative overflow-hidden mb-2">
+                        <img class="img-fluid" src="../images/blog/country-club-lima-hotel-lobby-scaled.jpg" alt="">
+                        <a class="destination-overlay text-white text-decoration-none" href="">
+                            <h5 class="text-white">Country Club</h5>
+                            <span>10 Lima</span>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="destination-item position-relative overflow-hidden mb-2">
+                        <img class="img-fluid" src="../images/blog/paracas_H.jpg" alt="">
+                        <a class="destination-overlay text-white text-decoration-none" href="">
+                            <h5 class="text-white">La Hacienda Bahía Paracas</h5>
+                            <span>100 Lima</span>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="destination-item position-relative overflow-hidden mb-2">
+                        <img class="img-fluid" src="../images/blog/exterior.jpg" alt="">
+                        <a class="destination-overlay text-white text-decoration-none" href="">
+                            <h5 class="text-white">JW Marriott Hotel</h5>
+                            <span>100  Lima</span>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="destination-item position-relative overflow-hidden mb-2">
+                        <img class="img-fluid" src="../images/blog/dco-galeria004.jpg" alt="">
+                        <a class="destination-overlay text-white text-decoration-none" href="">
+                            <h5 class="text-white">DCO Suites, Lounge & Spa</h5>
+                            <span>100 Lima</span>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="destination-item position-relative overflow-hidden mb-2">
+                        <img class="img-fluid" src="../images/blog/arennas-piscina-palmeras.jpg" alt="">
+                        <a class="destination-overlay text-white text-decoration-none" href="">
+                            <h5 class="text-white">Arennas Mancora</h5>
+                            <span>10 Lima</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Destination Start -->
+
+
+
+
+   
+
+    <!-- Packages Start -->
+    <div class="container-fluid py-5">
+        <div class="container pt-5 pb-3">
+            <div class="text-center mb-3 pb-3">
+                <h6 class="text-primary text-uppercase" style="letter-spacing: 5px;">PAQUETES</h6>
+                <h1>Paquetes de Turismo en Lima</h1>
+            </div>
+            <div class="row">
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="package-item bg-white mb-2">
+                        <img class="img-fluid" src="img/package-1.jpg" alt="">
+                        <div class="p-4">
+                            <div class="d-flex justify-content-between mb-3">
+                                <small class="m-0"><i class="fa fa-map-marker-alt text-primary mr-2"></i>Lima</small>
+                                <small class="m-0"><i class="fa fa-calendar-alt text-primary mr-2"></i>3 días</small>
+                                <small class="m-0"><i class="fa fa-user text-primary mr-2"></i>2 Persona</small>
+                            </div>
+                            <a class="h5 text-decoration-none" href="">Iberostar Selection Miraflores</a>
+                            <div class="border-top mt-4 pt-4">
+                                <div class="d-flex justify-content-between">
+                                    <h6 class="m-0"><i class="fa fa-star text-primary mr-2"></i>4.5 <small>(250)</small></h6>
+                                    <h5 class="m-0">$350</h5>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="package-item bg-white mb-2">
+                        <img class="img-fluid" src="img/package-2.jpg" alt="">
+                        <div class="p-4">
+                            <div class="d-flex justify-content-between mb-3">
+                                <small class="m-0"><i class="fa fa-map-marker-alt text-primary mr-2"></i>Lima</small>
+                                <small class="m-0"><i class="fa fa-calendar-alt text-primary mr-2"></i>3 días</small>
+                                <small class="m-0"><i class="fa fa-user text-primary mr-2"></i>2 Persona</small>
+                            </div>
+                            <a class="h5 text-decoration-none" href="">Hyatt Centric San Isidro Lima</a>
+                            <div class="border-top mt-4 pt-4">
+                                <div class="d-flex justify-content-between">
+                                    <h6 class="m-0"><i class="fa fa-star text-primary mr-2"></i>4.5 <small>(250)</small></h6>
+                                    <h5 class="m-0">$350</h5>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="package-item bg-white mb-2">
+                        <img class="img-fluid" src="img/package-3.jpg" alt="">
+                        <div class="p-4">
+                            <div class="d-flex justify-content-between mb-3">
+                                <small class="m-0"><i class="fa fa-map-marker-alt text-primary mr-2"></i>Lima</small>
+                                <small class="m-0"><i class="fa fa-calendar-alt text-primary mr-2"></i>3 días</small>
+                                <small class="m-0"><i class="fa fa-user text-primary mr-2"></i>2 Persona</small>
+                            </div>
+                            <a class="h5 text-decoration-none" href=""> Hotel Estelar Miraflores</a>
+                            <div class="border-top mt-4 pt-4">
+                                <div class="d-flex justify-content-between">
+                                    <h6 class="m-0"><i class="fa fa-star text-primary mr-2"></i>4.5 <small>(250)</small></h6>
+                                    <h5 class="m-0">$350</h5>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="package-item bg-white mb-2">
+                        <img class="img-fluid" src="img/package-4.jpg" alt="">
+                        <div class="p-4">
+                            <div class="d-flex justify-content-between mb-3">
+                                <small class="m-0"><i class="fa fa-map-marker-alt text-primary mr-2"></i>Lima</small>
+                                <small class="m-0"><i class="fa fa-calendar-alt text-primary mr-2"></i>3 días</small>
+                                <small class="m-0"><i class="fa fa-user text-primary mr-2"></i>2 Persona</small>
+                            </div>
+                            <a class="h5 text-decoration-none" href="">Pullman Lima Miraflores</a>
+                            <div class="border-top mt-4 pt-4">
+                                <div class="d-flex justify-content-between">
+                                    <h6 class="m-0"><i class="fa fa-star text-primary mr-2"></i>4.5 <small>(250)</small></h6>
+                                    <h5 class="m-0">$350</h5>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="package-item bg-white mb-2">
+                        <img class="img-fluid" src="img/package-5.jpg" alt="">
+                        <div class="p-4">
+                            <div class="d-flex justify-content-between mb-3">
+                                <small class="m-0"><i class="fa fa-map-marker-alt text-primary mr-2"></i>Lima</small>
+                                <small class="m-0"><i class="fa fa-calendar-alt text-primary mr-2"></i>3 días</small>
+                                <small class="m-0"><i class="fa fa-user text-primary mr-2"></i>2 Persona</small>
+                            </div>
+                            <a class="h5 text-decoration-none" href="">Holiday Inn Lima Airport</a>
+                            <div class="border-top mt-4 pt-4">
+                                <div class="d-flex justify-content-between">
+                                    <h6 class="m-0"><i class="fa fa-star text-primary mr-2"></i>4.5 <small>(250)</small></h6>
+                                    <h5 class="m-0">$350</h5>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="package-item bg-white mb-2">
+                        <img class="img-fluid" src="img/package-6.jpg" alt="">
+                        <div class="p-4">
+                            <div class="d-flex justify-content-between mb-3">
+                                <small class="m-0"><i class="fa fa-map-marker-alt text-primary mr-2"></i>Lima</small>
+                                <small class="m-0"><i class="fa fa-calendar-alt text-primary mr-2"></i>3 días</small>
+                                <small class="m-0"><i class="fa fa-user text-primary mr-2"></i>2 Persona</small>
+                            </div>
+                            <a class="h5 text-decoration-none" href="">Estelar Apartamentos Bellavista</a>
+                            <div class="border-top mt-4 pt-4">
+                                <div class="d-flex justify-content-between">
+                                    <h6 class="m-0"><i class="fa fa-star text-primary mr-2"></i>4.5 <small>(250)</small></h6>
+                                    <h5 class="m-0">$350</h5>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="package-item bg-white mb-2">
+                        <img class="img-fluid" src="img/package-7.jpg" alt="">
+                        <div class="p-4">
+                            <div class="d-flex justify-content-between mb-3">
+                                <small class="m-0"><i class="fa fa-map-marker-alt text-primary mr-2"></i>Lima</small>
+                                <small class="m-0"><i class="fa fa-calendar-alt text-primary mr-2"></i>3 días</small>
+                                <small class="m-0"><i class="fa fa-user text-primary mr-2"></i>2 Persona</small>
+                            </div>
+                            <a class="h5 text-decoration-none" href="">Costa del Sol Wyndham Lima </a>
+                            <div class="border-top mt-4 pt-4">
+                                <div class="d-flex justify-content-between">
+                                    <h6 class="m-0"><i class="fa fa-star text-primary mr-2"></i>4.5 <small>(250)</small></h6>
+                                    <h5 class="m-0">$350</h5>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="package-item bg-white mb-2">
+                        <img class="img-fluid" src="img/package-8.jpg" alt="">
+                        <div class="p-4">
+                            <div class="d-flex justify-content-between mb-3">
+                                <small class="m-0"><i class="fa fa-map-marker-alt text-primary mr-2"></i>Lima</small>
+                                <small class="m-0"><i class="fa fa-calendar-alt text-primary mr-2"></i>3 días</small>
+                                <small class="m-0"><i class="fa fa-user text-primary mr-2"></i>2 Persona</small>
+                            </div>
+                            <a class="h5 text-decoration-none" href="">Aloft Lima Miraflores</a>
+                            <div class="border-top mt-4 pt-4">
+                                <div class="d-flex justify-content-between">
+                                    <h6 class="m-0"><i class="fa fa-star text-primary mr-2"></i>4.5 <small>(250)</small></h6>
+                                    <h5 class="m-0">$350</h5>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="package-item bg-white mb-2">
+                        <img class="img-fluid" src="img/package-9.jpg" alt="">
+                        <div class="p-4">
+                            <div class="d-flex justify-content-between mb-3">
+                                <small class="m-0"><i class="fa fa-map-marker-alt text-primary mr-2"></i>Lima</small>
+                                <small class="m-0"><i class="fa fa-calendar-alt text-primary mr-2"></i>3 días</small>
+                                <small class="m-0"><i class="fa fa-user text-primary mr-2"></i>2 Persona</small>
+                            </div>
+                            <a class="h5 text-decoration-none" href="">Hilton Lima Miraflores</a>
+                            <div class="border-top mt-4 pt-4">
+                                <div class="d-flex justify-content-between">
+                                    <h6 class="m-0"><i class="fa fa-star text-primary mr-2"></i>4.5 <small>(250)</small></h6>
+                                    <h5 class="m-0">$350</h5>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Packages End -->
+
+
+    <!-- Registration Start -->
+    <div class="container-fluid bg-registration py-5" style="margin: 90px 0;">
+        <div class="container py-5">
+            <div class="row align-items-center">
+                <div class="col-lg-7 mb-5 mb-lg-0">
+                    <div class="mb-4">
+                        <h6 class="text-primary text-uppercase" style="letter-spacing: 5px;">MEGA OFERTA</h6>
+                        <h1 class="text-white"><span class="text-primary">30% de</span> descuento</h1>
+                    </div>
+                    <p class="text-white">Invidunt lorem justo sanctus clita. Erat lorem labore ea, justo dolor lorem ipsum ut sed eos,
+                        ipsum et dolor kasd sit ea justo. Erat justo sed sed diam. Ea et erat ut sed diam sea ipsum est
+                        dolor</p>
+                    <ul class="list-inline text-white m-0">
+                        <li class="py-2"><i class="fa fa-check text-primary mr-3"></i>Labore eos amet dolor amet diam</li>
+                        <li class="py-2"><i class="fa fa-check text-primary mr-3"></i>Etsea et sit dolor amet ipsum</li>
+                        <li class="py-2"><i class="fa fa-check text-primary mr-3"></i>Diam dolor diam elitripsum vero.</li>
+                    </ul>
+                </div>
+                <div class="col-lg-5">
+                    <div class="card border-0">
+                        <div class="card-header bg-primary text-center p-4">
+                            <h1 class="text-white m-0">Regístrate ahora</h1>
+                        </div>
+                        <div class="card-body rounded-bottom bg-white p-5">
+                            <form>
+                                <div class="form-group">
+                                    <input type="text" class="form-control p-4" placeholder="Tu nombre" required="required" />
+                                </div>
+                                <div class="form-group">
+                                    <input type="email" class="form-control p-4" placeholder="Tu correo " required="required" />
+                                </div>
+                                <div class="form-group">
+                                    <select class="custom-select px-4" style="height: 47px;">
+                                        <option selected>Selecciona tu destino</option>
+                                        <option value="1">destino 1</option>
+                                        <option value="2">destino 2</option>
+                                        <option value="3">destino 2</option>
+                                    </select>
+                                </div>
+                                <div>
+                                    <button class="btn btn-primary btn-block py-3" type="submit">Registrate ahora</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Registration End -->
+
+
+    <!-- Team Start -->
+    <div class="container-fluid py-5">
+        <div class="container pt-5 pb-3">
+            <div class="text-center mb-3 pb-3">
+                <h6 class="text-primary text-uppercase" style="letter-spacing: 5px;">GUÍAS</h6>
+                <h1>Descubre y Ahorra</h1>
+            </div>
+            <div class="row">
+                <div class="col-lg-3 col-md-4 col-sm-6 pb-2">
+                    <div class="team-item bg-white mb-4">
+                        <div class="team-img position-relative overflow-hidden">
+                            <img class="img-fluid w-100" src="img/team-1.jpg" alt="">
+                            <div class="team-social">
+                                <a class="btn btn-outline-primary btn-square" href=""><i class="fab fa-twitter"></i></a>
+                                <a class="btn btn-outline-primary btn-square" href=""><i class="fab fa-facebook-f"></i></a>
+                                <a class="btn btn-outline-primary btn-square" href=""><i class="fab fa-instagram"></i></a>
+                                <a class="btn btn-outline-primary btn-square" href=""><i class="fab fa-linkedin-in"></i></a>
+                            </div>
+                        </div>
+                        <div class="text-center py-4">
+                            <h5 class="text-truncate">Iberostar Selection Miraflores</h5>
+                            <p class="m-0 p-parrafo">El Iberostar Selection Miraflores se encuentra en Lima, a 500 metros de la playa Redondo, y ofrece alojamiento con piscina , aparcamiento privado gratuito, centro de fitness y terraza.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-4 col-sm-6 pb-2">
+                    <div class="team-item bg-white mb-4">
+                        <div class="team-img position-relative overflow-hidden">
+                            <img class="img-fluid w-100" src="img/team-2.jpg" alt="">
+                            <div class="team-social">
+                                <a class="btn btn-outline-primary btn-square" href=""><i class="fab fa-twitter"></i></a>
+                                <a class="btn btn-outline-primary btn-square" href=""><i class="fab fa-facebook-f"></i></a>
+                                <a class="btn btn-outline-primary btn-square" href=""><i class="fab fa-instagram"></i></a>
+                                <a class="btn btn-outline-primary btn-square" href=""><i class="fab fa-linkedin-in"></i></a>
+                            </div>
+                        </div>
+                        <div class="text-center py-4">
+                            <h5 class="text-truncate">Tierra Viva Miraflores Centro</h5>
+                            <p class="m-0 p-parrafo">El Tierra Viva Miraflores Centro está ubicado en Lima, a 1,5 km de la playa Redondo, y ofrece alojamiento con wifi y aparcamiento privado gratuitos.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-4 col-sm-6 pb-2">
+                    <div class="team-item bg-white mb-4">
+                        <div class="team-img position-relative overflow-hidden">
+                            <img class="img-fluid w-100" src="img/team-3.jpg" alt="">
+                            <div class="team-social">
+                                <a class="btn btn-outline-primary btn-square" href=""><i class="fab fa-twitter"></i></a>
+                                <a class="btn btn-outline-primary btn-square" href=""><i class="fab fa-facebook-f"></i></a>
+                                <a class="btn btn-outline-primary btn-square" href=""><i class="fab fa-instagram"></i></a>
+                                <a class="btn btn-outline-primary btn-square" href=""><i class="fab fa-linkedin-in"></i></a>
+                            </div>
+                        </div>
+                        <div class="text-center py-4">
+                            <h5 class="text-truncate">Harmony Inn Miraflores</h5>
+                            <p class="m-0 p-parrafo">El Harmony Inn Miraflores se encuentra en Lima, a 2,1 km de la playa Redondo, y ofrece vistas a la ciudad, WiFi gratuita y aparcamiento privado gratuito.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-4 col-sm-6 pb-2">
+                    <div class="team-item bg-white mb-4">
+                        <div class="team-img position-relative overflow-hidden">
+                            <img class="img-fluid w-100" src="img/team-4.jpg" alt="">
+                            <div class="team-social">
+                                <a class="btn btn-outline-primary btn-square" href=""><i class="fab fa-twitter"></i></a>
+                                <a class="btn btn-outline-primary btn-square" href=""><i class="fab fa-facebook-f"></i></a>
+                                <a class="btn btn-outline-primary btn-square" href=""><i class="fab fa-instagram"></i></a>
+                                <a class="btn btn-outline-primary btn-square" href=""><i class="fab fa-linkedin-in"></i></a>
+                            </div>
+                        </div>
+                        <div class="text-center py-4">
+                            <h5 class="text-truncate">Casaroma Hostels</h5>
+                            <p class="m-0 p-parrafo">El Casaroma Hostels se encuentra en Lima, a 300 metros de la playa Redondo, y ofrece alojamiento con jardín, aparcamiento privado gratuito, salón compartido y terraza.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Team End -->
+
+
+    <!-- Testimonial Start -->
+    <div class="container-fluid py-5">
+        <div class="container py-5">
+            <div class="text-center mb-3 pb-3">
+                <h6 class="text-primary text-uppercase" style="letter-spacing: 5px;">GUÍAS</h6>
+                <h1>Top 4 Hoteles Boutique en Lima</h1>
+            </div>
+            <div class="owl-carousel testimonial-carousel">
+                <div class="text-center pb-4">
+                    <img class="img-fluid mx-auto" src="img/testimonial-1.jpg" style="width: 100px; height: 100px;" >
+                    <div class="testimonial-text bg-white p-4 mt-n5">
+                        <p class="mt-5">El Blu Hotel Boutique está muy bien situado en el distrito de Miraflores de Lima, a 1,4 km de Playa Redondo, a 1,7 km de la playa Waikiki y a 1,8 km de Playa Makaha. 
+                        </p>
+                        <h5 class="text-truncate">Blu Hotel Boutique</h5>
+                        <span>Calificación 9.7</span>
+                    </div>
+                </div>
+                <div class="text-center">
+                    <img class="img-fluid mx-auto" src="img/testimonial-2.jpg" style="width: 100px; height: 100px;" >
+                    <div class="testimonial-text bg-white p-4 mt-n5">
+                        <p class="mt-5">Autor ii ha llevado el espíritu de Autor al paseo marítimo de Miraflores. Dos hermosas palmeras destacan a lo lejos marcando la entrada a la casa blanca. 
+                        <h5 class="text-truncate">Fausto</h5>
+                        <span>Calificación 8.5</span>
+                    </div>
+                </div>
+                <div class="text-center">
+                    <img class="img-fluid mx-auto" src="img/testimonial-3.jpg" style="width: 100px; height: 100px;" >
+                    <div class="testimonial-text bg-white p-4 mt-n5">
+                        <p class="mt-5">Este hotel único y lujoso fue construido en 1927 y declarado Monumento Cultural. Completamente remodelado y finamente decorado con más de 300 piezas de arte y muebles coloniales prestados.
+                        </p>
+                        <h5 class="text-truncate">Hotel Country Club Lima</h5>
+                        <span>Calificación 9.8</span>
+                    </div>
+                </div>
+                <div class="text-center">
+                    <img class="img-fluid mx-auto" src="img/testimonial-4.jpg" style="width: 100px; height: 100px;" >
+                    <div class="testimonial-text bg-white p-4 mt-n5">
+                        <p class="mt-5"> El Hotel B está situado en el barrio de Barranco y ofrece alojamiento elegante con conexión Wi-Fi gratuita en Lima. El desayuno y la bebida de bienvenida están incluidos y el establecimiento alberga un restaurante. 
+                        </p>
+                       
+                        <h5 class="text-truncate">Hotel B</h5>
+                        <span>Calificación 9.2</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Testimonial End -->
+        <!-- Blog Start -->
+        <div class="container-fluid py-5">
+            <div class="container pt-5 pb-3">
+                <div class="text-center mb-3 pb-3">
+                    <h6 class="text-primary text-uppercase" style="letter-spacing: 5px;">NUESTRO BLOG</h6>
+                    <h1>Nuestros últimos artículos sobre hoteles</h1>
+                </div>
+                <div class="row pb-3">
+                    <div class="col-lg-4 col-md-6 mb-4 pb-2">
+                        <div class="blog-item">
+                            <div class="position-relative">
+                                <img class="img-fluid w-100" src="img/blog-1.jpg" alt="">
+                                <div class="blog-date">
+                                    <h6 class="font-weight-bold mb-n1">01</h6>
+                                    <small class="text-white text-uppercase">ART</small>
+                                </div>
+                            </div>
+                            <div class="bg-white p-4">
+                                <div class="d-flex mb-2">
+                                    <a class="text-primary text-uppercase text-decoration-none" href="https://gestion.pe/economia/empresas/costa-del-sol-gana-licitacion-de-hoteles-en-jorge-chavez-destinara-us-50-millones-noticia/">ADMIN</a>
+                                    <span class="text-primary px-2">|</span>
+                                    <a class="text-primary text-uppercase text-decoration-none" href="https://gestion.pe/economia/empresas/costa-del-sol-gana-licitacion-de-hoteles-en-jorge-chavez-destinara-us-50-millones-noticia/">HOTELES DE ENSUEÑO</a>
+                                </div>
+                                <a class="h5 m-0 text-decoration-none" href="https://gestion.pe/economia/empresas/costa-del-sol-gana-licitacion-de-hoteles-en-jorge-chavez-destinara-us-50-millones-noticia/">Descubre reseñas detalladas de hoteles exclusivos en destinos de todo el mundo. 
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 mb-4 pb-2">
+                        <div class="blog-item">
+                            <div class="position-relative">
+                                <img class="img-fluid w-100" src="img/blog-2.jpg" alt="">
+                                <div class="blog-date">
+                                    <h6 class="font-weight-bold mb-n1">02</h6>
+                                    <small class="text-white text-uppercase">ART</small>
+                                </div>
+                            </div>
+                            <div class="bg-white p-4">
+                                <div class="d-flex mb-2">
+                                    <a class="text-primary text-uppercase text-decoration-none" href="https://peru.ladevi.info/hoteles-a1252/42">Admin</a>
+                                    <span class="text-primary px-2">|</span>
+                                    <a class="text-primary text-uppercase text-decoration-none" href="https://peru.ladevi.info/hoteles-a1252/42">CONSEJOS DE RESERVAS</a>
+                                </div>
+                                <a class="h5 m-0 text-decoration-none" href="https://peru.ladevi.info/hoteles-a1252/42">Aprende trucos y consejos para encontrar las mejores ofertas en hoteles.</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6 mb-4 pb-2">
+                        <div class="blog-item">
+                            <div class="position-relative">
+                                <img class="img-fluid w-100" src="img/blog-3.jpg" alt="">
+                                <div class="blog-date">
+                                    <h6 class="font-weight-bold mb-n1">03</h6>
+                                    <small class="text-white text-uppercase">ART</small>
+                                </div>
+                            </div>
+                            <div class="bg-white p-4">
+                                <div class="d-flex mb-2">
+                                    <a class="text-primary text-uppercase text-decoration-none" href="https://picchutravel.com/es/experiencias-de-lujo-en-peru/">Admin</a>
+                                    <span class="text-primary px-2">|</span>
+                                    <a class="text-primary text-uppercase text-decoration-none" href="https://picchutravel.com/es/experiencias-de-lujo-en-peru/">
+                                        EXPERIENCIAS DE HUÉSPEDES
+                                        </a>
+                                </div>
+                                <a class="h5 m-0 text-decoration-none" href="https://picchutravel.com/es/experiencias-de-lujo-en-peru/">Lee las historias de personas reales sobre sus experiencias en hoteles. </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <footer class="site-footer" itemscope itemtype="http://schema.org/WPFooter">
+            <div class="con footer-sections-container">
+                <!-- Primera Columna -->
+                <div class="footer-secti">
+                    <header>
+                        <h2 class="in-title">Información</h2> 
+                    </header>
+                    <p  class="in-content">Explora nuevas aventuras y descubre más sobre Perú en nuestra página.</p>
+                    <ul class="contact-details">
+                        <li>
+                            <span class="contact-icon"><i class="fas fa-phone"></i></span>
+                            <span class="contact-text">903392728</span>
+                        </li>
+                        <li>
+                            <span class="contact-icon"><i class="fas fa-envelope"></i></span>
+                            <span class="contact-text">info@turisite.com</span>
+                        </li>
+                        <li>
+                            <span class="contact-icon"><i class="fas fa-map-marker-alt"></i></span>
+                            <span class="contact-text">Perú, La Libertad, Trujillo</span>
+                        </li>
+                    </ul>
+                </div>
+                
+                <!-- Segunda Columna -->
+                <div class="footer-secti">
+                    <header>
+                        <h2 class="in-title">ENLACES</h2> 
+                    </header>
+                    <ul class="footer-link " >
+                        <li><a href="../../../../index.html">Inicio</a></li>
+                        <li><a href="../../../../blog.html">Blog</a></li>
+                        <li><a href="../../../../nosotros.html">Nosotros</a></li>
+                        <li><a href="../../../../gastronomia.html">Gastronomía</a></li>
+                        <li><a href="../../../../ciudades.html">Ciudades</a></li>
+                        <li><a href="../../../../cultura.html">Cultura</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Tercera Columna -->
+                <div class="footer-secti">
+                    <header>
+                        <h2 class="in-title">DESCUBRE MAS</h2> 
+                    </header>
+                    <ul class="footer-link">
+                        <li><a href="../../../../categorias/selva.html">Selva</a></li>
+                        <li><a href="../../../../categorias/costa.html">Costa</a></li>
+                        <li><a href="../../../../categorias/sierra.html">Sierra</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Cuarta Columna -->
+                <div class="footer-secti">
+                    <header>
+                        <h2 class="in-title">CONTACTO</h2> 
+                    </header>
+                    <section class="quick-contact">
+                        <form action="tu-script-de-procesamiento" method="POST">
+                            <input type="email" name="email" placeholder="Tu Email*" required>
+                            <textarea name="message" placeholder="Escribe tu mensaje*" required></textarea>
+                            <button type="submit">Enviar mensaje</button>
+                        </form>
+                    </section>
+                </div>
+                
+            </div>
+            
+            <!-- Iconos de redes sociales -->
+            <div class="social-icons">
+                <ul class="social-li">
+
+
+                    <li><a href="#"><i class="fab fa-facebook-square"></i></a></li>
+                    <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                    <li><a href="#"><i class="fab fa-skype"></i></a></li>
+                    <li><a href="#"><i class="fab fa-youtube"></i></a></li>
+                    <li><a href="#"> <i class="fab fa-instagram"></i></a></li>
+                </ul>
+            </div>
+            
+            <!-- Línea y derechos de autor -->
+            <div class="footer-line"></div>
+            <p class="p">&copy; 2023 TuriWeb@gmail.com. Todos los derechos reservados.| 903392728</p>
+        </footer>
+
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="lib/tempusdominus/js/moment.min.js"></script>
+    <script src="lib/tempusdominus/js/moment-timezone.min.js"></script>
+    <script src="lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js"></script>
+
+    <!-- Contact Javascript File -->
+    <script src="mail/jqBootstrapValidation.min.js"></script>
+    <script src="mail/contact.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="js/main.js"></script>
+</body>
+
+</html>

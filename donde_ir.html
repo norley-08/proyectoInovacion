@@ -1,0 +1,74 @@
+<html>
+<head>
+    <style>
+        .info-box {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: white;
+            padding: 10px;
+            border: 1px solid #ccc;
+        }
+        .region-info {
+            margin-bottom: 10px;
+        }
+        .indicator-circle {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            display: inline-block;
+            margin-right: 5px;
+        }
+    </style>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+        google.charts.load('current', {
+            'packages': ['geochart'],
+            'mapsApiKey': 'TU_CLAVE_DE_API'
+        });
+        google.charts.setOnLoadCallback(drawRegionsMap);
+
+        function drawRegionsMap() {
+            var data = google.visualization.arrayToDataTable([
+                ['Region Code', 'Popularity'],
+                ['PE-AMA', 466],
+                ['PE-ANC', 300],
+                ['PE-APU', 150],
+                // ... otras regiones ...
+            ]);
+
+            var options = {
+                region: 'PE',
+                resolution: 'provinces',
+                colorAxis: { colors: ['lightgreen', 'green', 'darkgreen'] },
+                datalessRegionColor: 'gray' // Color para regiones sin datos
+            };
+
+            var chart = new google.visualization.GeoChart(document.getElementById('regions_div'));
+
+            google.visualization.events.addListener(chart, 'select', function () {
+                var selection = chart.getSelection();
+                if (selection.length > 0) {
+                    var regionName = data.getValue(selection[0].row, 0);
+                    // Muestra el nombre de la región en un elemento con id 'region-name'
+                    document.getElementById('region-name').textContent = regionName;
+                    // Cambia la imagen en un elemento con id 'region-image' según la región seleccionada
+                    document.getElementById('region-image').src = 'URL_DE_LA_IMAGEN_' + regionName + '.jpg';
+                }
+            });
+
+            chart.draw(data, options);
+        }
+    </script>
+</head>
+<body>
+    <div id="regions_div" style="width: 900px; height: 500px;"></div>
+    <div class="info-box">
+        <div class="region-info">
+            <div class="indicator-circle" style="background-color: lightgreen;"></div>
+            <span id="region-name">Nombre de la Región</span>
+        </div>
+        <img id="region-image" src="" alt="Imagen de la región" style="max-width: 100px; max-height: 100px;">
+    </div>
+</body>
+</html>

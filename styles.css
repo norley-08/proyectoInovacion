@@ -1,0 +1,113 @@
+#map-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: #ffffff; 
+}
+
+.amazonas {
+    fill: #4CAF50;
+    stroke: #000000;
+    stroke-width: 2;
+  }
+  
+
+.ancash {
+    fill: #2196F3; /* Azul */
+}
+
+.apurimac {
+    fill: #FFC107; /* Amarillo */
+}
+
+.arequipa {
+    fill: #FF5722; /* Naranja */
+}
+
+.ayacucho {
+    fill: #9C27B0; /* Morado */
+}
+
+.cajamarca {
+    fill: #607D8B; /* Gris */
+}
+
+.callao {
+    fill: #3F51B5; /* Azul Oscuro */
+}
+
+.cusco {
+    fill: #E91E63; /* Rosa */
+}
+
+.huancavelica {
+    fill: #00BCD4; /* Turquesa */
+}
+
+.huanuco {
+    fill: #8BC34A; /* Verde Claro */
+}
+
+.ica {
+    fill: #FF9800; /* Naranja Claro */
+}
+
+.junin {
+    fill: #673AB7; /* Violeta */
+}
+
+.la_libertad {
+    fill: #FFEB3B; /* Amarillo Claro */
+}
+
+.lambayeque {
+    fill: #9E9E9E; /* Gris Claro */
+}
+
+.lima {
+    fill: #F44336; /* Rojo */
+}
+
+.loreto {
+    fill: #2196F3; /* Azul */
+}
+
+.madre_de_dios {
+    fill: #4CAF50; /* Verde */
+}
+
+.moquegua {
+    fill: #FFC107; /* Amarillo */
+}
+
+.pasco {
+    fill: #FF5722; /* Naranja */
+}
+
+.piura {
+    fill: #9C27B0; /* Morado */
+}
+
+.san_martin {
+    fill: #607D8B; /* Gris */
+}
+
+.tacna {
+    fill: #3F51B5; /* Azul Oscuro */
+}
+
+.tumbes {
+    fill: #E91E63; /* Rosa */
+}
+
+.ucayali {
+    fill: #00BCD4; /* Turquesa */
+}
+
+
+.region_name {
+    font-size: 12px;
+    font-family: sans-serif;
+    text-anchor: middle;
+}

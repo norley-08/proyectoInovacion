@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="valor-correcto" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
+   
+<style>
+    
+.con {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.site-footer {
+    background-color: rgb(67, 152, 180);
+    color: #fff;
+    padding: 20px 0;
+}
+
+.footer-sections-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.footer-secti {
+    flex: 1;
+    margin: 0;
+    font-size: 12px;
+}
+
+.footer-bo {
+    padding: 20px;
+    font-size: 14px;
+    color: #0d0c0c;
+    border: 1px solid rgb(44, 120, 145); /* Bordes para resaltar la ubicación de las secciones, puedes eliminar esto si no lo deseas */
+}
+
+.footer-link a {
+    color: #0d0c0c;
+    text-decoration: none;
+}
+
+.footer-line {
+    border: 0;
+}
+
+.social-icons {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+}
+
+.social-icons li {
+    margin: 0 10px;
+}
+
+.footer-second-s {
+    text-align: center;
+    margin-top: 20px;
+    
+}
+  
+.social-li {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+}
+  
+.social-li li {
+    margin: 0 10px;
+    position: relative;
+}
+  
+
+  /* Estilo del icono */
+.social-li li a {
+    position: relative;
+    z-index: 1; /* Poner sobre la línea */
+}
+  
+.footer-line {
+    width: 100%;
+    margin-top: 20px;
+}
+.p{
+    text-align: center;
+    font-size: 16px;
+    color: #0d0c0c;
+    margin-top: 10px;
+}
+
+.footer a{
+    background-color: chartreuse;
+}
+.footer-bo input[type="email"],
+.footer-bo textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  background-color: rgb(67, 152, 180);
+  border: 1px solid #f1f5f6;
+  border-radius: 5px;
+  box-sizing: border-box;  
+}
+
+.footer-bo textarea {
+  height: 100px; /* Ajusta la altura según tus necesidades */
+}
+
+.footer-bo button {
+  background-color: #f7fbf8;
+  color: rgb(7, 7, 7);
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.footer-bo button:hover {
+  background-color: #14c46c;
+}
+.footer-link {
+    margin-bottom: 10px;
+}
+
+.footer-secti {
+    margin-bottom: 10px;
+}
+
+.quick-contact input,
+.quick-contact textarea {
+    margin-bottom: 0px;
+}.in{
+    margin-bottom: 15px;
+}
+</style>   
+    
+   
+   
+
+</head>
+<body>
+
+<footer class="site-footer" itemscope itemtype="http://schema.org/WPFooter">
+    <div class="footer-sections-container">
+        <!-- Primera Columna -->
+        <div class="footer-secti">
+            <div class="con">
+                <div class="footer-bo" itemprop="about">
+                    <header>
+                        <h2 class="in">Información</h2>
+                    </header>
+                    <p class="in">Explora nuevas aventuras y descubre más sobre Perú en nuestra página.</p>
+
+                    <h4><a href="tel:+9779813639131"><i class="fas fa-phone"></i> 903392728</a></h4>
+                    <h4><a href="mailto:info@turisite.com"><i class="fas fa-envelope"></i> info@turisite.com</a></h4>
+                    <h4><a href="#"><i class="fas fa-map-marker-alt"></i> Perú, La Libertad, Trujillo</a></h4>
+                </div>
+            </div>
+        </div>
+
+        <!-- Segunda Columna -->
+        <div class="footer-secti">
+            <div class="con">
+                <div class="footer-bo">
+                    <header>
+                        <h2>Enlaces</h2>
+                    </header>
+                    <ul>
+                        <li><a href="index.html">Inicio</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="nosotros.html">Nosotros</a></li>
+                        <li><a href="gastronomia.html">Gastronomía</a></li>
+                        <li><a href="ciudades.html">Ciudades</a></li>
+                        <li><a href="cultura.html">Cultura</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Tercera Columna -->
+        <div class="footer-secti">
+            <div class="con">
+                <div class="footer-bo">
+                    <header>
+                        <h2>Descubre más</h2>
+                    </header>
+                    <div class="footer-link">
+                        <a href="categorias/selva.html">Selva</a>
+                    </div>
+                    <div class="footer-link">
+                        <a href="categorias/costa.html">Costa</a>
+                    </div>
+                    <div class="footer-link">
+                        <a href="categorias/sierra.html">Sierra</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Cuarta Columna -->
+        <div class="footer-secti">
+            <div class="con">
+                <div class="footer-bo">
+                    <header>
+                        <h2>Contacto</h2>
+                    </header>
+                    <section class="quick-contact">
+                        <input type="email" name="email" placeholder="Tu Email*">
+                        <textarea placeholder="Escribe tu mensaje*"></textarea>
+                        <button>Enviar mensaje</button>
+                    </section>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Iconos de redes sociales -->
+    <div class="footer-second-s">
+        <div class="container">
+            <ul class="social-li">
+                <li><a href="#"><i class="fab fa-facebook-square fa-2x"></i></a></li>
+                <li><a href="#"><i class="fab fa-twitter fa-2x"></i></a></li>
+                <li><a href="#"><i class="fab fa-skype fa-2x"></i></a></li>
+                <li><a href="#"><i class="fab fa-youtube fa-2x"></i></a></li>
+                <li><a href="#"><i class="fab fa-instagram fa-2x"></i></a></li>
+            </ul>
+        </div>
+    </div>
+    
+    <!-- Pie de página -->
+    <p class="p">&copy; 2023 TuriWeb@gmail.com. Todos los derechos reservados.| <a href="/contacto">903392728</a></p>
+</footer>
+
+</body>
+</html>

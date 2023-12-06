@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tu Página</title>
+<style> 
+    /* navdegador*/
+    header {
+        background-color: rgb(67, 152, 180);
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+    
+    .main-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 2px;
+    }
+    
+    .logo-wrap img {
+        max-width: 35%;
+        height: 30%;
+    }
+    
+    .nav-desktop {
+        display: flex;
+        align-items: center;
+    }
+    
+    .menu-list {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        font-size: 20px;
+       margin-right: 50px;
+    }
+    
+    .menu-list li {
+        margin-right: 20px;
+    }
+    
+    .menu-list a {
+        text-decoration: none;
+        color: black;
+        font-weight: bold;
+    }
+    
+    .menu-parent {
+        position: relative;
+        color: black;
+    }
+    
+    .sub-menu {
+        display: none;
+        position: absolute;
+        color: black;
+        top: 100%;
+        left: 0;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        z-index: 10;
+    }
+    
+    .menu-parent.active .sub-menu {
+        display: block;
+    }
+    
+    /* Aumentar el espacio entre "Costa", "Sierra" y "Selva" */
+    .sub-menu li {
+        margin-bottom: 10px;
+    }
+</style>
+
+</head>
+<body>
+    <div id="page" itemscope itemtype="http://schema.org/LocalBusiness">
+        <header>
+            <div class="main-header">
+                <div class="logo-wrap" itemprop="logo">
+                    <img src="../images/logoo.jpg" alt="Logo Image">
+                    
+                </div>
+                <div class="nav-wrap">
+                    <nav class="nav-desktop">
+                        <ul class="menu-list">
+                            <li><a href="index.html">Inicio</a></li>
+                            <li class="menu-parent">
+                                Categorias
+                                <ul class="sub-menu">
+                                    <li><a href="categorias/costa.html">Costa</a></li>
+                                    <li><a href="categorias/sierra.html">Sierra</a></li>
+                                    <li><a href="categorias/selva.html">Selva</a></li>
+                                </ul>
+                            </li>
+                            <li><a href="nosotros.html">Nosotros</a></li>
+                            <li><a href="blog.html">Blog</a></li>
+
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </header>
+    </div>
+</body>
+</html>

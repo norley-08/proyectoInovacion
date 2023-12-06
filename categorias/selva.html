@@ -1,0 +1,1422 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    
+    <!--font-family-->
+		<link href="https://fonts.googleapis.com/css?family=Rufina:400,700" rel="stylesheet" />
+
+		<link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900" rel="stylesheet" />
+
+		<!-- TITLE OF SITE -->
+		<title>TuriWeb</title>
+
+        
+	
+        <link rel="stylesheet" type="text/css" href="../css/all.min.css">
+        <link rel="stylesheet" type="text/css" href="../inner-page-style.css">
+        <link rel="stylesheet" type="text/css" href="../style.css">
+
+
+
+		<link rel="shortcut icon" type="image/icon" href="assets/logo/favicon.png"/>
+		<link rel="stylesheet" href="assets/css/font-awesome.min.css" />
+		<link rel="stylesheet" href="assets/css/animate.css" />
+		<link rel="stylesheet" href="assets/css/hover-min.css">
+		<link rel="stylesheet"  href="assets/css/datepicker.css" >
+        <link rel="stylesheet" href="assets/css/owl.carousel.min.css">
+		<link rel="stylesheet" href="assets/css/owl.theme.default.min.css"/>
+        <link rel="stylesheet" href="assets/css/jquery-ui.min.css" />
+		<!--bootstrap.min.css-->
+		<link rel="stylesheet" href="assets/css/bootstrap.min.css" />
+		<link rel="stylesheet" href="assets/css/bootsnav.css"/>
+		<link rel="stylesheet" href="assets/css/style.css" />
+		<link rel="stylesheet" href="assets/css/responsive.css" />
+
+		
+	<link href="https://fonts.googleapis.com/css?family=Raleway:400,500,600,700" rel="stylesheet">
+
+
+</head>
+
+<style> 
+	.yy-main-header {
+		background-color: #1493bf; /* Color de fondo de la barra de navegación */
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		padding: 0;
+	}
+	
+	.yy-logo-wrap img {
+		max-width: 160px;
+		height: auto;
+		display: block; /* Asegúrate de que la imagen se muestre como bloque */
+		margin: 0 auto; /* Centra la imagen si es más pequeña que el contenedor */
+	}
+	
+	
+	.yy-menu-list {
+		list-style: none;
+		padding: 0;
+		margin: 0;
+		display: flex;
+		align-items: center; 
+		
+		margin-right: 70px;
+	}
+	
+	.yy-menu-list a, .yy-menu-list li {
+		text-decoration: none;
+		color: rgb(0, 0, 0); /* Color del texto de los enlaces */
+		font-weight: bold;
+		padding: 10px 15px;
+	}
+	
+	.yy-menu-parent {
+		position: relative;
+		cursor: pointer; /* Cambia el cursor para indicar que es desplegable */
+	}
+	
+	.yy-menu-parent::after {
+		content: "";
+		border: solid rgb(19, 19, 19);
+		border-width: 0 3px 3px 0;
+		display: inline-block;
+		padding: 3px;
+		margin-left: 10px;
+		position: absolute;
+		right: 0; /* Alinea la flecha hacia la derecha */
+		top: 50%; /* Alinea la flecha verticalmente */
+		transform: translateY(-50%) rotate(45deg); /* Centra y rota la flecha */
+	}
+	
+	.yy-menu-list > .yy-menu-parent:hover .yy-sub-menu {
+		display: block; /* Muestra el menú desplegable al pasar el mouse */
+	}
+	
+	.yy-sub-menu {
+		display: none; /* Oculta el menú desplegable por defecto */
+		position: absolute;
+		background-color: #fdfdfd; /* Color de fondo del menú desplegable */
+		box-shadow: 0 4px 8px rgba(0,0,0,0.2); /* Sombra para el menú desplegable */
+		padding: 12px 16px; /* Espaciado dentro del menú desplegable */
+		z-index: 200; /* Incrementa el z-index para asegurar que esté por encima de otros elementos */
+		margin-top: .5em; /* Espacio para la sombra */
+	}
+	
+
+	/* footer */
+	.con {
+		max-width: 1200px;
+		margin: 0 auto;
+		padding: 0 20px;
+	}
+	
+	.site-footer {
+		background-color: rgb(67, 152, 180);
+		color: #141313;
+		padding: 20px 0;
+		margin-top: 7rem;
+	}
+	
+	.footer-sections-container {
+		display: flex;
+		justify-content: space-between; /* Cambiado de 'space-around' para un mejor control del espacio */
+		flex-wrap: wrap;
+	}
+	
+	.footer-secti {
+		flex-basis: 20%; /* Cambiado de 'flex: 1' para tener un mejor control sobre el ancho */
+		margin: 0;
+		padding: 20px;
+		box-sizing: border-box;
+		font-size: 12px;
+	}
+	
+	
+	
+	.footer-link a {
+		color: #0d0d0d;
+		text-decoration: none;
+		margin-left: -40px;
+		font-size: 1.3rem;
+	}
+	
+	.social-icons {
+		list-style: none;
+		padding: 0;
+		margin: 0;
+		display: flex;
+		justify-content: center;
+	}
+	
+	.social-icons li {
+		margin: 0 10px;
+		
+	}
+	
+	.footer-second-s {
+		text-align: center;
+		margin-top: 20px;
+	}
+	
+	.social-li {
+		list-style: none;
+		padding: 0;
+		display: flex;
+		justify-content: center;
+		
+	}
+	
+	.social-li li {
+		margin: 0 10px;
+		position: relative;
+	}
+	
+	.social-li li a {
+		position: relative;
+		z-index: 1; /* Poner sobre la línea */
+	}
+	
+	.footer-line {
+		width: 80%;
+		height: 1px;
+		background-color: #73a5c1; /* Color de la línea */
+		margin-top: 20px;
+		margin-left: auto; /* Margen automático a la izquierda */
+		margin-right: auto; /* Margen automático a la derecha */
+	}
+	
+	
+	.p {
+		text-align: center;
+		font-size: 10px;
+		color: #0b0b0b;
+		margin-top: 10px;
+	}
+	
+	.footer-bo input[type="email"],
+	.footer-bo textarea {
+		width: 100%;
+		padding: 10px;
+		margin-bottom: 10px;
+		background-color: #fff; /* Background color for the input fields */
+		border: 1px solid #f1f5f6;
+		border-radius: 5px;
+		box-sizing: border-box;
+		color: #0d0c0c; 
+		resize: none !important;
+	}
+	
+	
+	.footer-bo button {
+		width: 100%; /* Hace que el botón ocupe todo el ancho del contenedor */
+		background-color: #f7fafb;
+		color: rgb(7, 7, 7);
+		padding: 10px 20px;
+		border: none;
+		border-radius: 5px;
+		cursor: pointer;
+	}
+	
+	.footer-bo button:hover {
+		background-color: #14c46c;
+	}
+	
+	.footer-link {
+		margin-top: 1rem;
+		margin-left: 50px;
+	}
+	
+	.footer-secti {
+		margin-bottom: 10px;
+	}
+	
+	.quick-contact input,
+	.quick-contact textarea {
+		margin-bottom: 15px; /* Ajustado para uniformidad */
+	}
+	{% comment %} ...... {% endcomment %}
+	.quick-contact {
+		background-color: rgb(67, 152, 180); /* El color de fondo que combina con el pie de página */
+		padding: 20px;
+		border-radius: 8px; /* Bordes redondeados para el formulario */
+		box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra para dar profundidad */
+		width: 100%; /* Ajusta el ancho según sea necesario */
+		box-sizing: border-box;
+	}
+	
+	.quick-contact h2 {
+		color: #fff; /* Título del formulario en color blanco */
+		margin-bottom: 16px; /* Espacio entre el título y el campo de email */
+	}
+	
+	.quick-contact input[type="email"],
+	.quick-contact textarea {
+		width: calc(100% - 20px); /* Se calcula el 100% menos el padding */
+		padding: 10px;
+		margin-bottom: 16px; /* Espacio entre los campos de texto */
+		border: 1px solid #556d6d; 
+		background-color: #ebebeb; 
+		color: black;
+		border-radius: 5px; 
+		resize: none !important;
+	}
+	
+	
+	.quick-contact input[type="email"]:focus,
+	.quick-contact textarea:focus {
+		outline: none; /* Elimina el contorno al enfocar */
+		border: 2px solid #a39999; /* Cambia el color del borde al enfocar */
+	}
+	
+	.quick-contact button {
+		width: 100%; /* Ajusta el botón para que se expanda al 100% del formulario */
+		padding: 10px 0; /* Padding superior e inferior para el botón */
+		border: none; /* Elimina el borde del botón */
+		background-color: #0d0c0c; /* Color de fondo del botón */
+		color: #fff; /* Texto del botón en color blanco */
+		border-radius: 4px; /* Bordes redondeados para el botón */
+		cursor: pointer; /* Cursor en forma de mano al pasar sobre el botón */
+		transition: background-color 0.3s; /* Transición suave para el color de fondo */
+	}
+	
+	.quick-contact button:hover {
+		background-color: #a568a7; /* Cambia el color de fondo al pasar el cursor */
+	}
+	.social-li a {
+		font-size: 24px; /* Tamaño del icono */
+		color: white; /* Color del icono */
+		transition: color 0.3s ease; /* Transición suave para el efecto hover */
+	}
+	
+	.social-li a:hover {
+		color: black; /* Cambia el color al hacer hover */
+		/* Puedes agregar otros estilos que desees para el hover aquí */
+	}
+	.in-title {
+		font-weight: bold; /* Hace el texto en negrita */
+		text-transform: uppercase; /* Convierte el texto a mayúsculas */
+		margin-bottom: 16px; /* Agrega espacio debajo del título */
+		font-size: 18px; /* Ajusta el tamaño del texto según sea necesario */
+	}
+	
+	.in-content {
+		text-align: justify; /* Justifica el contenido */
+		margin-top: 16px; /* Agrega espacio arriba del contenido para separarlo del título */
+	}
+	.contact-title {
+		font-weight: bold;
+		text-transform: uppercase;
+		margin-bottom: 20px; /* Espacio debajo del título */
+		font-size: 18px; /* Ajusta el tamaño del texto según sea necesario */
+		color: #fff; /* Color del texto */
+	}
+	
+	.contact-description {
+		text-align: justify;
+		margin-bottom: 20px; 
+	}
+	
+	.contact-details {
+		list-style: none;
+		padding: 0;
+		margin: 0;
+		margin-top: 2rem
+	}
+	
+	.contact-details li {
+		display: flex;
+		align-items: center; /* Alinea los íconos con el texto */
+		margin-bottom: -1px; /* Espacio entre cada elemento de contacto */
+	}
+	
+	.contact-icon {
+		/* Ajusta el tamaño y el color de tus íconos aquí si es necesario */
+		margin-right: 6px; /* Espacio entre el ícono y el texto */
+		font-size: 16px; /* Tamaño del ícono */
+	}
+	
+	.contact-text {
+		color: #d9dee3;
+		font-weight: bold;
+	}
+	.contact-icon i {
+		margin-right: 10px; /* Espacio entre el ícono y el texto */
+		color: #fff; /* O el color que prefieras para tus iconos */
+		/* Otros estilos que quieras aplicar a los iconos */
+	}
+
+
+
+	
+	.footer-secti {
+		flex: 1;
+		padding: 20px;
+		margin-right: 20px; 
+	}
+	
+   
+	
+	.footer-sections-container {
+		display: flex;
+		justify-content: flex-start; /* O utiliza 'center' si prefieres centrar todo el contenido en el contenedor */
+		flex-wrap: wrap;
+	}
+	
+	.footer-secti {
+		margin-right: 15px;
+		margin-left: 15px; 
+	   
+	}
+	
+	/* Si deseas asegurarte de que el último elemento no tenga un margen a la derecha */
+	.footer-secti:last-child {
+		margin-right: 0;
+	}
+	
+</style>
+
+<body>
+    <div id="yy-page" itemscope itemtype="http://schema.org/LocalBusiness">
+		<header class="yy-main-header">
+			<div class="yy-logo-wrap" itemprop="logo">
+				<img src="../../../images/logoo.jpg" alt="Logo Image">
+			</div>
+			<nav class="yy-nav-desktop">
+				<ul class="yy-menu-list">
+					<li><a href="../../../index.html">Inicio</a></li>
+					<li class="yy-menu-parent">
+						Categorias
+						<ul class="yy-sub-menu">
+							<li><a href="costa.html">Costa</a></li>
+							<li><a href="sierra.html">Sierra</a></li>
+							<li><a href="selva.html">Selva</a></li>
+						</ul>
+					</li>
+					<li><a href="../../../nosotros.html">Nosotros</a></li>
+					<li><a href="../../../blog.html">Blog</a></li>
+				</ul>
+			</nav>
+		</header>
+	</div>
+
+
+		<!--about-us start -->
+        <section id="home" class="about-us selva">
+            <div class="">
+                <div class="about-us-content">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="single-about-us">
+                                <div class="about-us-txt">
+                                    <h2>
+                                        ¿Listo Para Viajar Y Descubrir la Selva de Perú?
+                                    </h2>
+                                    <div class="about-btn">
+                                        <button class="about-view" onclick="window.location.href='https://www.ytuqueplanes.com/blog-viajero/nacional/viaja-a-la-selva-central-y-explora-la-naturaleza-del-peru';">
+                                            explorar
+                                        </button>
+                                    </div><!--/.about-btn-->
+                                </div><!--/.about-us-txt-->
+                            </div><!--/.single-about-us-->
+                        </div><!--/.col-->
+                        <div class="col-sm-0">
+                            <div class="single-about-us">
+                                <!-- Contenido adicional si es necesario -->
+                            </div><!--/.single-about-us-->
+                        </div><!--/.col-->
+                    </div><!--/.row-->
+                </div><!--/.about-us-content-->
+            </div><!--/.container-->
+        </section><!--/.about-us-->
+        
+		<!--about-us end -->
+
+		<!--travel-box start-->
+		<section  class="travel-box">
+        	<div class="container">
+        		<div class="row">
+        			<div class="col-md-12">
+        				<div class="single-travel-boxes">
+        					<div id="desc-tabs" class="desc-tabs">
+
+								<ul class="nav nav-tabs" role="tablist">
+                                    <li role="presentation" class="active">
+                                        <a href="assets/templatemo_511_journey/index_selva.html" >
+                                            <i class="fa fa-tree"></i>
+                                            Lugares turisticos
+                                        </a>
+                                    </li>
+                                
+                                    <li role="presentation">
+                                        <a href="../categorias/assets/free-travel-website-template/hoteles_selva.html"  class="active">
+                                            <i class="fa fa-building"></i>
+                                            Hospedajes
+                                        </a>
+                                    </li>
+                                
+									<li role="presentation">
+                                        <a href="../categorias/assets/glozzom/restaurantes_selva.html"  class="active">
+                                            <i class="fa fa-cutlery
+											"></i>
+                                            Restaurantes
+                                        </a>
+                                    </li>
+									  
+                                
+									<li role="presentation">
+                                        <a href="../categorias/assets/2093_flight/index.html"  class="active">
+                                            <i class="fa fa-car
+											"></i>
+                                            Transporte
+                                        </a>
+                                    </li>
+                                </ul>
+								</ul>
+								<div class="tab-content">
+                                    <div role="tabpanel" class="tab-pane active fade in" id="tours">
+                                        <div class="tab-para">
+                                            <div class="row">
+                                                <div class="col-lg-4 col-md-4 col-sm-12">
+                                                    <div class="single-tab-select-box">
+                                                    </div>
+                                                </div>
+                                
+                                                <div class="col">
+                                                    <div class="single-tab-select-box">
+                                                        <h2>Explora la belleza de la selva peruana.</h2>
+                                                        <hr style="margin-top: 1rem; border-width: 0.5px;">
+                                                        <p style="font-size: 14px;">La selva peruana te sorprenderá con su exuberante paisaje tropical, pueblos encantadores y tradiciones únicas. Desde la mística Iquitos hasta la impresionante Reserva Nacional Tambopata, cada rincón de la selva ofrece una experiencia inolvidable. Descubre la riqueza de la biodiversidad, explora antiguas culturas indígenas y maravíllate con los paisajes amazónicos. ¡La selva peruana te invita a vivir aventuras únicas!</p>
+                                                    </div>
+                                                </div>
+                                
+                                                <div class="row">
+                                                    <div class="clo-sm-7">
+                                                        <div class="about-btn travel-mrt-0 pull-right">
+                                                            <button id="ver-mas-btn" class="about-view travel-btn">
+                                                                Ver más
+                                                            </button><!--/.travel-btn-->
+                                                        </div><!--/.about-btn-->
+                                                    </div><!--/.col-->
+                                                    <script>
+                                                        document.getElementById("ver-mas-btn").addEventListener("click", function() {
+                                                            window.location.href = "https://www.ytuqueplanes.com/blog-viajero/nacional/viaja-a-la-selva-central-y-explora-la-naturaleza-del-peru";
+                                                        });
+                                                    </script>
+                                                </div><!--/.row-->
+                                            </div><!--/.tab-para-->
+                                        </div><!--/.tabpannel-->
+                                    </div><!--/.tab content-->
+                                </div>
+                                
+							</div><!--/.desc-tabs-->
+        				</div><!--/.single-travel-box-->
+        			</div><!--/.col-->
+        		</div><!--/.row-->
+        	</div><!--/.container-->
+
+        </section><!--/.travel-box-->
+		<!--travel-box end-->
+        <section id="service" class="service">
+            <div class="container">
+                <div style="display: flex; justify-content: center;">
+                    <div class="single-service-box" style="margin: 0 10px;">
+                        <div class="service-img">
+                            <img src="assets/images/service/s1.png" alt="service-icon" />
+                        </div><!--/.service-img-->
+                        <div class="service-content">
+                            <h2>
+                                <a href="#">
+                                    Información Local
+                                </a>
+                            </h2>
+                            <p>Descubre datos interesantes y detalles locales sobre los destinos turísticos que visitarás.</p>
+                        </div><!--/.service-content-->
+                    </div><!--/.single-service-box-->
+        
+                    <div class="single-service-box" style="margin: 0 10px;">
+                        <div class="service-img">
+                            <img src="assets/images/service/s2.png" alt="service-icon" />
+                        </div><!--/.service-img-->
+                        <div class="service-content">
+                            <h2>
+                                <a href="#">
+                                    Consejos de Viaje
+                                </a>
+                            </h2>
+                            <p>Encuentra consejos útiles para planificar tu viaje, desde la documentación necesaria hasta el mejor momento para visitar.</p>
+                        </div><!--/.service-content-->
+                    </div><!--/.single-service-box-->
+                </div><!--/.row-->
+            </div><!--/.container-->
+        </section>
+		<section id="gallery" class="gallery">
+			<div class="container">
+				<div class="gallery-details">
+					<div class="gallary-header text-center">
+						<h2>Lugares Principales</h2>
+						<p> No tengas miedo de explorar la selva peruana</p>
+					</div>
+					<div class="gallery-box">
+						<div class="gallery-content">
+						  	<div class="filtr-container">
+						  		<div class="row">
+						  			<div class="col-md-6">
+						  				<div class="filtr-item">
+											<img src="assets/images/gallary/rio-amazonas.jpg" alt="portfolio image"/>
+											<div class="item-title">
+												<a href="#"> Rio Amazonas</a>
+												<p><span>20 tours</span><span>15 Amazonas</span></p>
+											</div>
+										</div>
+						  			</div>
+						  			<div class="col-md-6">
+						  				<div class="filtr-item">
+											<img style="height: 300px; width: 600px;" src="https://denomades.s3.us-west-2.amazonaws.com/blog/wp-content/uploads/2019/08/06165326/kuelap-1.jpg" alt="portfolio image"/>
+											<div class="item-title">
+												<a href="#">Chachapoyas</a>
+												<p><span>12 tours</span><span>9 Amazonas</span></p>
+											</div>
+										</div>
+						  			</div>
+						  			<div class="col-md-4">
+						  				<div class="filtr-item">
+											<img style="height: 613px; width: 400px;"  src="assets/images/gallary/catarata-gocta.jpg" alt="portfolio image"/>
+											<div class="item-title">
+												<a href="#">Catarata Gocta </a>
+												<p><span>25 tours</span><span>10 Amazonas</span></p>
+											</div>
+										</div>
+						  			</div>
+						  			<div class="col-md-4">
+						  				<div class="filtr-item">
+											<img style="height: 200px; width: 400px;"  src="assets/images/gallary/viaje-a-iquitos.jpeg" alt="portfolio image"/>
+											<div class="item-title">
+												<a href="#">Iquitos </a>
+												<p><span>18 tours</span><span>9 Loreto</span></p>
+											</div> 
+										</div>
+						  			</div>
+						  			<div class="col-md-4">
+						  				<div class="filtr-item">
+											<img src="https://i.ytimg.com/vi/h22jLAZhV4Y/maxresdefault.jpg" alt="portfolio image"/>
+											<div class="item-title">
+												<a href="#">Tarapoto</a>
+												<p><span>14 tours</span><span>12 San Martín</span></p>
+											</div>
+										</div>
+						  			</div>
+						  			<div class="col-md-8">
+						  				<div class="filtr-item">
+											<img src="assets/images/gallary/The_Mackaw_Clay).jpeg" alt="portfolio image"/>
+											<div class="item-title">
+												<a href="#">R.N. de Tambopata</a>
+												<p><span>14 tours</span><span>6 Madre de Dios</span></p>
+											</div>
+										</div>
+						  			</div>
+
+						  		</div>
+
+						  	</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+		</section>
+
+
+		<!--discount-offer start-->
+		<section class="discount-offer">
+			<div class="container">
+				<div class="row">
+					<div class="col-sm-12">
+						<div class="dicount-offer-content text-center">
+							<h2>Conozca lugares asombrosos, conéctese con personas increíbles y cree recuerdos inolvidables. La vida es una aventura esperando a ser vivida. </h2>
+							<div class="campaign-timer">
+								<div id="timer">
+									<div class="time time-after" id="days">
+										<span></span>
+									</div><!--/.time-->
+									<div class="time time-after" id="hours">
+
+									</div><!--/.time-->
+									<div class="time time-after" id="minutes">
+
+									</div><!--/.time-->
+									<div class="time" id="seconds">
+										
+									</div>
+								</div>
+							</div>
+							<div class="about-btn">
+								<a href="https://www.elrincondesele.com/que-ver-en-peru-viaje/"><!-- Agrega la URL real en lugar de "URL_DE_TU_ENLACE" -->
+									<button class="about-view discount-offer-btn">ÚNETE AHORA</button>
+								</a>
+							</div><!--/.about-btn-->
+							
+
+
+						</div><!-- /.dicount-offer-content-->
+					</div><!-- /.col-->
+				</div><!-- /.row-->
+			</div><!-- /.container-->
+
+		</section><!-- /.discount-offer-->
+		<!--discount-offer end-->
+
+		<!--packages start-->
+		<section id="pack" class="packages">
+			<div class="container">
+				<div class="gallary-header text-center">
+					<h2>
+						Hospedajes
+					</h2>
+					<p style=" text-align: justify;width:70rem; margin: 0 auto;">
+						Desde lujosos eco-lodges con vistas a la exuberante selva hasta acogedoras posadas en pueblos rodeados de vegetación, Perú ofrece una amplia variedad de hospedajes para todos los gustos y presupuestos en la selva amazónica. Explora la biodiversidad única desde lodges cerca de reservas naturales, relájate en las orillas de ríos serpenteantes o aventúrate en la selva profunda en alojamientos ecológicos. Con hospitalidad excepcional y comodidades que se integran armoniosamente con el entorno, nuestros hospedajes te brindarán una experiencia inolvidable en el corazón de la selva peruana.
+					</p>
+				</div><!--/.gallery-header-->
+				<div class="packages-content">
+					<div class="row">
+
+						<div class="col-md-4 col-sm-6">
+							<div class="single-package-item">
+								<img src="assets/images/packages/405197984.jpg" alt="package-place">
+								<div class="single-package-item-txt">
+									<h3>Igocta andes lodge <span class="pull-right">$499</span></h3>
+									<div class="packages-para">
+										<p>
+											<span>
+												<i class="fa fa-angle-right"></i> 5 daays 6 nights
+											</span>
+											<i class="fa fa-angle-right"></i>  5 star accomodation
+										</p>
+										<p>
+											<span>
+												<i class="fa fa-angle-right"></i>  transportation
+											</span>
+											<i class="fa fa-angle-right"></i>  food facilities
+										 </p>
+									</div><!--/.packages-para-->
+									<div class="packages-review">
+										<p>
+											<i class="fa fa-star"></i>
+											<i class="fa fa-star"></i>
+											<i class="fa fa-star"></i>
+											<i class="fa fa-star"></i>
+											<i class="fa fa-star"></i>
+											<span>2544 review</span>
+										</p>
+									</div><!--/.packages-review-->
+									
+								</div>
+							</div>
+						</div>
+
+						<div class="col-md-4 col-sm-6">
+							<div class="single-package-item">
+								<img src="assets/images/packages/357A1375-1200x565.jpg" alt="package-place">
+								<div class="single-package-item-txt">
+									<h3>inkaterra reserva <span class="pull-right">$1499</span></h3>
+									<div class="packages-para">
+										<p>
+											<span>
+												<i class="fa fa-angle-right"></i> 5 daays 6 nights
+											</span>
+											<i class="fa fa-angle-right"></i>  5 star accomodation
+										</p>
+										<p>
+											<span>
+												<i class="fa fa-angle-right"></i>  transportation
+											</span>
+											<i class="fa fa-angle-right"></i>  food facilities
+										 </p>
+									</div><!--/.packages-para-->
+									<div class="packages-review">
+										<p>
+											<i class="fa fa-star"></i>
+											<i class="fa fa-star"></i>
+											<i class="fa fa-star"></i>
+											<i class="fa fa-star"></i>
+											<i class="fa fa-star"></i>
+											<span>2544 review</span>
+										</p>
+									</div><!--/.packages-review-->
+									
+								</div>
+							</div>
+						</div>
+
+						<div class="col-md-4 col-sm-6">
+							<div class="single-package-item">
+								<img src="assets/images/packages/Aqua-Expeditions2.jpg" alt="package-place">
+								<div class="single-package-item-txt">
+									<h3>Aqua Expeditions, Iquitos <span class="pull-right">$1199</span></h3>
+									<div class="packages-para">
+										<p>
+											<span>
+												<i class="fa fa-angle-right"></i> 5 daays 6 nights
+											</span>
+											<i class="fa fa-angle-right"></i>  5 star accomodation
+										</p>
+										<p>
+											<span>
+												<i class="fa fa-angle-right"></i>  transportation
+											</span>
+											<i class="fa fa-angle-right"></i>  food facilities
+										 </p>
+									</div><!--/.packages-para-->
+									<div class="packages-review">
+										<p>
+											<i class="fa fa-star"></i>
+											<i class="fa fa-star"></i>
+											<i class="fa fa-star"></i>
+											<i class="fa fa-star"></i>
+											<i class="fa fa-star"></i>
+											<span>2544 review</span>
+										</p>
+									</div><!--/.packages-review-->
+									
+								</div><!--/.single-package-item-txt-->
+							</div><!--/.single-package-item-->
+
+						</div><!--/.col-->
+						
+						<div class="col-md-4 col-sm-6">
+							<div class="single-package-item">
+								<img src="assets/images/packages/treehouse.jpg" alt="package-place">
+								<div class="single-package-item-txt">
+									<h3>Treehouse Lodge hotel  <span class="pull-right">$799</span></h3>
+									<div class="packages-para">
+										<p>
+											<span>
+												<i class="fa fa-angle-right"></i> 5 daays 6 nights
+											</span>
+											<i class="fa fa-angle-right"></i>  5 star accomodation
+										</p>
+										<p>
+											<span>
+												<i class="fa fa-angle-right"></i>  transportation
+											</span>
+											<i class="fa fa-angle-right"></i>  food facilities
+										 </p>
+									</div><!--/.packages-para-->
+									<div class="packages-review">
+										<p>
+											<i class="fa fa-star"></i>
+											<i class="fa fa-star"></i>
+											<i class="fa fa-star"></i>
+											<i class="fa fa-star"></i>
+											<i class="fa fa-star"></i>
+											<span>2544 review</span>
+										</p>
+									</div><!--/.packages-review-->
+									
+								</div><!--/.single-package-item-txt-->
+							</div><!--/.single-package-item-->
+
+						</div><!--/.col-->
+						
+						<div class="col-md-4 col-sm-6">
+							<div class="single-package-item">
+								<img src="assets/images/packages/matrimonial-terrace-with.jpg" alt="package-place">
+								<div class="single-package-item-txt">
+									<h3>Amazon PLanet <span class="pull-right">$999</span></h3>
+									<div class="packages-para">
+										<p>
+											<span>
+												<i class="fa fa-angle-right"></i> 5 daays 6 nights
+											</span>
+											<i class="fa fa-angle-right"></i>  5 star accomodation
+										</p>
+										<p>
+											<span>
+												<i class="fa fa-angle-right"></i>  transportation
+											</span>
+											<i class="fa fa-angle-right"></i>  food facilities
+										 </p>
+									</div><!--/.packages-para-->
+									<div class="packages-review">
+										<p>
+											<i class="fa fa-star"></i>
+											<i class="fa fa-star"></i>
+											<i class="fa fa-star"></i>
+											<i class="fa fa-star"></i>
+											<i class="fa fa-star"></i>
+											<span>2544 review</span>
+										</p>
+									</div><!--/.packages-review-->
+									
+								</div><!--/.single-package-item-txt-->
+							</div><!--/.single-package-item-->
+
+						</div><!--/.col-->
+						
+						<div class="col-md-4 col-sm-6">
+							<div class="single-package-item">
+								<img src="assets/images/packages/ecoaldea-kapievi.jpg" alt="package-place">
+								<div class="single-package-item-txt">
+									<h3>Kapievi Ecovillage<span class="pull-right">$799</span></h3>
+									<div class="packages-para">
+										<p>
+											<span>
+												<i class="fa fa-angle-right"></i> 5 daays 6 nights
+											</span>
+											<i class="fa fa-angle-right"></i>  5 star accomodation
+										</p>
+										<p>
+											<span>
+												<i class="fa fa-angle-right"></i>  transportation
+											</span>
+											<i class="fa fa-angle-right"></i>  food facilities
+										 </p>
+									</div><!--/.packages-para-->
+									<div class="packages-review">
+										<p>
+											<i class="fa fa-star"></i>
+											<i class="fa fa-star"></i>
+											<i class="fa fa-star"></i>
+											<i class="fa fa-star"></i>
+											<i class="fa fa-star"></i>
+											<span>2544 review</span>
+										</p>
+									</div><!--/.packages-review-->
+									
+								</div><!--/.single-package-item-txt-->
+							</div><!--/.single-package-item-->
+
+						</div><!--/.col-->
+
+					</div><!--/.row-->
+				</div><!--/.packages-content-->
+			</div>
+			<div class="col-sm-12 text-center mx-auto"><!-- Agregado 'mx-auto' para centrar horizontalmente -->
+				<div class="about-btn travel-mrt-0"><!-- Eliminado 'pull-right' -->
+					<a href="../categorias/assets/free-travel-website-template/hoteles_selva.html">
+						<button id="ver-mas-btn" class="about-view travel-btn">
+							Ver más
+						</button>
+					</a><!--/.travel-btn-->
+				</div><!--/.about-btn-->
+			</div><!--/.col-->
+
+		</section><!--/.packages-->
+		<!--packages end-->
+
+		<!-- testemomialest -->
+		<section   class="testemonial">
+			<div class="container">
+
+				<div class="gallary-header text-center">
+					<h2>
+						Restaurantes top
+					</h2>
+					<p>
+						Conoce los retaurantes top  de Peru!!!1
+					</p>
+
+				</div><!--/.gallery-header-->
+
+				<div class="owl-carousel owl-theme" id="testemonial-carousel">
+
+					
+					<div class="home1-testm item">
+						<div class="home1-testm-single text-center">
+							<div class="home1-testm-img">
+								<img src="assets/images/client/te-esperamos-siempre.jpg" alt="img"/>
+							</div><!--/.home1-testm-img-->
+							<div class="home1-testm-txt">
+								<span class="icon section-icon">
+									<i class="fa fa-quote-left" aria-hidden="true"></i>
+								</span>
+								<p>
+									Sumérgete en un fascinante viaje gastronómico por el corazón de Perú, donde la diversidad culinaria es tan vibrante .
+								</p>
+								<h3>
+									<a href="#">
+										EL BATÁN DEL TAYTA
+									</a>
+								</h3>
+								<h4>Selva</h4>
+							</div><!--/.home1-testm-txt-->	
+						</div><!--/.home1-testm-single-->
+
+					</div><!--/.item-->
+
+					<div class="home1-testm item">
+						<div class="home1-testm-single text-center">
+							<div class="home1-testm-img">
+								<img src="assets/images/client/inside-the-cafe.jpg" alt="img"/>
+							</div><!--/.home1-testm-img-->
+							<div class="home1-testm-txt">
+								<span class="icon section-icon">
+									<i class="fa fa-quote-left" aria-hidden="true"></i>
+								</span>
+								<p>
+									Sumérgete en un fascinante viaje gastronómico por el corazón de Perú, donde la diversidad culinaria es tan vibrante . 
+								</p>
+								<h3>
+									<a href="#">
+										Amazonas 632
+									</a>
+								</h3>
+								<h4>Selva</h4>
+							</div><!--/.home1-testm-txt-->	
+						</div><!--/.home1-testm-single-->
+
+					</div><!--/.item-->
+
+					<div class="home1-testm item">
+						<div class="home1-testm-single text-center">
+							<div class="home1-testm-img">
+								<img src="assets/images/client/interior-de-cal-payes.jpg" alt="img"/>
+							</div><!--/.home1-testm-img-->
+							<div class="home1-testm-txt">
+								<span class="icon section-icon">
+									<i class="fa fa-quote-left" aria-hidden="true"></i>
+								</span>
+								<p>
+									Sumérgete en un fascinante viaje gastronómico por el corazón de Perú, donde la diversidad culinaria es tan vibrante . 
+								</p>
+								<h3>
+									<a href="#">
+                                        Cal Payés
+									</a>
+								</h3>
+								<h4>Selva</h4>
+							</div><!--/.home1-testm-txt-->	
+						</div><!--/.home1-testm-single-->
+
+					</div><!--/.item-->
+
+					<div class="home1-testm item">
+						<div class="home1-testm-single text-center">
+							<div class="home1-testm-img">
+								<img src="assets/images/client/salon-principal.jpg" alt="img"/>
+							</div><!--/.home1-testm-img-->
+							<div class="home1-testm-txt">
+								<span class="icon section-icon">
+									<i class="fa fa-quote-left" aria-hidden="true"></i>
+								</span>
+								<p>
+									Sumérgete en un fascinante viaje gastronómico por el corazón de Perú, donde la diversidad culinaria es tan vibrante .  
+								</p>
+								<h3>
+									<a href="#">
+										La Casa de Fierro Restaurante
+									</a>
+								</h3>
+								<h4>Selva</h4>
+							</div><!--/.home1-testm-txt-->	
+						</div><!--/.home1-testm-single-->
+
+					</div><!--/.item-->
+
+					<div class="home1-testm item">
+						<div class="home1-testm-single text-center">
+							<div class="home1-testm-img">
+								<img src="assets/images/client/yakumama-resto-bar-flotante.jpg" alt="img"/>
+							</div><!--/.home1-testm-img-->
+							<div class="home1-testm-txt">
+								<span class="icon section-icon">
+									<i class="fa fa-quote-left" aria-hidden="true"></i>
+								</span>
+								<p>
+									Sumérgete en un fascinante viaje gastronómico por el corazón de Perú, donde la diversidad culinaria es tan vibrante . 
+								</p>
+								<h3>
+									<a href="#">
+										Yakumama Resto Bar Flotante
+									</a>
+								</h3>
+								<h4>Selva</h4>
+							</div><!--/.home1-testm-txt-->	
+						</div><!--/.home1-testm-single-->
+
+					</div><!--/.item-->
+
+					<div class="home1-testm item">
+						<div class="home1-testm-single text-center">
+							<div class="home1-testm-img">
+								<img src="assets/images/client/al-frio-y-al-fuego-restaurant.jpg" alt="img"/>
+							</div><!--/.home1-testm-img-->
+							<div class="home1-testm-txt">
+								<span class="icon section-icon">
+									<i class="fa fa-quote-left" aria-hidden="true"></i>
+								</span>
+								<p>
+									Sumérgete en un fascinante viaje gastronómico por el corazón de Perú, donde la diversidad culinaria es tan vibrante . 
+								</p>
+								<h3>
+									<a href="#">
+										Al Frio y Al Fuego
+									</a>
+								</h3>
+								<h4>Selva</h4>
+							</div><!--/.home1-testm-txt-->	
+						</div><!--/.home1-testm-single-->
+
+					</div><!--/.item-->
+
+					<div class="home1-testm item">
+						<div class="home1-testm-single text-center">
+							<div class="home1-testm-img">
+								<img src="assets/images/client/tables.jpg" alt="img"/>
+							</div><!--/.home1-testm-img-->
+							<div class="home1-testm-txt">
+								<span class="icon section-icon">
+									<i class="fa fa-quote-left" aria-hidden="true"></i>
+								</span>
+								<p>
+									Sumérgete en un fascinante viaje gastronómico por el corazón de Perú, donde la diversidad culinaria es tan vibrante . 
+								</p>
+								<h3>
+									<a href="#">
+										Burgos's Restaurant
+									</a>
+								</h3>
+								<h4>Selva</h4>
+							</div><!--/.home1-testm-txt-->	
+						</div><!--/.home1-testm-single-->
+
+					</div><!--/.item-->
+
+					<div class="home1-testm item">
+						<div class="home1-testm-single text-center">
+							<div class="home1-testm-img">
+								<img src="assets/images/client/rest8.jpg" alt="img"/>
+							</div><!--/.home1-testm-img-->
+							<div class="home1-testm-txt">
+								<span class="icon section-icon">
+									<i class="fa fa-quote-left" aria-hidden="true"></i>
+								</span>
+								<p>
+									Sumérgete en un fascinante viaje gastronómico por el corazón de Perú, donde la diversidad culinaria es tan vibrante . 
+								</p>
+								<h3>
+									<a href="#">
+                                        Cal Payés
+									</a>
+								</h3>
+								<h4>Selva</h4>
+							</div><!--/.home1-testm-txt-->	
+						</div><!--/.home1-testm-single-->
+
+					</div><!--/.item-->
+
+				</div><!--/.testemonial-carousel-->
+			</div><!--/.container-->
+
+		</section><!--/.testimonial-->	
+		<!-- testemonial End -->
+
+
+		<!--special-offer start-->
+		<section id="spo" class="special-offer">
+			<div class="container">
+				<div class="special-offer-content">
+					<div class="row">
+						<div class="col-sm-8">
+							<div class="single-special-offer">
+								<div class="single-special-offer-txt">
+									<h2>Amazonas</h2>
+									<div class="packages-review special-offer-review">
+										<p>
+											<i class="fa fa-star"></i>
+											<i class="fa fa-star"></i>
+											<i class="fa fa-star"></i>
+											<i class="fa fa-star"></i>
+											<i class="fa fa-star"></i>
+											<span>2544 Visitas</span>
+										</p>
+									</div><!--/.packages-review-->
+									<div class="packages-para special-offer-para">
+										<p>
+											<span>
+												<i class="fa fa-angle-right"></i> 5  Días 6 Noches
+											</span>
+											<span>
+												<i class="fa fa-angle-right"></i> 2 Personas
+											</span>
+											<span>
+												<i class="fa fa-angle-right"></i>  Alojamiento De 5 Estrellas
+											</span>
+										</p>
+										<p>
+											<span>
+												<i class="fa fa-angle-right"></i>  Transporte
+											</span>
+											<span>
+												<i class="fa fa-angle-right"></i>  Instalaciones De Comida
+											</span>  
+										</p>
+										<p class="offer-para">
+											Deleite sus sentidos en la costa peruana. Descubra las playas de arena dorada, sienta la brisa marina acariciar su piel y deguste la deliciosa gastronomía peruana fresca del océano. Explore las antiguas líneas de Nazca, admire la belleza de los acantilados de Paracas y sumérjase en la rica historia de las culturas preincaicas. La costa peruana le ofrece un mundo de maravillas por descubrir.  
+										</p>
+									</div>
+									
+								</div>
+							</div>
+						</div>
+						<div class="col-sm-4">
+							<div class="single-special-offer">
+								<div class="single-special-offer-bg">
+									<img src="assets/images/offer/offer-shape.png" alt="offer-shape">
+								</div>
+								<div class="single-special-shape-txt">
+									<h3>Explora ya!!!</h3>
+									<h4><span>20%</span><br>descuento</h4>
+									<p><span>$999</span><br>reguler $ 1450</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+		</section>
+		<section id="blog" class="blog">
+			<div class="container">
+				<div class="blog-details">
+						<div class="gallary-header text-center">
+							<h2>
+								Transporte
+							</h2>
+							<p>
+								Noticias de viajes de todo el Peru
+							</p>
+						</div><!--/.gallery-header-->
+						<div class="blog-content">
+							<div class="row">
+
+								<div class="col-sm-4 col-md-4">
+									<div class="thumbnail">
+										<h2>Airport Express Lima<span>13 may 2016</span></h2>
+										<div class="thumbnail-img">
+											<img src="assets/images/blog/transporte3.jpg" alt="blog-img">
+											<div class="thumbnail-img-overlay"></div>
+										
+										</div>
+									  
+										<div class="caption">
+											<div class="blog-txt">
+												<h3>
+													<a href="#">
+														El Airport Express Lima es un autobús que conecta el Aeropuerto Internacional de Lima con el distrito de Miraflores.
+													</a>
+												</h3>
+												<p>
+													Si vais a viajar a Lima y no sabéis cómo llegar desde el aeropuerto hasta el centro de la ciudad, el Airport Express Lima es un servicio de autobús que os llevará de una forma rápida.
+												</p>
+											</div>
+										</div>
+									</div>
+
+								</div>
+
+								<div class="col-sm-4 col-md-4">
+									<div class="thumbnail">
+										<h2>QuickLlama <span>15 november 2017</span></h2>
+										<div class="thumbnail-img">
+											<img src="assets/images/blog/transporte2.png" alt="blog-img">
+											<div class="thumbnail-img-overlay"></div>
+										</div>
+										<div class="caption">
+											<div class="blog-txt">										<h3><a href="#">QuickLlama no sólo es la manera más fácil y económica de ir o venir del Aeropuerto de Lima.</a>
+												</h3>
+												<p>Ofrecer un servicio de traslado de primer nivel, económico, puntual, confiable y seguro desde y hacia el Aeropuerto Jorge Chávez.
+												</p>
+											</div>
+										</div>
+									</div><!--/.thumbnail-->
+
+								</div><!--/.col-->
+
+								<div class="col-sm-4 col-md-4">
+									<div class="thumbnail">
+										<h2>
+Crown taxi & remisse <span>15 november 2017</span></h2>
+										<div class="thumbnail-img">
+											<img src="assets/images/blog/transporte1.jpg" alt="blog-img">
+											<div class="thumbnail-img-overlay"></div>
+										
+										</div>
+										<div class="caption">
+											<div class="blog-txt">
+												<h3><a href="#">CROWN ofrece servicios de traslado en taxi al aeropuerto de Lima accsesibles, puntuales y seguros.</a></h3>
+												<p>
+													Nuestros clientes demuestran por qué su experiencia de viaje puede ser mucho mejor nosotros.
+												</p>
+											</div><!--/.blog-txt-->
+										</div><!--/.caption-->
+									</div><!--/.thumbnail-->
+
+								</div><!--/.col-->
+
+							</div><!--/.row-->
+						</div><!--/.blog-content-->
+					</div><!--/.blog-details-->
+				</div><!--/.container-->
+
+		</section>
+
+		
+		<section id="subs" class="subscribe">
+			<div class="container">
+				<div class="subscribe-title text-center">
+					<h2>
+						Únase A Nuestra aventura y llévate una gran experiencia.
+					</h2>
+					<p>
+						Introduzca su correo electrónico aquí
+					</p>
+				</div>
+				<form>
+					<div class="row">
+						<div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
+							<div class="custom-input-group">
+								<input type="email" class="form-control" placeholder="Introduzca su email aquí">
+								<button class="appsLand-btn subscribe-btn">Enviar</button>
+								<div class="clearfix"></div>
+								<i class="fa fa-envelope"></i>
+							</div>
+
+						</div>
+					</div>
+				</form>
+			</div>
+
+		</section>
+
+		<footer class="site-footer" itemscope itemtype="http://schema.org/WPFooter">
+			<div class="con footer-sections-container">
+				<!-- Primera Columna -->
+				<div class="footer-secti">
+					<header>
+						<h2 class="in-title">Información</h2> 
+					</header>
+					<p  class="in-content">Explora nuevas aventuras y descubre más sobre Perú en nuestra página.</p>
+					<ul class="contact-details">
+						<li>
+							<span class="contact-icon"><i class="fas fa-phone"></i></span>
+							<span class="contact-text">903392728</span>
+						</li>
+						<li>
+							<span class="contact-icon"><i class="fas fa-envelope"></i></span>
+							<span class="contact-text">info@turisite.com</span>
+						</li>
+						<li>
+							<span class="contact-icon"><i class="fas fa-map-marker-alt"></i></span>
+							<span class="contact-text">Perú, La Libertad, Trujillo</span>
+						</li>
+					</ul>
+				</div>
+				
+				<!-- Segunda Columna -->
+				<div class="footer-secti">
+					<header>
+						<h2 class="in-title">ENLACES</h2> 
+					</header>
+					<ul class="footer-link " >
+						<li><a href="../../../../index.html">Inicio</a></li>
+						<li><a href="../../../../blog.html">Blog</a></li>
+						<li><a href="../../../../nosotros.html">Nosotros</a></li>
+						<li><a href="../../../../gastronomia.html">Gastronomía</a></li>
+						<li><a href="../../../../ciudades.html">Ciudades</a></li>
+						<li><a href="../../../../cultura.html">Cultura</a></li>
+					</ul>
+				</div>
+				
+				<!-- Tercera Columna -->
+				<div class="footer-secti">
+					<header>
+						<h2 class="in-title">DESCUBRE MAS</h2> 
+					</header>
+					<ul class="footer-link">
+						<li><a href="../../../../categorias/selva.html">Selva</a></li>
+						<li><a href="../../../../categorias/costa.html">Costa</a></li>
+						<li><a href="../../../../categorias/sierra.html">Sierra</a></li>
+						
+					</ul>
+				</div>
+				
+				<!-- Cuarta Columna -->
+				<div class="footer-secti">
+					<header>
+						<h2 class="in-title">CONTACTO</h2> 
+					</header>
+					<section class="quick-contact">
+						<form action="tu-script-de-procesamiento" method="POST">
+							<input type="email" name="email" placeholder="Tu Email*" required>
+							<textarea name="message" placeholder="Escribe tu mensaje*" required></textarea>
+							<button type="submit">Enviar mensaje</button>
+						</form>
+					</section>
+				</div>
+				
+			</div>
+			
+			<!-- Iconos de redes sociales -->
+			<div class="social-icons">
+				<ul class="social-li">
+	
+	
+					<li><a href="#"><i class="fab fa-facebook-square"></i></a></li>
+					<li><a href="#"><i class="fab fa-twitter"></i></a></li>
+					<li><a href="#"><i class="fab fa-skype"></i></a></li>
+					<li><a href="#"><i class="fab fa-youtube"></i></a></li>
+					<li><a href="#"> <i class="fab fa-instagram"></i></a></li>
+				</ul>
+			</div>
+			
+			<!-- Línea y derechos de autor -->
+			<div class="footer-line"></div>
+			<p class="p">&copy; 2023 TuriWeb@gmail.com. Todos los derechos reservados.| 903392728</p>
+		</footer>
+
+
+
+		<script src="assets/js/jquery.js"></script>
+		<!-- Include all compiled plugins (below), or include individual files as needed -->
+
+		<!--modernizr.min.js-->
+		<script  src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
+
+
+		<!--bootstrap.min.js-->
+		<script  src="assets/js/bootstrap.min.js"></script>
+
+		<!-- bootsnav js -->
+		<script src="assets/js/bootsnav.js"></script>
+
+		<!-- jquery.filterizr.min.js -->
+		<script src="assets/js/jquery.filterizr.min.js"></script>
+
+		<script  src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
+
+		<!--jquery-ui.min.js-->
+        <script src="assets/js/jquery-ui.min.js"></script>
+
+        <!-- counter js -->
+		<script src="assets/js/jquery.counterup.min.js"></script>
+		<script src="assets/js/waypoints.min.js"></script>
+
+		<!--owl.carousel.js-->
+        <script  src="assets/js/owl.carousel.min.js"></script>
+
+        <!-- jquery.sticky.js -->
+		<script src="assets/js/jquery.sticky.js"></script>
+
+        <!--datepicker.js-->
+        <script  src="assets/js/datepicker.js"></script>
+
+		<!--Custom JS-->
+		<script src="assets/js/custom.js"></script>
+
+
+	</body>
+
+</html>

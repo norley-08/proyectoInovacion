@@ -1,0 +1,324 @@
+
+.titu{
+    text-align: center;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    text-shadow: 3px 3px rgb(238, 11, 11);
+    -webkit-text-stroke-color: rgb(95, 2, 2);
+    -webkit-text-stroke-width: 1px;
+    font-size: 50px;
+    color: transparent;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+	margin-bottom: 2rem;
+}
+
+/* Estilo para el contenedor principal */
+.containe {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: rgb(239, 251, 251);
+}
+
+/* Estilo para el mapa */
+.map-containe {
+    width: 10%; /* Ajusta el ancho del contenedor del mapa según sea necesario */
+    height: auto; /* Ajusta la altura del mapa según sea necesario */
+    margin-left: 60px;
+}
+
+/* Estilo para el contenedor de texto */
+.text-containe {
+    width: 50%; /* Ajusta el ancho del contenedor de texto según sea necesario */
+    font-size: 16px;
+    text-align: justify;
+    margin-left: 70px;
+    margin-right: 50px;
+}
+.contain{
+    text-align: center;
+    margin-bottom: 35px;
+
+}
+.map-containe {
+    width: 50%;
+    height: 350px;
+    margin-left: 60px;
+    border: 2px solid #a19d9d; /* Añade un borde de 2 píxeles sólidos con un color gris claro */
+    border-radius: 15px; /* Añade bordes redondeados */
+    overflow: hidden; /* Evita que el borde afecte el tamaño total */
+
+}
+/* Estilo para las imágenes dentro de box-wrap */
+.box-wrap .img-wrap img {
+    width: 100%; /* Establece el ancho al 100% del contenedor padre */
+    height: 90%; /* Mantiene la proporción original de la imagen */
+}
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+}
+
+
+.split-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 25vh; /* Ajusta la altura según sea necesario */
+}
+.split-section > div {
+    width: 35%; /* Ajusta el ancho según sea necesario */
+    padding: 20px;
+    margin-right:150px;
+    background-color: rgb(142, 173, 209);
+    border: 1px solid #5d5c5c; /* Borde para resaltar el cuadro */
+    margin-bottom: 50px;
+}
+.te {
+    text-align: justify;
+    font-size: 14px;
+    margin: 10px 0; /* Espacio arriba y abajo */
+}
+.hola{
+    margin-left: 165px;
+}
+.ce{
+    text-align: center;
+    font-size: 20px;
+}
+
+
+
+.image-row {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 20px;
+}
+.image-container {
+    text-align: center;
+    overflow: hidden; /* Evita que la animación se desborde */
+}
+.image-container img {
+    height: 75%;
+    width: 95%; /* Hace que las imágenes tengan el mismo ancho dentro del contenedor */
+    transition: transform 0.3s ease-in-out; /* Agrega una animación suave al hacer hover */
+}
+.image-container:hover img {
+    transform: scale(1.1); /* Hace zoom al 110% en hover */
+}
+.image-container p {
+    margin: 10px 0;
+}
+.PE{
+    font-size: 18px;
+}
+
+
+
+
+.owl-four owl-carousel {
+    transition: transform 0.5s ease-in-out;
+}
+
+.owl-four owl-carousel {
+    transform: translateX(20px); /* Mueve la imagen 20px a la derecha al pasar el ratón sobre ella */
+}
+
+/* navdegador*/
+header {
+    background-color: rgb(67, 152, 180);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.main-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2px;
+}
+
+.logo-wrap img {
+    max-width: 35%;
+    height: 30%;
+}
+
+.nav-desktop {
+    display: flex;
+    align-items: center;
+}
+
+.menu-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    font-size: 20px;
+   margin-right: 50px;
+}
+
+.menu-list li {
+    margin-right: 20px;
+}
+
+.menu-list a {
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+}
+
+.menu-parent {
+    position: relative;
+    color: black;
+}
+
+.sub-menu {
+    display: none;
+    position: absolute;
+    color: black;
+    top: 100%;
+    left: 0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    z-index: 10;
+}
+
+.menu-parent.active .sub-menu {
+    display: block;
+}
+
+/* Aumentar el espacio entre "Costa", "Sierra" y "Selva" */
+.sub-menu li {
+    margin-bottom: 10px;
+}
+
+
+
+/*footer*/
+.con {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.site-footer {
+    background-color: rgb(67, 152, 180);
+    color: #fff;
+    padding: 20px 0;
+}
+
+.footer-sections-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.footer-secti {
+    flex: 1;
+    margin: 0;
+    font-size: 12px;
+}
+
+.footer-bo {
+    padding: 20px;
+    font-size: 14px;
+    color: #0d0c0c;
+    border: 1px solid rgb(44, 120, 145); /* Bordes para resaltar la ubicación de las secciones, puedes eliminar esto si no lo deseas */
+}
+
+.footer-link a {
+    color: #0d0c0c;
+    text-decoration: none;
+}
+
+.footer-line {
+    border: 0;
+}
+
+.social-icons {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+}
+
+.social-icons li {
+    margin: 0 10px;
+}
+
+.footer-second-s {
+    text-align: center;
+    margin-top: 20px;
+    
+}
+  
+.social-li {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+}
+  
+.social-li li {
+    margin: 0 10px;
+    position: relative;
+}
+  
+
+  /* Estilo del icono */
+.social-li li a {
+    position: relative;
+    z-index: 1; /* Poner sobre la línea */
+}
+  
+.footer-line {
+    width: 100%;
+    margin-top: 20px;
+}
+.p{
+    text-align: center;
+    font-size: 16px;
+    color: #0d0c0c;
+    margin-top: 10px;
+}
+
+
+.footer-bo input[type="email"],
+.footer-bo textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  background-color: rgb(67, 152, 180);
+  border: 1px solid #f1f5f6;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+.footer-bo textarea {
+  height: 100px; /* Ajusta la altura según tus necesidades */
+}
+
+.footer-bo button {
+  background-color: #f7fbf8;
+  color: rgb(7, 7, 7);
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.footer-bo button:hover {
+  background-color: #14c46c;
+}
+.footer-link {
+    margin-bottom: 10px;
+}
+
+.footer-secti {
+    margin-bottom: 10px;
+}
+
+.quick-contact input,
+.quick-contact textarea {
+    margin-bottom: 0px;
+}.in{
+    margin-bottom: 15px;
+}

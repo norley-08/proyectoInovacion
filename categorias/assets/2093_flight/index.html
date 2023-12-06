@@ -1,0 +1,809 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    	<title>Turibweb</title>
+    
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="apple-touch-icon" href="apple-touch-icon.png">
+
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <link rel="stylesheet" href="css/bootstrap-theme.min.css">
+        <link rel="stylesheet" href="css/fontAwesome.css">
+        <link rel="stylesheet" href="css/hero-slider.css">
+        <link rel="stylesheet" href="css/owl-carousel.css">
+        <link rel="stylesheet" href="css/datepicker.css">
+        <link rel="stylesheet" href="css/tooplate-style.css">
+
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800" rel="stylesheet">
+
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+        <script src="js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
+
+        
+    </head>
+    <style> 
+        .yy-main-header {
+            background-color: #1493bf; /* Color de fondo de la barra de navegación */
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0;
+        }
+        
+        .yy-logo-wrap img {
+            max-width: 160px;
+            height: auto;
+            display: block; /* Asegúrate de que la imagen se muestre como bloque */
+            margin: 0 auto; /* Centra la imagen si es más pequeña que el contenedor */
+        }
+        
+        
+        .yy-menu-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            align-items: center; 
+            
+            margin-right: 70px;
+        }
+        
+        .yy-menu-list a, .yy-menu-list li {
+            text-decoration: none;
+            color: rgb(0, 0, 0); /* Color del texto de los enlaces */
+            font-weight: bold;
+            padding: 10px 15px;
+        }
+        
+        .yy-menu-parent {
+            position: relative;
+            cursor: pointer; /* Cambia el cursor para indicar que es desplegable */
+        }
+        
+        .yy-menu-parent::after {
+            content: "";
+            border: solid rgb(19, 19, 19);
+            border-width: 0 3px 3px 0;
+            display: inline-block;
+            padding: 3px;
+            margin-left: 10px;
+            position: absolute;
+            right: 0; /* Alinea la flecha hacia la derecha */
+            top: 50%; /* Alinea la flecha verticalmente */
+            transform: translateY(-50%) rotate(45deg); /* Centra y rota la flecha */
+        }
+        
+        .yy-menu-list > .yy-menu-parent:hover .yy-sub-menu {
+            display: block; /* Muestra el menú desplegable al pasar el mouse */
+        }
+        
+        .yy-sub-menu {
+            display: none; /* Oculta el menú desplegable por defecto */
+            position: absolute;
+            background-color: #fdfdfd; /* Color de fondo del menú desplegable */
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2); /* Sombra para el menú desplegable */
+            padding: 12px 16px; /* Espaciado dentro del menú desplegable */
+            z-index: 200; /* Incrementa el z-index para asegurar que esté por encima de otros elementos */
+            margin-top: .5em; /* Espacio para la sombra */
+        }
+        
+    
+        /* footer */
+        .con {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .site-footer {
+            background-color: rgb(67, 152, 180);
+            color: #141313;
+            padding: 20px 0;
+            margin-top: 7rem;
+        }
+        
+        .footer-sections-container {
+            display: flex;
+            justify-content: space-between; /* Cambiado de 'space-around' para un mejor control del espacio */
+            flex-wrap: wrap;
+        }
+        
+        .footer-secti {
+            flex-basis: 20%; /* Cambiado de 'flex: 1' para tener un mejor control sobre el ancho */
+            margin: 0;
+            padding: 20px;
+            box-sizing: border-box;
+            font-size: 12px;
+        }
+        
+        
+        
+        .footer-link a {
+            color: #0d0d0d;
+            text-decoration: none;
+            margin-left: -40px;
+            font-size: 1.3rem;
+        }
+        
+        .social-icons {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+        }
+        
+        .social-icons li {
+            margin: 0 10px;
+            
+        }
+        
+        .footer-second-s {
+            text-align: center;
+            margin-top: 20px;
+        }
+        
+        .social-li {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            
+        }
+        
+        .social-li li {
+            margin: 0 10px;
+            position: relative;
+        }
+        
+        .social-li li a {
+            position: relative;
+            z-index: 1; /* Poner sobre la línea */
+        }
+        
+        .footer-line {
+            width: 80%;
+            height: 1px;
+            background-color: #73a5c1; /* Color de la línea */
+            margin-top: 20px;
+            margin-left: auto; /* Margen automático a la izquierda */
+            margin-right: auto; /* Margen automático a la derecha */
+        }
+        
+        
+        .p {
+            text-align: center;
+            font-size: 10px;
+            color: #0b0b0b;
+            margin-top: 10px;
+        }
+        
+        .footer-bo input[type="email"],
+        .footer-bo textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            background-color: #fff; /* Background color for the input fields */
+            border: 1px solid #f1f5f6;
+            border-radius: 5px;
+            box-sizing: border-box;
+            color: #0d0c0c; 
+            resize: none !important;
+        }
+        
+        
+        .footer-bo button {
+            width: 100%; /* Hace que el botón ocupe todo el ancho del contenedor */
+            background-color: #f7fafb;
+            color: rgb(7, 7, 7);
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        
+        .footer-bo button:hover {
+            background-color: #14c46c;
+        }
+        
+        .footer-link {
+            margin-top: 1rem;
+            margin-left: 50px;
+        }
+        
+        .footer-secti {
+            margin-bottom: 10px;
+        }
+        
+        .quick-contact input,
+        .quick-contact textarea {
+            margin-bottom: 15px; /* Ajustado para uniformidad */
+        }
+        {% comment %} ...... {% endcomment %}
+        .quick-contact {
+            background-color: rgb(67, 152, 180); /* El color de fondo que combina con el pie de página */
+            padding: 20px;
+            border-radius: 8px; /* Bordes redondeados para el formulario */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra para dar profundidad */
+            width: 100%; /* Ajusta el ancho según sea necesario */
+            box-sizing: border-box;
+        }
+        
+        .quick-contact h2 {
+            color: #fff; /* Título del formulario en color blanco */
+            margin-bottom: 16px; /* Espacio entre el título y el campo de email */
+        }
+        
+        .quick-contact input[type="email"],
+        .quick-contact textarea {
+            width: calc(100% - 20px); /* Se calcula el 100% menos el padding */
+            padding: 10px;
+            margin-bottom: 16px; /* Espacio entre los campos de texto */
+            border: 1px solid #556d6d; 
+            background-color: #ebebeb; 
+            color: black;
+            border-radius: 5px; 
+            resize: none !important;
+        }
+        
+        
+        .quick-contact input[type="email"]:focus,
+        .quick-contact textarea:focus {
+            outline: none; /* Elimina el contorno al enfocar */
+            border: 2px solid #a39999; /* Cambia el color del borde al enfocar */
+        }
+        
+        .quick-contact button {
+            width: 100%; /* Ajusta el botón para que se expanda al 100% del formulario */
+            padding: 10px 0; /* Padding superior e inferior para el botón */
+            border: none; /* Elimina el borde del botón */
+            background-color: #0d0c0c; /* Color de fondo del botón */
+            color: #fff; /* Texto del botón en color blanco */
+            border-radius: 4px; /* Bordes redondeados para el botón */
+            cursor: pointer; /* Cursor en forma de mano al pasar sobre el botón */
+            transition: background-color 0.3s; /* Transición suave para el color de fondo */
+        }
+        
+        .quick-contact button:hover {
+            background-color: #a568a7; /* Cambia el color de fondo al pasar el cursor */
+        }
+        .social-li a {
+            font-size: 24px; /* Tamaño del icono */
+            color: white; /* Color del icono */
+            transition: color 0.3s ease; /* Transición suave para el efecto hover */
+        }
+        
+        .social-li a:hover {
+            color: black; /* Cambia el color al hacer hover */
+            /* Puedes agregar otros estilos que desees para el hover aquí */
+        }
+        .in-title {
+            font-weight: bold; /* Hace el texto en negrita */
+            text-transform: uppercase; /* Convierte el texto a mayúsculas */
+            margin-bottom: 16px; /* Agrega espacio debajo del título */
+            font-size: 18px; /* Ajusta el tamaño del texto según sea necesario */
+        }
+        
+        .in-content {
+            text-align: justify; /* Justifica el contenido */
+            margin-top: 16px; /* Agrega espacio arriba del contenido para separarlo del título */
+        }
+        .contact-title {
+            font-weight: bold;
+            text-transform: uppercase;
+            margin-bottom: 20px; /* Espacio debajo del título */
+            font-size: 18px; /* Ajusta el tamaño del texto según sea necesario */
+            color: #fff; /* Color del texto */
+        }
+        
+        .contact-description {
+            text-align: justify;
+            margin-bottom: 20px; 
+        }
+        
+        .contact-details {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            margin-top: 2rem
+        }
+        
+        .contact-details li {
+            display: flex;
+            align-items: center; /* Alinea los íconos con el texto */
+            margin-bottom: -1px; /* Espacio entre cada elemento de contacto */
+        }
+        
+        .contact-icon {
+            /* Ajusta el tamaño y el color de tus íconos aquí si es necesario */
+            margin-right: 6px; /* Espacio entre el ícono y el texto */
+            font-size: 16px; /* Tamaño del ícono */
+        }
+        
+        .contact-text {
+            color: #d9dee3;
+            font-weight: bold;
+        }
+        .contact-icon i {
+            margin-right: 10px; /* Espacio entre el ícono y el texto */
+            color: #fff; /* O el color que prefieras para tus iconos */
+            /* Otros estilos que quieras aplicar a los iconos */
+        }
+    
+    
+    
+        
+        .footer-secti {
+            flex: 1;
+            padding: 20px;
+            margin-right: 20px; 
+        }
+        
+       
+        {% comment %} xd {% endcomment %}
+        .footer-sections-container {
+            display: flex;
+            justify-content: flex-start; /* O utiliza 'center' si prefieres centrar todo el contenido en el contenedor */
+            flex-wrap: wrap;
+        }
+        
+        .footer-secti {
+            margin-right: 15px;
+            margin-left: 15px; 
+           
+        }
+        
+        /* Si deseas asegurarte de que el último elemento no tenga un margen a la derecha */
+        .footer-secti:last-child {
+            margin-right: 0;
+        }
+        
+    </style>
+<body>
+    <div id="yy-page" itemscope itemtype="http://schema.org/LocalBusiness">
+        <header class="yy-main-header">
+            <div class="yy-logo-wrap" itemprop="logo">
+                <img src="../../../images/logoo.jpg" alt="Logo Image">
+            </div>
+            <nav class="yy-nav-desktop">
+                <ul class="yy-menu-list">
+                    <li><a href="../../../index.html">Inicio</a></li>
+                    <li class="yy-menu-parent">
+                        Categorias
+                        <ul class="yy-sub-menu">
+                            <li><a href="../../costa.html">Costa</a></li>
+                            <li><a href="../../sierra.html">Sierra</a></li>
+                            <li><a href="../../selva.html">Selva</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="../../../nosotros.html">Nosotros</a></li>
+                    <li><a href="../../../blog.html">Blog</a></li>
+                </ul>
+            </nav>
+        </header>
+    </div>
+
+
+    
+    <section class="banner" id="top">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-5">
+                    <div class="left-side">
+                       
+                        <div class="tabs-content">
+                            <h4>Elige Tu Información:</h4>
+                            <ul class="social-links">
+                                <li><a href="https://www.facebook.com/groups/644670482620245/">  las Últimas <em> Noticias</em><i class="fa fa-facebook"></i></a></li>
+                                <li><a href="https://www.youtube.com/watch?v=UBkocRT23dw">Consejos <em>de</em> Seguridad<i class="fa fa-youtube"></i></a></li>
+                                <li><a href="https://www.instagram.com/mincetur/?hl=es">Galeria de <em>Transportes</em><i class="fa fa-instagram"></i></a></li>
+                            </ul>
+                        </div>
+                        <div class="page-direction-button" style="margin-top: 4rem; margin-bottom: 15px;">
+                            <a href="https://www.consulado.pe/es/RiodeJaneiro/Lists/Avisos/Mostrar.aspx?ID=8&ContentTypeId=0x0100324466A49D95AD4294FEA73B8D01DEDA"><i class="fa fa-phone"></i>Contactar</a>
+                        </div>
+                        
+                    </div>
+                </div>
+               
+            </div>
+        </div>
+    </section>
+
+
+    <section class="services">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="section-heading">
+                        <h2>GUÍA PARA TUS VIAJES</h2>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="service-item first-service">
+                        <div class="service-icon"></div>
+                        <h4>RUTAS OPTIMIZADAS</h4>
+                        <p>Encuentra las mejores rutas para tu viaje. Actualizaciones en tiempo real para garantizar el camino más eficiente y evitar retrasos.</p>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="service-item second-service">
+                        <div class="service-icon"></div>
+                        <h4>INFORMACIÓN EN TIEMPO REAL</h4>
+                        <p>Mantente informado con los últimos horarios de salida y llegada, cambios de itinerario y estado del servicio de transporte público y privado.</p>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="service-item third-service">
+                        <div class="service-icon"></div>
+                        <h4>SOPORTE AL VIAJERO</h4>
+                        <p>Accede a consejos de viaje, recomendaciones de seguridad y soporte al cliente para resolver tus dudas durante tu viaje.</p>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <div class="tabs-content" id="recommended-hotel">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="section-heading">
+                        <h2>RECOMENDACIONES DE TRANSPORTE  PARA TU VIAJE</h2>
+                    </div>
+                </div>
+                <div class="wrapper">
+                    <div class="col-md-4">
+                            <ul class="tabs clearfix" data-tabgroup="third-tab-group">
+                                <li><a href="#livingroom" class="active">VIDEO DESTACADO <i class="fa fa-angle-right"></i></a></li>
+                                <li><a href="#suitroom">Opciones de Transporte<i class="fa fa-angle-right"></i></a></li>
+                                <li><a href="#swimingpool">Transporte Recomendado <i class="fa fa-angle-right"></i></a></li>
+                                <li><a href="#massage">Consejos de Transporte <i class="fa fa-angle-right"></i></a></li>
+                                <li><a href="#fitness">Transporte Ecológico <i class="fa fa-angle-right"></i></a></li>
+                                <li><a href="#event">Acceso Rápido <i class="fa fa-angle-right"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-md-8">
+                        <section id="third-tab-group" class="recommendedgroup">
+                            <div id="livingroom">
+                                <div class="text-content">
+                                    <iframe width="100%%" height="400px" src="https://www.youtube.com/embed/z33ehkgo3h8?si=HSG4p55_F7xVvYoN" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                                </div>
+                            </div>
+                            <div id="suitroom">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div id="owl-suiteroom" class="owl-carousel owl-theme">
+                                            <div class="item">
+                                                <div class="suiteroom-item">
+                                                    <img src="img/suite-09.jpg" alt="">
+                                                    <div class="text-content">
+                                                        <h4>Descubra el placer de viajar vía terrestre</h4>
+                                                        <span> Donde cada detalle está pensado para su confort y relajación.</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="item">
+                                                <div class="suiteroom-item">
+                                                    <img src="img/suite-01.jpg" alt="">
+                                                    <div class="text-content">
+                                                        <h4>Eleve su Experiencia de Vuelo</h4>
+                                                        <span>Confort y exclusividad a miles de metros de altura.</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            
+                                            <div class="item">
+                                                <div class="suiteroom-item">
+                                                    <img src="img/suite-03.jpg" alt="">
+                                                    <div class="text-content">
+                                                        <h4>Navegue en la Opulencia</h4>
+                                                        <span>Lujosas suites que flotan sobre las olas.</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="swimingpool">
+                                <img src="img/swiming-pool.jpg" alt="">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="text-content">
+                                            <h4> Airport Express Lima</h4>
+                                            <span>Es el servicio oficial de bus que conecta de forma segura, rápida y económica.</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="massage">
+                                <img src="img/massage-service.jpg" alt="">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="text-content">
+                                            <h4>Viaje Seguro y Confiable</h4>
+                                            <span> Priorizamos tu seguridad </span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="fitness">
+                                <img src="img/ecologico.jpg" alt="">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="text-content">
+                                            <h4>Viajes Sostenibles</h4>
+                                            <span> Opciones de transporte, una huella ambiental mínima.</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="event">
+                                <img src="img/expres.jpg" alt="">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="text-content">
+                                            <h4>Llegada Exprés</h4>
+                                            <span> Servicio de taxis y shuttles rápidos</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <section id="most-visited">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="section-heading">
+                        <h2>10 mejores transportes de Perú</h2>
+                    </div>
+                </div>
+                <div class="col-md-12">
+                    <div id="owl-mostvisited" class="owl-carousel owl-theme">
+                        <div class="item col-md-12">
+                            <div class="visited-item">
+                                <img src="img/quick.jpg" alt="">
+                                <div class="text-content">
+                                    <h4>QuickLlama</h4>
+                                    <span>Disfrute del servicio puerta a puerta</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item col-md-12">
+                            <div class="visited-item">
+                                <img src="img/transporte3.jpg" alt="">
+                                <div class="text-content">
+                                    <h4>Airport Express Lima</h4>
+                                    <span>Un servicio que os llevará de una forma rápida.</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item col-md-12">
+                            <div class="visited-item">
+                                <img src="img/transporte1.jpg" alt="">
+                                <div class="text-content">
+                                    <h4>Crown Taxi & Remisse </h4>
+                                    <span>experiencias de viaje puede ser mucho mejor nosotros.</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item col-md-12">
+                            <div class="visited-item">
+                                <img src="img/transportes-cruz-del.jpg" alt="">
+                                <div class="text-content">
+                                    <h4>Transportes Cruz del Sur
+                                    </h4>
+                                    <span>Elege la opcion de viajar con Cruz del Sur </span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item col-md-12">
+                            <div class="visited-item">
+                                <img src="img/junin-centro-del-peru.jpg" alt="">
+                                <div class="text-content">
+                                    <h4> Hanabi Tours</h4>
+                                    <span>Taxis y otros servicios de traslado. Tour rapido</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item col-md-12">
+                            <div class="visited-item">
+                                <img src="img/oltursa.jpg" alt="">
+                                <div class="text-content">
+                                    <h4>OLTURSA</h4>
+                                    <span>Tu viaje  es sinónimo de seguridad y comodidad. </span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item col-md-12">
+                            <div class="visited-item">
+                                <img src="img/civa.jpg" alt="">
+                                <div class="text-content">
+                                    <h4>Civa</h4>
+                                    <span>extensa y amplia cobertura hacia todo el territorio peruano</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item col-md-12">
+                            <div class="visited-item">
+                                <img src="img/linea.jpg" alt="">
+                                <div class="text-content">
+                                    <h4>Linea </h4>
+                                    <span>Línea  la más popular y una de las que inspira</span>
+                                </div> 
+                            </div>
+                        </div>
+                        <div class="item col-md-12">
+                            <div class="visited-item">
+                                <img src="img/cromotex.jpg" alt="">
+                                <div class="text-content">
+                                    <h4>Cromotex</h4>
+                                    <span> Une, llevando tus sueños a cualquier destino</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item col-md-12">
+                            <div class="visited-item">
+                                <img src="img/palomino.jpg" alt="">
+                                <div class="text-content">
+                                    <h4>Palomino</h4>
+                                    <span>Nunca se detiene, conectando personas y lugares sin límites</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer class="site-footer" itemscope itemtype="http://schema.org/WPFooter">
+        <div class="con footer-sections-container">
+            <!-- Primera Columna -->
+            <div class="footer-secti">
+                <header>
+                    <h2 class="in-title">Información</h2> 
+                </header>
+                <p  class="in-content">Explora nuevas aventuras y descubre más sobre Perú en nuestra página.</p>
+                <ul class="contact-details">
+                    <li>
+                        <span class="contact-icon"><i class="fas fa-phone"></i></span>
+                        <span class="contact-text">903392728</span>
+                    </li>
+                    <li>
+                        <span class="contact-icon"><i class="fas fa-envelope"></i></span>
+                        <span class="contact-text">info@turisite.com</span>
+                    </li>
+                    <li>
+                        <span class="contact-icon"><i class="fas fa-map-marker-alt"></i></span>
+                        <span class="contact-text">Perú, La Libertad, Trujillo</span>
+                    </li>
+                </ul>
+            </div>
+            
+            <!-- Segunda Columna -->
+            <div class="footer-secti">
+                <header>
+                    <h2 class="in-title">ENLACES</h2> 
+                </header>
+                <ul class="footer-link " >
+                    <li><a href="../../../../index.html">Inicio</a></li>
+                    <li><a href="../../../../blog.html">Blog</a></li>
+                    <li><a href="../../../../nosotros.html">Nosotros</a></li>
+                    <li><a href="../../../../gastronomia.html">Gastronomía</a></li>
+                    <li><a href="../../../../ciudades.html">Ciudades</a></li>
+                    <li><a href="../../../../cultura.html">Cultura</a></li>
+                </ul>
+            </div>
+            
+            <!-- Tercera Columna -->
+            <div class="footer-secti">
+                <header>
+                    <h2 class="in-title">DESCUBRE MAS</h2> 
+                </header>
+                <ul class="footer-link">
+                    <li><a href="../../../../categorias/selva.html">Selva</a></li>
+                    <li><a href="../../../../categorias/costa.html">Costa</a></li>
+                    <li><a href="../../../../categorias/sierra.html">Sierra</a></li>
+                </ul>
+            </div>
+            
+            <!-- Cuarta Columna -->
+            <div class="footer-secti">
+                <header>
+                    <h2 class="in-title">CONTACTO</h2> 
+                </header>
+                <section class="quick-contact">
+                    <form action="tu-script-de-procesamiento" method="POST">
+                        <input type="email" name="email" placeholder="Tu Email*" required>
+                        <textarea name="message" placeholder="Escribe tu mensaje*" required></textarea>
+                        <button type="submit">Enviar mensaje</button>
+                    </form>
+                </section>
+            </div>
+            
+        </div>
+        
+        <!-- Iconos de redes sociales -->
+        <div class="social-icons">
+            <ul class="social-li">
+
+
+                <li><a href="#"><i class="fab fa-facebook-square"></i></a></li>
+                <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                <li><a href="#"><i class="fab fa-skype"></i></a></li>
+                <li><a href="#"><i class="fab fa-youtube"></i></a></li>
+                <li><a href="#"> <i class="fab fa-instagram"></i></a></li>
+            </ul>
+        </div>
+        
+        <!-- Línea y derechos de autor -->
+        <div class="footer-line"></div>
+        <p class="p">&copy; 2023 TuriWeb@gmail.com. Todos los derechos reservados.| 903392728</p>
+    </footer>
+
+
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.2.min.js"><\/script>')</script>
+
+    <script src="js/vendor/bootstrap.min.js"></script>
+    
+    <script src="js/datepicker.js"></script>
+    <script src="js/plugins.js"></script>
+    <script src="js/main.js"></script>
+
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js" type="text/javascript"></script>
+    <script type="text/javascript">
+    $(document).ready(function() {
+
+        
+
+        // navigation click actions 
+        $('.scroll-link').on('click', function(event){
+            event.preventDefault();
+            var sectionID = $(this).attr("data-id");
+            scrollToID('#' + sectionID, 750);
+        });
+        // scroll to top action
+        $('.scroll-top').on('click', function(event) {
+            event.preventDefault();
+            $('html, body').animate({scrollTop:0}, 'slow');         
+        });
+        // mobile nav toggle
+        $('#nav-toggle').on('click', function (event) {
+            event.preventDefault();
+            $('#main-nav').toggleClass("open");
+        });
+    });
+    // scroll function
+    function scrollToID(id, speed){
+        var offSet = 0;
+        var targetOffset = $(id).offset().top - offSet;
+        var mainNav = $('#main-nav');
+        $('html,body').animate({scrollTop:targetOffset}, speed);
+        if (mainNav.hasClass("open")) {
+            mainNav.css("height", "1px").removeClass("in").addClass("collapse");
+            mainNav.removeClass("open");
+        }
+    }
+    if (typeof console === "undefined") {
+        console = {
+            log: function() { }
+        };
+    }
+    </script>
+</body>
+</html>
